@@ -1,0 +1,27 @@
+
+.GD-logo1-icon {
+
+	width: 260px;
+	height: 314px;
+	background-position: -0px 0;
+}
+
+.GD-logo2-icon {
+	width: 310px;
+	height: 380px;
+	background-position: -260px 0;
+}
+
+.no-svg .GD-logo1-icon,
+.no-svg .GD-logo2-icon {
+	display: inline-block;
+	background-image: url("../image/sprites/png-sprite.png");
+	background-size: 570px 380px;
+}
+
+.GD-logo1-icon,
+.GD-logo2-icon {
+	display: inline-block;
+	background-image: url("./../image/sprites/svg-sprite.svg");
+	background-repeat: no-repeat;
+}

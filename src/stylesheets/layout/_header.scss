@@ -1,0 +1,12 @@
+header {
+  font-family: $heading-font;
+  @include margin-leader(4);
+  @include margin-trailer(2);
+  @include apply-side-rhythm-border(top, 2px, 1);
+  // @include apply-side-rhythm-border(bottom, 2px, 1);
+  border-color: $brand-color;
+  // svg {
+  // -webkit-filter: drop-shadow(2px 2px $brand-color);
+  // //filter: url(#logoFilter);
+  //
+}

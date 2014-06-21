@@ -1,0 +1,54 @@
+/*************************************************
+*GRID
+**************************************************/
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  global-box-sizing: border-box,
+  gutter-position: inside,
+	debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: overlay,
+    toggle: top right,
+  )
+
+
+);
+
+
+body {
+	@include container(80%);
+
+
+	}
+
+@include susy-breakpoint($bp-medium,12){
+
+	main {
+		  @include span(12 wide);
+	}
+
+}
+
+@include susy-breakpoint($bp-large,24) {
+	main {
+		  @include span(18 );
+	}
+
+	aside {
+	  @include span(6  at 19);
+	}
+}
+
+
+
+.navigation {
+		@include navigation-list;
+	}
+
+// 960 px grid
+//@include layout (12 (60px 10px) split static);

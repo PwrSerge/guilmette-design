@@ -1,0 +1,1719 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"ali",
+				"text-align: "
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"dis",
+				"display: "
+			],
+			[
+				"al",
+				"text-align: "
+			],
+			[
+				"pa",
+				"padding-right: "
+			],
+			[
+				"ba",
+				"background-color: "
+			],
+			[
+				"com",
+				"compass"
+			],
+			[
+				"alig",
+				"text-align: "
+			],
+			[
+				"wi",
+				"window"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bc",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"sg",
+				"svg"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"bord",
+				"apply-side-rhythm-border"
+			],
+			[
+				"repea",
+				"background-repeat"
+			],
+			[
+				"cler",
+				"Clearfix"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"st",
+				"stylesheets"
+			],
+			[
+				"sc",
+				"scss"
+			],
+			[
+				"in",
+				"inside"
+			],
+			[
+				"wid",
+				"widelayout"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"d",
+				"d:ib	display:inline-block"
+			],
+			[
+				"f",
+				"f+	font+"
+			],
+			[
+				"ch",
+				"chrome"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 6427,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/image/sprites/svg-sprite.svg",
+			"settings":
+			{
+				"buffer_size": 2003,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 15808,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stylesheets/components/_images.scss",
+			"settings":
+			{
+				"buffer_size": 447,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dist/index.html",
+			"settings":
+			{
+				"buffer_size": 15903,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stylesheets/components/_media.scss",
+			"settings":
+			{
+				"buffer_size": 1840,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/image/sprites/svg-defs.html",
+			"settings":
+			{
+				"buffer_size": 1713,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dist/css/main.css",
+			"settings":
+			{
+				"buffer_size": 9365,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stylesheets/layout/_footer.scss",
+			"settings":
+			{
+				"buffer_size": 155,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/stylesheets/layout/_header.scss",
+			"settings":
+			{
+				"buffer_size": 340,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "/* Sublime GitHub default settings */\n{\n    \"accounts\": {\n        \"GitHub\": {\n            \"base_uri\": \"https://api.github.com\",\n            \"github_token\": \"\"\n        }\n    },\n\n    // You can add support for a private GitHub installation by adding another entry\n    // to the accounts entry in the User settings file (Preferences ->\n    // Package Settings -> GitHub -> Settings - User). You can then switch between\n    // accounts via the GitHub: Switch Accounts command\n    //\n    // \"YourCo\": {\n    //     \"base_uri\": \"https://github.yourco.com/api/v3\",\n    //     \"github_token\": \"\"\n    // }\n\n    // The format of the each line in the list of gists.\n    // The value is either a Python format string, or a list of Python format\n    // strings. In the latter case, each element of the list will be a separate\n    // line in the select list.\n    // Valid parameters:\n    //    filename - filename of [first file in] gist\n    //    description - description of gist\n    //    index - 1-based index of gist in the list\n    //\n    // Some things to try:\n    // \"gist_list_format\": \"%(index)d. %(filename)s: %(description)s\",\n    // \"gist_list_format\": [\"%(filename)s\", \"%(description)s\"],\n    \"gist_list_format\": \"%(filename)s: %(description)s\",\n    // If true, display the list of gists in a monospace font\n    \"gist_list_monospace\": false,\n    // Highlight the line the cursor is on in GitHub, even if the line is not selected\n    \"always_highlight_current_line\": false,\n    // output debug info to the console\n    \"debug\": false\n}\n",
+			"file": "/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/sublime-github/GitHub.sublime-settings",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 1533,
+				"line_ending": "Windows",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/stylesheets/layout/_grid.scss",
+			"settings":
+			{
+				"buffer_size": 708,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"git",
+				"Git: Commit…"
+			],
+			[
+				"git ",
+				"Git: Add Remote"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"sas",
+				"SassBeautify"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"use",
+				"Preferences: Settings - User"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime lint",
+				"Preferences: SublimeLint Settings – Default"
+			],
+			[
+				"css lin",
+				"Preferences: SublimeLint Settings – Default"
+			],
+			[
+				"css lint",
+				"Preferences: SublimeLint Settings – Default"
+			],
+			[
+				"fet",
+				"Fetch: File"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"sy",
+				"Set Syntax: Sass"
+			],
+			[
+				"syn",
+				"Set Syntax: Sass"
+			],
+			[
+				"col",
+				"Color Picker"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"in",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"lint",
+				"JSLint"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				" git commi",
+				"Git: Quick Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git a",
+				"Git: Add Tag"
+			],
+			[
+				"git ad",
+				"Git: Add Tag"
+			],
+			[
+				"sni",
+				"Snippet: html"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Emmet: Remove Tag"
+			],
+			[
+				"syn sa",
+				"Set Syntax: Sass"
+			],
+			[
+				"isntall",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"git br",
+				"Git: Checkout New Branch"
+			],
+			[
+				"git branch",
+				"Git: New Branch"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"INSTA",
+				"Package Control: Install Package"
+			],
+			[
+				"markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"pack insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 594.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/!PROJECTS/WebDesign/GuilmetteDesign/.git/config",
+		"/D/!PROJECTS/WebDesign/GuilmetteDesign/.git/sourcetreeconfig",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.git/config",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.git/HEAD",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.git/description",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeGit/SublimeGit.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SideBarGit/SideBarGit.sublime-settings",
+		"/C/Users/Sergio/Downloads/pure-layout-pricing/css/layouts/pricing.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/base/_base.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/index.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/sprites/svg-sprite.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_sprites.scss",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/SassBeautify.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/SG_resume.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/gulpfile.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/index.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_images.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_media.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_mixins.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_vars.scss",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SassBeautify/SassBeautify.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/scripts/main.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.jshintrc",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/package.json",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/README.md",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/dist/jshint.js",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/bin/jshint",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/main.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/svg-defs.svg",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_navigation.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/main.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/preview-svg-sprite.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/icons/GD-logo1.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/preview-svg.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_typography.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/sprites/svg-sprite.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_sprites.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_sprites.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/preview-svg-sprite.html",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/node_modules/browser-sync/node_modules/connect/lib/middleware/staticCache.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/node_modules/gulp-svg-sprites/lib/css-render.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/node_modules/gulp-svg-sprites/node_modules/svgo/node_modules/sax/test/script.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/preview-svg.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/preview-svg-sprite.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/preview-svg-sprite.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/preview-svg.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-logo2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-logo1.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GDlogo1.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GDlogo2.svg",
+		"/C/Users/Sergio/Desktop/GD-logo2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/stylesheets/helpers/_sprites.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_sprite.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/layout/_grid.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/trianglify-background2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/css/sprites.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/trianglify-background2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-04.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-03.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/sprites.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/GD-03.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/trianglify-background.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/scripts/plugins.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/scripts/vendor/jquery-1.11.0.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/scripts/vendor/modernizr-2.7.1.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/scripts/vendor/jquery-1.11.0.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_functions.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_buttons.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.awspublish-guilmettedesign.com",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/test.html",
+		"/D/DL/Adobe Illustrator CC 17.1 Final Multilanguage [ChingLiu]/Illustrator_17_LS20.7z",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/SG_resume.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.gitignore",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/trianglify-background.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/GPlay.svg",
+		"/C/Users/Sergio/Downloads/GPlay.svg",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Sergio/Desktop/GD-03.svg",
+		"/C/Users/Sergio/Desktop/GD-01.svg",
+		"/C/Users/Sergio/Desktop/GD-02.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/vendor/web-fonts.scss",
+		"/C/Users/Sergio/Downloads/Sass-Web-Fonts-master/Sass-Web-Fonts-master/web-fonts.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/vendor/web-font.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/main.min.css",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/sublimelint/SublimeLint.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/config.rb",
+		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/_units.scss",
+		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/_vertical_rhythm.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_placeholders.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/layout/_header.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/base/_reset.scss",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/Fetch.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/pages/_home.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/pages/_footer.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/__tmp_package.zip",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/base/_normalize.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/base/_base.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/layout/_footer.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/layout/_sidebar",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_icons.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/sprite.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_base.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/css/sprite.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/images/sprite.png",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/SG-resume.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/404.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/scripts/vendor/modernizr-2.7.1.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/package.json",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_forms.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_grid.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/styles/main.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/js/plugins.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/img/.gitignore",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/doc/usage.md",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/css/normalize.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/css/main.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/LICENSE.md",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/CONTRIBUTING.md"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 109.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"white",
+			"symbol",
+			"black",
+			"white",
+			"flex",
+			"zz",
+			"container",
+			"styles",
+			"</g>",
+			"<g",
+			"G",
+			"g",
+			"scritp",
+			"tp",
+			"imag",
+			"h2",
+			"summary",
+			"sasdcasda",
+			"breakpoint",
+			"_sprite",
+			"013ff52744984f485532472de568bae69d73dc20",
+			"\n//",
+			"layout",
+			"sprite.png",
+			"sprite",
+			"sprite.png",
+			"css/sprite.png",
+			"../css/sprite.png",
+			"sprite.png",
+			"image",
+			"images",
+			"Images",
+			"images",
+			"div",
+			"me",
+			"about",
+			"li",
+			"projects",
+			"GRID",
+			"src/stylesheets/main.scss",
+			"$color",
+			"$brand-color",
+			"beige",
+			"p",
+			"</hgroup>",
+			"<hgroup>",
+			"class",
+			"perferendis",
+			"amet"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#000",
+			"#fff",
+			"sass",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 10,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4205,
+								4205
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dist/image/sprites/svg-sprite.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2003,
+								2003
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15808,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2283,
+								2283
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 323.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/stylesheets/components/_images.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "dist/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1094,
+								1094
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/stylesheets/components/_media.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 528.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "dist/image/sprites/svg-defs.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1713,
+								1713
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "dist/css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								681,
+								681
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 183.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/stylesheets/layout/_footer.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 155,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/stylesheets/layout/_header.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 340,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97,
+								97
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/sublime-github/GitHub.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1533,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1025,
+								1025
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/stylesheets/layout/_grid.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								472,
+								472
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 314.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"output.git-commit":
+	{
+		"height": 100.0
+	},
+	"output.git-init":
+	{
+		"height": 140.0
+	},
+	"output.git-push":
+	{
+		"height": 100.0
+	},
+	"project": "Resume_gulp.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gu",
+				"gulpfile.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\!PROJECTS\\WebDesign\\HTML5 site\\html5.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 276.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

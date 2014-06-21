@@ -1,0 +1,195 @@
+// VARIABLES
+
+//
+// Project  paths
+//--------------------------------------------------------------------
+
+
+// Image directory. Change this to the optimised path when deploying
+$img: '../image/';
+
+
+//
+// Colours
+//--------------------------------------------------------------------
+
+//
+// main colors
+//$base-background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMDAnIGhlaWdodD0nMzAwJyB2aWV3Qm94PScwIDAgMTUwIDE1MCc+Cgk8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCQk8ZmVUdXJidWxlbmNlIHR5cGU9J3R1cmJ1bGVuY2UnIGJhc2VGcmVxdWVuY3k9Jy43JyByZXN1bHQ9J2Z1enonIG51bU9jdGF2ZXM9JzInIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz4KCQk8ZmVDb21wb3NpdGUgaW49J1NvdXJjZUdyYXBoaWMnIGluMj0nZnV6eicgb3BlcmF0b3I9J2FyaXRobWV0aWMnIGsxPScwJyBrMj0nMC45NycgazM9Jy0wLjE0JyBrND0nLjAxJyAvPgoJPC9maWx0ZXI+Cgk8cmVjdCB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDAwMDAwJy8+Cgk8cmVjdCB4PSctMSUnIHk9Jy0xJScgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nI2Y4ZjdmMicgZmlsdGVyPSd1cmwoI24pJyBvcGFjaXR5PScxJy8+Cjwvc3ZnPg==');
+$base-background-image: url(../image/trianglify-background2.svg);
+$base-color: #3e225b;
+$base-background-color: #f8f7f2;
+$brand-color: #8cc63e;
+$accent-color: #3e225b;
+$attention-color: #cc680d;
+
+
+// functional variables
+
+$text-color: $base-color;
+$link-color: $brand-color;
+$border-color: $base-color;
+
+
+//
+// Fonts
+//--------------------------------------------------------------------
+//Google fonts
+//@include web-fonts("Poiret One");
+$font-p: Kavoon;
+$font-s: Wendy One;
+$font-t: Montserrat;
+
+// Or directly:
+//$fonts: Kavoon, Wendy One, Bonbon;
+//
+
+// Font Family
+$heading-font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-font: Georgia, Times, "Times New Roman", serif;
+
+// Font weights
+$type-weight: (
+    thin: 200,
+    light: 300,
+    regular: 400,
+    bold: 700,
+    black: 900
+);
+
+// Base Font
+$base-font-family: $sans-serif-font;
+$base-font-size: 20px;
+$base-line-height: 32px;
+
+// Rhythm unit (Compass vertical rhythm)
+$rhythm-unit: 'rem';
+$rem-with-px-fallback: true;
+
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+
+//Sass map (Sass v3.3) with different font sizes using scale
+$type-scale: (
+  tiny: (
+    font-size: 13px,
+    base-lines: .5
+  ),
+  small: (
+    font-size: 16px,
+    base-lines: .75
+   ),
+  base: (
+   font-size: $base-font-size,
+   base-lines: 1
+  ),
+  medium: (
+    font-size: 25px,
+    base-lines: 1
+  ),
+  large: (
+    font-size: 31px,
+    base-lines: 1
+  ),
+  xlarge: (
+    font-size: 39px,
+    base-lines: 1.5
+  ),
+  xxlarge: (
+    font-size: 49px,
+    base-lines: 2
+  )
+);
+
+
+
+//
+// Dimensions
+//--------------------------------------------------------------------
+
+//breakpoint values
+
+
+$breakpoint-to-ems: true;
+$bp-verysmall: 250px;
+$bp-small: 500px;
+$bp-medium: 700px;
+$bp-large: 1250px;
+$bp-verylarge: 1600px;
+
+
+// breakpoint
+// assume min-width (by default) if only a number
+$breakpoint-medium-width: 500px;
+$breakpoint-medium-width-em: 30em;
+// set min-width/max-width if both values are numbers
+$breakpoint-medium-not-wide: 500px 700px;
+// set min/max of feature if there are two numbers
+$breakpoint-medium-height: height 300px 700px;
+// if one value is a string, assume a feature/value pair
+$breakpoint-kind-of-wide: min-width 700px;
+$breakpoint-not-too-wide: max-width 700px;
+// for multidimensional lists, assume each item is a feature value pair
+$breakpoint-wide-portrait: (max-width 700px) (orientation portrait);
+// handle one-sided features (ie. monochrome)
+$breakpoint-wide-portrait-mono: (max-width 700px) (orientation portrait) (monochrome);
+$breakpoint-mono: monochrome;
+$breakpoint-hi-rez: min-resolution 1.5dppx;
+
+
+
+//
+// Easing
+//
+// @see http://robertpenner.com/
+// @see http://matthewlein.com/ceaser/
+//--------------------------------------------------------------------
+
+// Cubic
+$easeInCubic     :  cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeOutCubic    :  cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeInOutCubic  :  cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+// Circ
+$easeInCirc      :  cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeOutCirc     :  cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeInOutCirc   :  cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+// Expo
+$easeInExpo      :  cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeOutExpo     :  cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInOutExpo   :  cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+// Quad
+$easeInQuad      :  cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeOutQuad     :  cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeInOutQuad   :  cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Quart
+$easeInQuart     :  cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeOutQuart    :  cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeInOutQuart  :  cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+// Quint
+$easeInQuint     :  cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeOutQuint    :  cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$easeInOutQuint  :  cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+// Sine
+$easeInSine      :  cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeOutSine     :  cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeInOutSine   :  cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+// Back
+$easeInBack      :  cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeOutBack     :  cubic-bezier(0.175,  0.885, 0.320, 1.275);
+$easeInOutBack   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+
+
+
+

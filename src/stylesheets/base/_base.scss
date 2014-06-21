@@ -1,0 +1,139 @@
+  /*************************************************
+  *BASE
+  **************************************************/
+
+  // Establish a vertical rhythm @include establish-baseline;
+  *,
+  *:after,
+  *:before {
+    @include box-sizing(border-box);
+  }
+
+  body {
+    background-size: cover;
+    font-family: $base-font-family;
+    //background: $base-background-color $base-background-image;
+    color: #000;
+    background: $base-background-color url(../../dist/image/creampaper.png);
+  }
+
+
+
+
+  // ul {
+  // @include navigation-list;
+  //
+  //}
+
+
+  aside ul {
+    padding: 0;
+    margin:0;
+    overflow:hidden;
+    background-color: $accent-color;
+    text-align: center;
+    width: 100%;
+
+
+
+      li {
+      @include breakpoint($bp-medium) {
+      text-align:  center;
+      display: inline-block;
+      }
+
+      a {
+        border-bottom: solid 1px $text_color;
+        display: block;
+        padding: 10px 5%;
+      }
+    }
+  }
+
+  // base headings
+  #{h1, h2, h3, h4, h5} {
+    font-family: $heading-font;
+    @include type-weight(black);
+    @include margin-trailer(1);
+    @include type-ligatures;
+  }
+
+  h1 {
+    @include type-scale(xxlarge);
+    color: $accent-color;
+    //@include text-emboss(0.65, 0.9);
+  }
+
+  h2 {
+    @include type-scale(xlarge);
+    @include apply-side-rhythm-border(bottom, 2px, 1);
+    border-color: darken(#fff, 50%);
+    color: $accent-color;
+  }
+
+  h3 {
+    @include type-scale(large);
+  }
+
+  h4 {
+    @include type-scale(medium);
+  }
+
+  h5 {
+    @include type-scale(base);
+  }
+
+  // Base paragraphs
+  p {
+    @include margin-trailer(1);
+    @include word-break(break-word);
+    @include hyphens(auto);
+    @include type-ligatures;
+    font-family: $base-font-family;
+  }
+
+  // Small
+  small {
+    @include type-scale(small);
+  }
+
+  // Base anchors
+  a {
+    color: $link_color;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: darken($link-color, 30%);
+    }
+    &:focus {
+      outline: 0;
+    }
+    &:active {
+      color: darken($link-color, 10%);
+    }
+  }
+
+  ul {
+    @include reset-list;
+  }
+
+  // Base form styles
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  // Base table styles
+  table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+  }
+
+  // Responsive media
+  img,
+  object,
+  embed {
+    max-width: 100%;
+  }
