@@ -3,41 +3,54 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
+    jshint = require('gulp-jshint'),
+    stylish = require('jshint-stylish'),
     rename = require('gulp-rename'),
-    clean = require('gulp-clean'),
     concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
+    clean = require('gulp-clean'),
+    growl = require('gulp-notify-growl'),
     cache = require('gulp-cache'),
     changed = require('gulp-changed'),
     awspublish = require('gulp-awspublish'),
-    compass = require('gulp-compass'),
     header = require('gulp-header'),
-    lr = require('tiny-lr'),
-    open = require("gulp-open"),
     cssbeautify = require('gulp-cssbeautify'),
     browserSync = require('browser-sync'),
-    svgSprites = require('gulp-svg-sprites'),
+    svgSymbols = require('gulp-svg-symbols'),
+    fileinclude = require('gulp-file-include'),
+    svgmin = require('gulp-svgmin'),
+    uncss = require('gulp-uncss'),
     pngcrush = require('imagemin-pngcrush'),
     inject = require("gulp-inject"),
-    server = lr();
+    mainBowerFiles = require('main-bower-files'),
+    size = require('gulp-filesize'),
+    flatten = require('gulp-flatten'),
+    gulpFilter = require('gulp-filter'),
+    lazypipe = require('lazypipe'),
+    plumber = require('gulp-plumber');
 
 
 
-//PATHS
+
+/*******************************************************************************
+ *CONFIGS
+ ******************************************************************************/
+
+//Paths
 var paths = {
+    scr: 'src',
+    dest: 'dist',
     scripts: {
-        src:  'src/scripts/*.js',
+        src: 'src/scripts/**/*.js',
         dest: 'dist/scripts'
     },
     styles: {
-        src:  'src/stylesheets/*.scss',
+        src: 'src/stylesheets/*.scss',
         dest: 'dist/css'
     },
     image: {
-        src:  'src/image/**/*',
+        src: 'src/image/**/*',
         dest: 'dist/image'
     },
     html: {
@@ -46,150 +59,295 @@ var paths = {
     }
 };
 
-
-// SASS
-gulp.task('sass', function () {
-  return gulp.src('src/stylesheets/main.scss')
-        .pipe(changed(paths.styles.dest))
-        .pipe(sass({
-        //style: 'expanded',
-        //sourcemap: true,
-            lineNumbers: false,
-            compass: true,
-            trace: true,
-            require: ['susy', 'modular-scale', 'breakpoint']
-        }))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(cssbeautify({
-            indent: '  ',
-            openbrace: 'end-of-line',
-            autosemicolon: true
-        }))
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(minifycss())
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.reload({stream: true}))
-        .pipe(notify({ message: 'Styles task complete' }));
+//Initialize the notifier
+var growlNotifier = growl({
+    hostname: '127.0.0.1' // IP or Hostname to notify, default to localhost
 });
 
+// fileinclude
 
-// SCRIPTS
-gulp.task('scripts', function () {
-  return gulp.src(paths.scripts.src)
-        .pipe(changed(paths.scripts.dest))
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('default'))
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(gulp.src('src/scripts/vendor/*.js'))
-        .pipe(gulp.dest('dist/scripts/vendor'))
-        .pipe(browserSync.reload({stream: true, once: true}))
-        .pipe(notify({ message: 'Scripts task complete' }));
-
-});
-
-// IMAGES
-gulp.task('image', function () {
-  return gulp.src(paths.image.src)
-        .pipe(changed(paths.image.dest))
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, svgoPlugins: [{removeViewBox: false}], use: [pngcrush()], interlaced: true })))
-        .pipe(gulp.dest(paths.image.dest))
-        .pipe(browserSync.reload({stream: true}))
-        .pipe(notify({ message: 'Image task complete' }));
-});
-
-// SVG SPRITES
-var svg = svgSprites.svg;
-var png = svgSprites.png;
-var config = {
-    className: ".%f-icon",
-    svgId:     "%f-icon",
-    cssFile:   "./stylesheets/components/_sprites.scss",
-    svgPath:   "./../%f",
-    svg: {
-        sprite: "image/sprites/svg-sprite.svg",
-        defs: "image/sprites/svg-defs.svg"
-    },
-    //defs: true
+var fileincludecfg = {
+    prefix: '@@',
+    basepath: '@file'
 };
 
-gulp.task('sprites', function () {
+//Banner
+var packg = require('./package.json');
+var banner = ['/**',
+    ' * <%= packg.name %> - <%= packg.description %>',
+    ' * @version v<%= packg.version %>',
+    ' * @link <%= packg.homepage %>',
+    ' * @license <%= packg.license %>',
+    ' */',
+    ''
+].join('\n');
+
+//lazypipe tasks
+
+var sassTasks = lazypipe()
+    .pipe(sass, {
+        //style: 'expanded',
+        //sourcemap: true,
+        lineNumbers: false,
+        compass: true,
+        trace: true,
+        require: ['susy', 'modular-scale', 'breakpoint']
+    })
+    .pipe(autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
+    .pipe(cssbeautify, {
+        indent: '  ',
+        openbrace: 'end-of-line',
+        autosemicolon: true
+    })
+    .pipe(uncss, ({
+        html: ['dist/index.html']
+    }));
+
+
+var cssminTasks = lazypipe()
+    .pipe(rename, {
+        suffix: '.min'
+    })
+    .pipe(minifycss);
+
+var jsminTasks = lazypipe()
+    .pipe(jshint)
+    .pipe(jshint.reporter, stylish)
+    .pipe(rename, {
+        suffix: '.min'
+    })
+    .pipe(uglify);
+
+
+/*******************************************************************************
+ *BOWER
+ ******************************************************************************/
+// grab libraries files from bower_components, minify and push in /public
+gulp.task('libs', function() {
+
+    var jsFilter = gulpFilter('*.js');
+    var cssFilter = gulpFilter('*.css');
+    var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);
+
+    return gulp.src(mainBowerFiles({
+        debugging: true
+    }))
+
+    // grab vendor js files from bower_components, minify and push in /public
+    .pipe(jsFilter)
+        .pipe(gulp.dest('src/scripts/vendor'))
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: ".min"
+        }))
+        .pipe(gulp.dest('src/scripts/vendor'))
+        .pipe(jsFilter.restore())
+
+    // grab vendor css files from bower_components, minify and push in /public
+    .pipe(cssFilter)
+        .pipe(gulp.dest('src/stylesheets/vendor'))
+        .pipe(cssminTasks())
+        .pipe(gulp.dest('src/stylesheets/vendor'))
+        .pipe(cssFilter.restore())
+
+    // grab vendor font files from bower_components and push in /public
+    .pipe(fontFilter)
+        .pipe(flatten())
+        .pipe(gulp.dest(paths.src + '/fonts'))
+});
+
+/*******************************************************************************
+ *STYLES
+ ******************************************************************************/
+
+gulp.task('styles', function() {
+    return gulp.src(paths.styles.src)
+        //.pipe(changed(paths.styles.dest))
+        .pipe(plumber())
+        .pipe(sassTasks())
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(cssminTasks())
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(growlNotifier({
+            title: 'STYLES.',
+            message: 'Styles task complete'
+        }));
+
+});
+
+/*******************************************************************************
+ *SCRIPTS
+ ******************************************************************************/
+
+gulp.task('scripts', function() {
+    var filter = gulpFilter(['*.js', '!src/scripts/vendor']);
+    return gulp.src(paths.scripts.src)
+        //.pipe(changed(paths.scripts.dest))
+        .pipe(filter)
+        .pipe(plumber())
+        .pipe(concat('main.js'))
+        .pipe(header(banner, {
+            packg: packg
+        }))
+        .pipe(jsminTasks())
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(filter.restore())
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.reload({
+            stream: true,
+            once: true
+        }))
+        .pipe(growlNotifier({
+            title: 'SCRIPTS.',
+            message: 'Scripts task complete'
+        }));
+
+});
+
+/*******************************************************************************
+ *IMAGES
+ ******************************************************************************/
+
+gulp.task('image', function() {
+    return gulp.src(paths.image.src)
+        //.pipe(changed(paths.image.dest))
+        .pipe(plumber())
+        .pipe(cache(imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            svgoPlugins: [{
+                removeViewBox: false
+            }],
+            use: [pngcrush()],
+            interlaced: true
+        })))
+        .pipe(size())
+        .pipe(gulp.dest(paths.image.dest))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+        .pipe(growlNotifier({
+            title: 'IMAGES.',
+            message: 'Image task complete'
+        }));
+});
+
+/*******************************************************************************
+ *SVG SPRITES
+ ******************************************************************************/
+
+var config = {
+    svgId: 'icon-%f',
+    className: '.icon-%f',
+    fontSize: 16,
+};
+
+gulp.task('sprites', function() {
     return gulp.src('src/image/icons/*.svg')
-            .pipe(svg(config))
-            .pipe(gulp.dest('src'))
-            .pipe(notify({ message: 'Sprites task complete' }));
+        .pipe(plumber())
+        .pipe(svgSymbols(config))
+        .pipe(size())
+        .pipe(gulp.dest('src/image/sprites'))
+        .pipe(growlNotifier({
+            title: 'SPRITES.',
+            message: 'Sprites task complete'
+        }));
+
 });
 
-//HTML
-gulp.task('html', function () {
+/*******************************************************************************
+ *HTML
+ ******************************************************************************/
+
+gulp.task('html', function() {
     return gulp.src('src/index.html')
-        //.pipe(changed(paths.html.dest))
-
-        //.pipe(gulp.src('src/index.html'))
-        .pipe(inject(gulp.src(["./dist/scripts/**/*.min.js", "./dist/css/*.min.css"], {read: false}), {ignorePath: 'dist/', addRootSlash: false})) // Not necessary to read the files (will speed up things), we're only after their paths
+        //.pipe(changed(paths.html.src))
+        .pipe(plumber())
+        .pipe(fileinclude(fileincludecfg))
+        .pipe(inject(gulp.src('./dist/scripts/vendor/modernizr*.min.js', {
+            read: false
+        }), {
+            starttag: '<!-- inject:head:{{ext}} -->',
+            ignorePath: 'dist/',
+            addRootSlash: false
+        }))
+        .pipe(inject(gulp.src(['./dist/css/*.min.css', './dist/scripts/**/*.min.js', './dist/css/*.min.css', '!./dist/scripts/vendor/modernizr*.min.js'], {
+            read: false
+        }), {
+            ignorePath: 'dist/',
+            addRootSlash: false
+        }))
+        .pipe(size())
         .pipe(gulp.dest('./dist'))
-        .pipe(browserSync.reload({stream: true}))
-        .pipe(notify({ message: 'HTML task complete' }));
-
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+        .pipe(growlNotifier({
+            title: 'HTML.',
+            message: 'HTML task complete'
+        }));
 });
 
-// CLEAN
-gulp.task('clean', function () {
-  return gulp.src(['dist/styles', 'dist/scripts', 'dist/image'], {read: false})
+/*******************************************************************************
+ *CLEAN
+ ******************************************************************************/
+
+gulp.task('clean', function() {
+    return gulp.src(['dist/'], {
+            read: false
+        })
         .pipe(clean());
 });
 
-//AWS PUBLISH
-gulp.task('publish', function () {
+/*******************************************************************************
+ *AWS PUBLISH
+ ******************************************************************************/
 
-  // create a new publisher
-  var publisher = awspublish.create({ key: 'AKIAJXFBVOWZJCTIBP6Q',  secret: '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', bucket: 'guilmettedesign.com' });
+gulp.task('publish', function() {
 
-  // define custom headers
-  var headers = {
+    // create a new publisher
+    var publisher = awspublish.create({
+        key: 'AKIAJXFBVOWZJCTIBP6Q',
+        secret: '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',
+        bucket: 'guilmettedesign.com'
+    });
+
+    // define custom headers
+    var headers = {
         'Cache-Control': 'max-age=315360000, no-transform, public'
         // ...
     };
 
-  return gulp.src('./dist/**/*')
+    return gulp.src('./dist/**/*')
 
     // gzip, Set Content-Encoding headers and add .gz extension
     //.pipe(awspublish.gzip({ ext: '.gz' }))
 
-        .pipe(rename(function (path) {
-            path.dirname = '/' + path.dirname;
-        }))
+    .pipe(rename(function(path) {
+        path.dirname = '/' + path.dirname;
+    }))
 
-        // publisher will add Content-Length, Content-Type and Cache-Control headers
-        // and if not specified will set x-amz-acl to public-read by default
-        .pipe(publisher.publish(headers))
+    // publisher will add Content-Length, Content-Type and Cache-Control headers
+    // and if not specified will set x-amz-acl to public-read by default
+    .pipe(publisher.publish(headers))
 
-        // create a cache file to speed up consecutive uploads
-        .pipe(publisher.cache())
+    // create a cache file to speed up consecutive uploads
+    .pipe(publisher.cache())
 
-        //sync bucket files
-        .pipe(publisher.sync())
+    //sync bucket files
+    // .pipe(publisher.sync())
 
-         // print upload updates to console
-        .pipe(awspublish.reporter({
-            states: ['create', 'update', 'delete']
-        }));
+    // print upload updates to console
+    .pipe(awspublish.reporter({
+        states: ['create', 'update', 'delete']
+    }));
 });
 
+/*******************************************************************************
+ *BROWSER_SYNC
+ ******************************************************************************/
 
-//OPEN
-gulp.task("url", function () {
-  gulp.src("dist/index.html")
-        .pipe(open("<%file.path%>"));
-});
-
-
-// BROWSER_SYNC
-gulp.task('browser-sync', function () {
+gulp.task('browser-sync', function() {
     browserSync.init(null, {
         server: {
             baseDir: "./dist"
@@ -197,29 +355,33 @@ gulp.task('browser-sync', function () {
     });
 });
 
-// DEFAULT BUILD
-gulp.task('default', ['clean'], function () {
-    gulp.start('sass', 'scripts', 'image', 'sprites', 'html');
+/*******************************************************************************
+ *DEFAULT BUILD
+ ******************************************************************************/
+
+gulp.task('default', ['clean'], function() {
+    gulp.start('styles', 'libs', 'scripts', 'image', 'sprites', 'html');
 });
 
+/*******************************************************************************
+ *WATCH
+ ******************************************************************************/
 
-// WATCH
-gulp.task('watch', ['browser-sync'], function () {
-  // //opens the index page in default browser
-  // gulp.start('url');
+gulp.task('watch', ['browser-sync'], function() {
+    // //opens the index page in default browser
+    // gulp.start('url');
 
     // Watch .scss files
-    gulp.watch('src/stylesheets/**/*.scss', ['sass']);
+    gulp.watch('src/stylesheets/**/*.scss', ['styles']);
 
     // Watch .js files
     gulp.watch('src/scripts/**/*.js', ['scripts']);
 
     // Watch image files
-    gulp.watch('src/image/**/*', ['image']);
+    gulp.watch('dist/image/**/*', ['image']);
 
     // Watch .html files
     gulp.watch('src/*.html', ['html']);
 
 
 });
-

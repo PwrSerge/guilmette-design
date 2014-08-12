@@ -1,139 +1,129 @@
-  /*************************************************
-  *BASE
-  **************************************************/
+/*************************************************
+*BASE
+**************************************************/
+// Html element styling only
 
-  // Establish a vertical rhythm @include establish-baseline;
-  *,
-  *:after,
-  *:before {
+// Establish a vertical rhythm @include establish-baseline;
+*,
+*:after,
+*:before {
     @include box-sizing(border-box);
-  }
+}
 
-  body {
+body {
+    background: $base-background-color;
     background-size: cover;
     font-family: $base-font-family;
-    //background: $base-background-color $base-background-image;
-    color: #000;
-    background: $base-background-color url(../../dist/image/creampaper.png);
-  }
-
-
-
-
-  // ul {
-  // @include navigation-list;
-  //
-  //}
-
-
-  aside ul {
+    margin: 0;
     padding: 0;
-    margin:0;
-    overflow:hidden;
-    background-color: $accent-color;
-    text-align: center;
-    width: 100%;
+    z-index: 0;
+    //background: $base-background-color url(../image/creampaper.png);
+}
 
 
+article {
+    line-height: 1.5em;
 
-      li {
-      @include breakpoint($bp-medium) {
-      text-align:  center;
-      display: inline-block;
-      }
+}
 
-      a {
-        border-bottom: solid 1px $text_color;
-        display: block;
-        padding: 10px 5%;
-      }
-    }
-  }
+header {
+  font-family: $heading-font;
+  padding-top: 2em;
 
-  // base headings
-  #{h1, h2, h3, h4, h5} {
+  //@include margin-leader(1);
+  //@include margin-trailer(1);
+  //@include apply-side-rhythm-border(top, 2px, 1);
+  // @include apply-side-rhythm-border(bottom, 2px, 1);
+  //border-color: $brand-color;
+  // svg {
+  // -webkit-filter: drop-shadow(2px 2px $brand-color);
+  // //filter: url(#logoFilter);
+  //
+}
+
+// base headings
+#{h1, h2, h3, h4, h5} {
     font-family: $heading-font;
-    @include type-weight(black);
+    @include type-weight(xtrabold);
     @include margin-trailer(1);
-    @include type-ligatures;
-  }
+    @include font-feature;
+}
 
-  h1 {
+h1 {
     @include type-scale(xxlarge);
     color: $accent-color;
     //@include text-emboss(0.65, 0.9);
-  }
+}
 
-  h2 {
+h2 {
     @include type-scale(xlarge);
     @include apply-side-rhythm-border(bottom, 2px, 1);
     border-color: darken(#fff, 50%);
     color: $accent-color;
-  }
+}
 
-  h3 {
+h3 {
     @include type-scale(large);
-  }
+}
 
-  h4 {
+h4 {
     @include type-scale(medium);
-  }
+}
 
-  h5 {
+h5 {
     @include type-scale(base);
-  }
+}
 
-  // Base paragraphs
-  p {
+// Base paragraphs
+p {
+    @include type-scale(medium);
     @include margin-trailer(1);
     @include word-break(break-word);
     @include hyphens(auto);
-    @include type-ligatures;
-    font-family: $base-font-family;
-  }
+}
 
-  // Small
-  small {
+// Small
+small {
     @include type-scale(small);
-  }
+}
 
-  // Base anchors
-  a {
-    color: $link_color;
+// Base anchors
+a {
+    color: inherit;
     text-decoration: none;
-    &:hover,
-    &:focus {
-      color: darken($link-color, 30%);
-    }
-    &:focus {
-      outline: 0;
-    }
-    &:active {
-      color: darken($link-color, 10%);
-    }
-  }
+    // &:hover,
+    // &:focus {
+    //   color: darken($link-color, 30%);
+    // }
+    // &:focus {
+    //   outline: 0;
+    // }
+    // &:active {
+    //   color: darken($link-color, 10%);
+    // }
+}
 
-  ul {
+ul {
     @include reset-list;
-  }
+}
 
-  // Base form styles
-  label {
+// Base form styles
+label {
     display: block;
     margin-bottom: 10px;
-  }
+}
 
-  // Base table styles
-  table {
+// Base table styles
+table {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
     max-width: 100%;
-  }
+}
 
-  // Responsive media
-  img,
-  object,
-  embed {
+// Responsive media
+img,
+object,
+embed {
     max-width: 100%;
-  }
+}

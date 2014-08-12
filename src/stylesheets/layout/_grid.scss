@@ -2,53 +2,40 @@
 *GRID
 **************************************************/
 
-$susy: (
-  columns: 12,
-  gutters: 1/4,
-  math: fluid,
-  output: float,
-  global-box-sizing: border-box,
-  gutter-position: inside,
-	debug: (
-    image: show,
-    color: rgba(#66f, .25),
-    output: overlay,
-    toggle: top right,
-  )
+$susy: (columns: 12, gutters: 1 / 4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside, debug: (image: show, color: rgba(#66f, .25), output: overlay, toggle: top right));
 
+// main {
+//  @include container(80%);
+// }
 
-);
+// nav {
+//   @include container(100%);
+// }
 
-
-body {
-	@include container(80%);
-
-
-	}
-
-@include susy-breakpoint($bp-medium,12){
-
-	main {
-		  @include span(12 wide);
-	}
-
-}
-
-@include susy-breakpoint($bp-large,24) {
-	main {
-		  @include span(18 );
-	}
-
-	aside {
-	  @include span(6  at 19);
-	}
+@include susy-breakpoint($bp-medium, 12) {
+    main {
+        @include span(8);
+        margin-left: span(2) + gutter();
+        margin-right: span(2) + gutter();
+    }
 }
 
 
+@include susy-breakpoint($bp-large, 24) {
 
-.navigation {
-		@include navigation-list;
-	}
+
+    main {
+        @include span(10);
+        margin-left: span(7) + gutter();
+        margin-right: span(7) + gutter();
+    }
+
+    // aside {
+    //   @include span(6  at 19);
+    // }
+}
+
+
 
 // 960 px grid
 //@include layout (12 (60px 10px) split static);

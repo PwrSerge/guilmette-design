@@ -4,35 +4,63 @@
 
 // background img using compass mixins
 .cover {
-  @include background-size(cover);
+    @include background-size(cover);
 }
 
 .contain {
- @include background-size(contain);
+    @include background-size(contain);
 }
 
 
-icons
+//Utiliy class for SVG
+.ui-img,
+%ui-img {
+    background-image: url("#{$img}/sprites/sprite.svg");
+    background-repeat: no-repeat;
+
+    .no-svg & {
+        background-image: url("#{$img}/ui-separate-std-sprite.png");
+    }
+}
+
 svg {
- fill: currentColor;
+    fill: currentColor;
 }
 
-.icon {
-  width: 125px;
-  height: 125px;
+.logo {
+    height: 8em;
+    width: 8em;
+
+}
+.no-bleed {
+    position: relative;
+
+    &:after {
+        @extend %ui-img;
+        background-position: 0 0;
+        background-size: 380px;
+        content: ' ';
+        display: block;
+        height: 380px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 260px;
+    }
 }
 
-.logo{
-  width: 180px;
-  height: 180px;
- }
+// icons
+#icon-GD-logo2 {
+    path:nth-of-type(1){
+    fill: $base-color;
+    }
+    path:nth-of-type(2){
+    fill: $brand-color;
+    }
+}
 
-.logo--g {
-  fill: $base-color;
- }
-.logo--d {
-  fill: $brand-color;
- }
-
-
+[class^="icon-"] {
+    height: 3em;
+    width: 3em;
+}
 
