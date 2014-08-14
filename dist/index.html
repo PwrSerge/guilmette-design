@@ -8,11 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
     <!-- inject:head:js -->
-    <script src="scripts/vendor/modernizr.min.js"></script>
+    <!-- only importantFile.js will be injected here -->
     <!-- endinject -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/print.min.css">
+    <!-- any *.css files among your sources will go here as: <link rel="stylesheet" href="FILE"> -->
     <!-- endinject -->
     <!-- include SVGs -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -71,27 +70,28 @@
   <body class="loading">
     <div class="wrapper">
       <div class="inner-wrapper">
-        <nav>
-          <div class="handle">Menu</div>
-          <ul class="showing">
-            <li><a href="#a1">about me</a></li>
-            <li><a href="#a2">summary</a></li>
-            <li><a href="#a3">work experience</a></li>
-            <li><a href="#a4">education</a></li>
-            <li><a href="#a5">skills</a></li>
-          </ul>
-        </nav>
-        <main>
         <header>
-          <div class="flex__container logo">
-            <svg role="img" class="flex__item icon-GD-logo2">
-            <use xlink:href="#icon-GD-logo2" ></use>
-            </svg>
-          </div>
-          <h1>Serge Guilmette</h1>
-          <h2>web designer/front-end developer</h2>
+          <div class="nav-toggle">Menu</div>
+          <nav class="main-navigation" role="navigation">
+            <ul>
+              <li><a href="#a1">about me</a></li>
+              <li><a href="#a2">summary</a></li>
+              <li><a href="#a3">work experience</a></li>
+              <li><a href="#a4">education</a></li>
+              <li><a href="#a5">skills</a></li>
+            </ul>
+          </nav>
+
         </header>
-        <dl>
+        <div class="flex__container logo">
+          <svg role="img" class="flex__item icon-GD-logo2">
+          <use xlink:href="#icon-GD-logo2" ></use>
+          </svg>
+        </div>
+        <h1>Serge Guilmette</h1>
+        <h2>web designer/front-end developer</h2>
+
+        <main><dl>
           <svg role="img" class="icon-envelope">
           <use xlink:href="#icon-envelope"></use>
           </svg>
@@ -293,9 +293,7 @@
         </div> <!--.inner-wrapper-->
         </div> <!--.wrapper-->
         <!-- inject:js -->
-        <script src="scripts/vendor/jquery.min.js"></script>
-        <script src="scripts/main.min.js"></script>
-
+        <!-- the rest of the *.js files will be injected here -->
         <!-- endinject -->
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!-- <script>

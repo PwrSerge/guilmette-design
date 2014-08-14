@@ -42,7 +42,8 @@
     "gulp-flatten": "0.0.2",
     "lazypipe": "~0.2.2",
     "gulp-jshint": "~1.7.1",
-    "jshint-stylish": "~0.4.0"
+    "jshint-stylish": "~0.4.0",
+    "run-sequence": "~0.3.6"
   },
   "dependencies": {
     "gulp-open": "~0.2.8",
