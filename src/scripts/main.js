@@ -4,19 +4,11 @@
   Slidemenu
 */
 
-$('.handle').on('click', function() {
-    //$('nav ul').toggleClass('showing--active');
-
-    if ($('nav').hasClass('showing--inactive')) {
-        $('nav').removeClass('showing--inactive');
-        $('nav').find('ul').addClass('showing--active');
-    } else {
-        $('nav').find('ul').removeClass('showing--active');
-        $('nav').addClass('showing--inactive');
-    }
-
+$(function() {
+    $('.nav-toggle').on('click', function() {
+        $('.main-navigation').toggleClass('open');
+    });
 });
-
 // var body = $('body'),
 //     page = body.find('.wrapper'),
 //     navToggle = body.find('.handle'),

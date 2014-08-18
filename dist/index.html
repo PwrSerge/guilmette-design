@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
     <!-- inject:head:js -->
-    <!-- only importantFile.js will be injected here -->
+    <script src="scripts/vendor/modernizr.min.js"></script>
     <!-- endinject -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- inject:css -->
-    <!-- any *.css files among your sources will go here as: <link rel="stylesheet" href="FILE"> -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/print.min.css">
     <!-- endinject -->
     <!-- include SVGs -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -25,7 +27,7 @@
       <path d="M0 10h32l-2 20h-28l-2-20zm29-4l1 2h-28l2-4h11l1 2h13z"/>
     </symbol>
 
-    <symbol id="icon-GD-logo2" viewBox="0 0 310 380">
+    <symbol id="icon-gd-logo2" viewBox="0 0 310 380">
       <title>GD-logo2 icon</title>
       <path fill="#3E215A" d="M135.587 160.335v63.7c0 1.244-1.018 2.238-2.262 2.208-49.381-1.201-89.042-41.607-89.042-91.276 0-49.707 39.721-90.136 89.153-91.279 1.182-.027 2.15-1.019 2.15-2.202v-35.294c0-1.24-1.014-2.228-2.254-2.207-71.308 1.203-128.746 59.385-128.746 130.982 0 72.042 58.153 130.501 130.077 130.998.508.004 1.217-.29 1.576-.649l19.196-19.196 19.203-19.201c.355-.355.646-1.057.646-1.56v-104.916c0-2.928-1.694-3.63-3.765-1.559l-32.03 32.029c-2.145 2.146-3.902 6.386-3.902 9.422z"/><path fill="#8DC63F" d="M171.994 118.409l-32.546 32.592c-2.123 2.126-3.861 6.325-3.861 9.329v.055c1.388-3.582 3.788-5.522 8.835-5.565l3.679-.005h27.183c3.538 0 7.029.201 10.462.593 45.499 5.19 80.842 43.823 80.842 90.711 0 47.712-36.597 86.876-83.251 90.953-1.913.167-3.844.275-5.789.323-1.24.03-2.264-.967-2.264-2.208v-75.804c0-1.965-2.376-2.949-3.765-1.559l-34.641 34.641c-.711.711-1.292 2.114-1.292 3.119v77.126c0 2.426 1.985 4.411 4.411 4.411h35.286c2.803 0 5.585-.088 8.344-.261 68.462-4.303 122.657-61.193 122.657-130.74 0-70.727-56.05-128.363-126.153-130.913-3.038-.111-5.987 1.052-8.137 3.202z"/>
     </symbol>
@@ -67,31 +69,39 @@
 </svg>
     <!-- end of include SVG -->
   </head>
-  <body class="loading">
+  <body>
     <div class="wrapper">
       <div class="inner-wrapper">
         <header>
-          <div class="nav-toggle">Menu</div>
-          <nav class="main-navigation" role="navigation">
+          <div class="header-wrapper">
+
+            <svg role="img" class="logo">
+            <use xlink:href="#icon-gd-logo2" ></use>
+            </svg>
+            <span class="site-title">Resume</span>
+            <span class="fa-stack fa-2x nav-toggle">
+              <i class="fa fa-circle fa-stack-2x "></i>
+              <i class="fa fa-bars fa-stack-1x "></i>
+            </span>
+
+
+
+          </div>
+          <nav class="main-navigation">
+
             <ul>
               <li><a href="#a1">about me</a></li>
               <li><a href="#a2">summary</a></li>
               <li><a href="#a3">work experience</a></li>
               <li><a href="#a4">education</a></li>
               <li><a href="#a5">skills</a></li>
+              <span class="nav-toggle">Close</span>
             </ul>
           </nav>
-
         </header>
-        <div class="flex__container logo">
-          <svg role="img" class="flex__item icon-GD-logo2">
-          <use xlink:href="#icon-GD-logo2" ></use>
-          </svg>
-        </div>
-        <h1>Serge Guilmette</h1>
-        <h2>web designer/front-end developer</h2>
-
-        <main><dl>
+        <main>
+        <h2>Contact</h2>
+        <dl>
           <svg role="img" class="icon-envelope">
           <use xlink:href="#icon-envelope"></use>
           </svg>
@@ -101,7 +111,7 @@
           <dd>613-415-1261</dd>
           <dt>email</dt>
           <dd>
-          <a href="mailto:nobody.special@nobodycares.com">sergeguilmette@gmail.com</a>
+          <a href="mailto:sergeguilmette@gmail.com">sergeguilmette@gmail.com</a>
           </dd>
           <dt>web</dt>
           <dd>
@@ -223,7 +233,7 @@
             <li>Create, amend and adjust files in PDF format</li>
           </ul>
         </article>
-        <div class="col col-two">
+        <div>
           <article>
             <h2 id="a4">Education</h2>
             <dl>
@@ -292,8 +302,11 @@
         </main>
         </div> <!--.inner-wrapper-->
         </div> <!--.wrapper-->
+        <!-- inject:bower:js -->
+        <script src="scripts/vendor/jquery.min.js"></script>
+        <!-- endinject -->
         <!-- inject:js -->
-        <!-- the rest of the *.js files will be injected here -->
+        <script src="scripts/main.min.js"></script>
         <!-- endinject -->
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!-- <script>

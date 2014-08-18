@@ -2,7 +2,10 @@
 *GRID
 **************************************************/
 
-$susy: (columns: 12, gutters: 1 / 4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside, debug: (image: show, color: rgba(#66f, .25), output: overlay, toggle: top right));
+$susy: (columns: 12, gutters: 1/4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside, debug: (image: show, color: rgba(#66f, .25), output: overlay, toggle: top right));
+
+$widelayout: 24 1/4 fluid float inside (gutter-override: 0);
+
 
 // main {
 //  @include container(80%);
@@ -21,13 +24,15 @@ $susy: (columns: 12, gutters: 1 / 4, math: fluid, output: float, global-box-sizi
 }
 
 
-@include susy-breakpoint($bp-large, 24) {
+@include susy-breakpoint($bp-large, $widelayout) {
+    header {
+    @include span(24);
+    }
 
-
-    main {
+    main, .header-wrapper  {
         @include span(10);
-        margin-left: span(7) + gutter();
-        margin-right: span(7) + gutter();
+        margin-left: span(7) ;
+        margin-right: span(7) ;
     }
 
     // aside {

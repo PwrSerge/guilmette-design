@@ -10,6 +10,7 @@
     <!-- inject:head:js -->
     <!-- only importantFile.js will be injected here -->
     <!-- endinject -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- inject:css -->
     <!-- any *.css files among your sources will go here as: <link rel="stylesheet" href="FILE"> -->
     <!-- endinject -->
@@ -17,31 +18,39 @@
     @@include('./image/sprites/svg-symbols.svg')
     <!-- end of include SVG -->
   </head>
-  <body class="loading">
+  <body>
     <div class="wrapper">
       <div class="inner-wrapper">
         <header>
-          <div class="nav-toggle">Menu</div>
-          <nav class="main-navigation" role="navigation">
+          <div class="header-wrapper">
+
+            <svg role="img" class="logo">
+            <use xlink:href="#icon-gd-logo2" ></use>
+            </svg>
+            <span class="site-title">Resume</span>
+            <span class="fa-stack fa-2x nav-toggle">
+              <i class="fa fa-circle fa-stack-2x "></i>
+              <i class="fa fa-bars fa-stack-1x "></i>
+            </span>
+
+
+
+          </div>
+          <nav class="main-navigation">
+
             <ul>
               <li><a href="#a1">about me</a></li>
               <li><a href="#a2">summary</a></li>
               <li><a href="#a3">work experience</a></li>
               <li><a href="#a4">education</a></li>
               <li><a href="#a5">skills</a></li>
+              <span class="nav-toggle">Close</span>
             </ul>
           </nav>
-
         </header>
-        <div class="flex__container logo">
-          <svg role="img" class="flex__item icon-GD-logo2">
-          <use xlink:href="#icon-GD-logo2" ></use>
-          </svg>
-        </div>
-        <h1>Serge Guilmette</h1>
-        <h2>web designer/front-end developer</h2>
-
-        <main><dl>
+        <main>
+        <h2>Contact</h2>
+        <dl>
           <svg role="img" class="icon-envelope">
           <use xlink:href="#icon-envelope"></use>
           </svg>
@@ -51,7 +60,7 @@
           <dd>613-415-1261</dd>
           <dt>email</dt>
           <dd>
-          <a href="mailto:nobody.special@nobodycares.com">sergeguilmette@gmail.com</a>
+          <a href="mailto:sergeguilmette@gmail.com">sergeguilmette@gmail.com</a>
           </dd>
           <dt>web</dt>
           <dd>
@@ -173,7 +182,7 @@
             <li>Create, amend and adjust files in PDF format</li>
           </ul>
         </article>
-        <div class="col col-two">
+        <div>
           <article>
             <h2 id="a4">Education</h2>
             <dl>
@@ -242,6 +251,9 @@
         </main>
         </div> <!--.inner-wrapper-->
         </div> <!--.wrapper-->
+        <!-- inject:bower:js -->
+        <!-- bower installed scripts will go here... -->
+        <!-- endinject -->
         <!-- inject:js -->
         <!-- the rest of the *.js files will be injected here -->
         <!-- endinject -->

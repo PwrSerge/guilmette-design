@@ -1,0 +1,50 @@
+/**
+ * Print styles - h5bp.com/r
+ *
+ */
+
+@media print {
+  * {
+    -webkit-filter: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+    background: transparent !important;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: ' (" attr(href) ")';
+  }
+
+  a[href^="#"]:after {
+    content: '';
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+
+  /* h5bp.com/t */
+
+@page {
+    margin: .5cm;
+}
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

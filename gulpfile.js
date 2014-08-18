@@ -101,7 +101,8 @@ var sassTasks = lazypipe()
         autosemicolon: true
     })
     .pipe(uncss, ({
-        html: ['src/index.html']
+        html: ['src/index.html'],
+        ignore: ['.main-navigation', '.main-navigation.open', '.nav-toggle', '.main-navigation .nav-toggle']
     }));
 
 
@@ -161,40 +162,42 @@ gulp.task('libs', function() {
  *STYLES
  ******************************************************************************/
 
-gulp.task('styles', function(cb) {
+gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
         //.pipe(changed(paths.styles.dest))
         .pipe(plumber())
         .pipe(sassTasks())
-        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(gulp.dest('src/css'))
         .pipe(cssminTasks())
+        .pipe(gulp.dest('src/css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(growlNotifier({
             title: 'STYLES.',
             message: 'Styles task complete'
         }));
-    cb(err);
-
 });
 
 /*******************************************************************************
  *SCRIPTS
  ******************************************************************************/
 
-gulp.task('scripts', ['styles'], function(cb) {
-    var filter = gulpFilter(['*.js', '!src/scripts/vendor']);
+gulp.task('scripts', function() {
+    var mainjs = gulpFilter(['*.js', '!src/scripts/vendor']);
+    //var vendorjs = gulpFilter('src/scripts/vendor/*.min.js');
     return gulp.src(paths.scripts.src)
         //.pipe(changed(paths.scripts.dest))
-        .pipe(filter)
+        .pipe(mainjs)
         .pipe(plumber())
         .pipe(concat('main.js'))
         .pipe(header(banner, {
             packg: packg
         }))
         .pipe(jsminTasks())
+        //.pipe(gulp.dest('src/scripts/'))
         .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(filter.restore())
-        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(mainjs.restore())
+
+    .pipe(gulp.dest(paths.scripts.dest))
         .pipe(browserSync.reload({
             stream: true,
             once: true
@@ -203,8 +206,6 @@ gulp.task('scripts', ['styles'], function(cb) {
             title: 'SCRIPTS.',
             message: 'Scripts task complete'
         }));
-    cb(err);
-
 });
 
 /*******************************************************************************
@@ -243,6 +244,7 @@ var config = {
     svgId: 'icon-%f',
     className: '.icon-%f',
     fontSize: 16,
+    css: false
 };
 
 gulp.task('sprites', function() {
@@ -262,24 +264,33 @@ gulp.task('sprites', function() {
  *HTML
  ******************************************************************************/
 
-gulp.task('html', ['scripts'], function() {
+gulp.task('html', ['styles'], function() {
     return gulp.src('src/index.html')
         //.pipe(changed(paths.html.src))
         .pipe(plumber())
         .pipe(fileinclude(fileincludecfg))
-        .pipe(inject(gulp.src('./dist/scripts/vendor/modernizr*.min.js', {
+        .pipe(inject(gulp.src('./src/scripts/vendor/modernizr*.min.js', {
             read: false
         }), {
             starttag: '<!-- inject:head:{{ext}} -->',
-            ignorePath: 'dist/',
+            ignorePath: 'src/',
             addRootSlash: false
         }))
-        .pipe(inject(gulp.src(['./dist/css/*.min.css', './dist/scripts/**/*.min.js', './dist/css/*.min.css', '!./dist/scripts/vendor/modernizr*.min.js'], {
-            read: false
-        }), {
-            ignorePath: 'dist/',
-            addRootSlash: false
-        }))
+
+    .pipe(inject(gulp.src(['./src/css/*.min.css', './dist/scripts/*.min.js'], {
+        read: false
+    }), {
+        ignorePath: ['src/', 'dist/'],
+        addRootSlash: false
+    }))
+    //vendor sripts injection
+    .pipe(inject(gulp.src(['./src/scripts/vendor/*.min.js', '!./src/scripts/vendor/modernizr*.min.js'], {
+        read: false
+    }), {
+        starttag: '<!-- inject:bower:{{ext}} -->',
+        ignorePath: 'src/',
+        addRootSlash: false
+    }))
         .pipe(size())
         .pipe(gulp.dest('./dist'))
         .pipe(browserSync.reload({
@@ -295,12 +306,11 @@ gulp.task('html', ['scripts'], function() {
  *CLEAN
  ******************************************************************************/
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', function() {
     return gulp.src(['dist/'], {
             read: false
         })
         .pipe(clean());
-    cb(err);
 });
 
 /*******************************************************************************
@@ -386,8 +396,8 @@ gulp.task('watch', ['browser-sync'], function() {
  * BUILD TASK
  ******************************************************************************/
 
-gulp.task('build', function(cb) {
-    runSequence('clean', ['styles', 'scripts', 'image', 'html'], cb);
+gulp.task('build', function() {
+    runSequence('clean', ['scripts', 'image', 'html']);
 });
 
 /*******************************************************************************
