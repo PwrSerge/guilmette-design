@@ -35,21 +35,34 @@ header {
   position: relative;
 }
 
+h1,
 h2,
 h3,
 h4 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  margin-bottom: 1.6rem;
   -webkit-font-feature-settings: "liga", "dlig", "onum";
   -moz-font-feature-settings: "liga", "dlig", "onum";
   -ms-font-feature-settings: "liga", "dlig", "onum";
   font-feature-settings: "liga", "dlig", "onum";
 }
 
+h1 {
+  font-weight: 900;
+  margin: 0;
+  color: #3e225b;
+  font-size: 4em;
+  padding-left: 1.5em;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 h2 {
   font-size: 1.95rem;
   line-height: 2.4rem;
+  font-weight: 700;
   border-bottom-width: 0.1rem;
   border-bottom-style: solid;
   padding-bottom: 1.5rem;
@@ -60,11 +73,14 @@ h2 {
 h3 {
   font-size: 1.55rem;
   line-height: 1.6rem;
+  font-weight: 400;
+  color: #8cc63e;
 }
 
 h4 {
   font-size: 1.25rem;
   line-height: 1.6rem;
+  font-weight: 400;
 }
 
 p {
@@ -81,12 +97,6 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 /*************************************************
@@ -106,6 +116,14 @@ ul {
 *TYPOGRAPHY
 **************************************************/
 
+.date-ranges {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  color: #8cc63e;
+}
+
 /*************************************************
 *IMAGES
 **************************************************/
@@ -124,13 +142,17 @@ svg {
   height: 4em;
 }
 
-[class^="icon-"] {
-  height: 2em;
-  width: 2em;
+.fa-bars {
+  color: #3e225b;
 }
 
-.icon-envelope {
-  fill: #8cc63e;
+.fa-circle {
+  color: #f8f7f2;
+}
+
+.fa-envelope {
+  top: -25%;
+  color: #3e225b;
 }
 
 .header-wrapper {
@@ -139,18 +161,6 @@ svg {
   vertical-align: middle;
   width: 100%;
   background-color: #fff;
-}
-
-.site-title {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #3e225b;
-  font-size: 4em;
-  padding-left: 1.5em;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .nav-toggle {
@@ -219,14 +229,6 @@ nav ul li:hover {
   nav ul {
     max-height: 100%;
   }
-}
-
-.fa-bars {
-  color: #3e225b;
-}
-
-.fa-circle {
-  color: #f8f7f2;
 }
 
 @-webkit-keyframes bouncyDown {

@@ -59,11 +59,8 @@ svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
     width: 4em;
     height: 4em;
-
-
 }
 
 #icon-gd-logo2 {
@@ -81,10 +78,28 @@ svg {
     width: 2em;
     }
 
+.fa-bars {
+    color: $base-color;
+}
+
+.fa-circle {
+        color: $base-background-color;
+}
+
+.fa-envelope {
+    top: - 25%;
+    color: $base-color;
+}
+
+h2  {
+    .fa-stack {
 
 
-.icon-envelope {
-    fill: $brand-color;
+    }
+    .fa-circle {
+    color: #ccc;
+    }
+
 }
 
 

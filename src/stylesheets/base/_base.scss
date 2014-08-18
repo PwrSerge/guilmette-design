@@ -44,19 +44,25 @@ header {
 // base headings
 #{h1, h2, h3, h4, h5} {
     font-family: $heading-font;
-    @include type-weight(xtrabold);
-    @include margin-trailer(1);
     @include font-feature;
 }
 
-h1 {
-    @include type-scale(xxlarge);
+ h1 {
+    //@include type-scale(xxlarge);
+    @include type-weight(xtrabold);
+    margin: 0;
     color: $base-color;
-    //@include text-emboss(0.65, 0.9);
+    font-size: 4em;
+    padding-left: 1.5em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
 
 h2 {
     @include type-scale(xlarge);
+    @include type-weight(bold);
     @include apply-side-rhythm-border(bottom, 2px, 1);
     border-color: darken(#fff, 50%);
     color: $accent-color;
@@ -64,10 +70,13 @@ h2 {
 
 h3 {
     @include type-scale(large);
+    @include type-weight(regular);
+    color: $brand-color;
 }
 
 h4 {
     @include type-scale(medium);
+    @include type-weight(regular);
 }
 
 h5 {
@@ -81,6 +90,7 @@ p {
     @include word-break(break-word);
     @include hyphens(auto);
 }
+
 
 // Small
 small {
@@ -103,9 +113,7 @@ a {
     // }
 }
 
-ul {
-    @include reset-list;
-}
+
 
 // Base form styles
 label {
