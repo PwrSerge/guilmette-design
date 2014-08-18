@@ -1,0 +1,1063 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"ali",
+				"text-align: "
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"dis",
+				"display: "
+			],
+			[
+				"al",
+				"text-align: "
+			],
+			[
+				"pa",
+				"padding-right: "
+			],
+			[
+				"ba",
+				"background-color: "
+			],
+			[
+				"com",
+				"compass"
+			],
+			[
+				"alig",
+				"text-align: "
+			],
+			[
+				"wi",
+				"window"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bc",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"sg",
+				"svg"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"bord",
+				"apply-side-rhythm-border"
+			],
+			[
+				"repea",
+				"background-repeat"
+			],
+			[
+				"cler",
+				"Clearfix"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"st",
+				"stylesheets"
+			],
+			[
+				"sc",
+				"scss"
+			],
+			[
+				"in",
+				"inside"
+			],
+			[
+				"wid",
+				"widelayout"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"d",
+				"d:ib	display:inline-block"
+			],
+			[
+				"f",
+				"f+	font+"
+			],
+			[
+				"ch",
+				"chrome"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Remote:   origin @ https://PwrSerge@bitbucket.org/PwrSerge/guilmette-design.git\nLocal:    master ~\\Desktop\\Serge\\guilmette-design\nHead:     884e1c8 added node modules\n\n\nUntracked files:\n	.gitignore\n	HTML5 site/\n	WPGSC/\n	baselineTest/\n	basic/\n	go-static/\n	grunt-static-site/\n	jekyll/\n	lazy-tag.dwr\n	node_modules/\n	sass/\n	sillypog/\n\nChanges:\n	Modified   Resume\n\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash, Z = create stash including untracked files\n#    backspace = discard stash",
+			"settings":
+			{
+				"buffer_size": 1121,
+				"line_ending": "Windows",
+				"name": "*git-status*: guilmette-design",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/test.html",
+			"settings":
+			{
+				"buffer_size": 35,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 12936,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"git  p",
+				"Git: Pull"
+			],
+			[
+				"git pull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"git re",
+				"Git: Remote"
+			],
+			[
+				"git add",
+				"Git: Add Remote"
+			],
+			[
+				"git  pull",
+				"Git: Pull"
+			],
+			[
+				"git   pu",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git  sw",
+				"Git: Switch Repo"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git fe",
+				"Git: Fetch"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git remo",
+				"Git: Remote"
+			],
+			[
+				"git init",
+				"Git: Init"
+			],
+			[
+				"git ",
+				"Git: Checkout"
+			],
+			[
+				" git pu",
+				"Git: Pull"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"git",
+				"Git: Fetch"
+			],
+			[
+				"git p",
+				"Git: Pull"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"git br",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git bra",
+				"Git: Checkout New Branch"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git sw",
+				"Git: Switch Repo"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git remote",
+				"Git: Remote"
+			],
+			[
+				"git r",
+				"Git: Remote"
+			],
+			[
+				"git ad",
+				"Git: Add Remote"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git  co",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add Remote"
+			],
+			[
+				"git fetch",
+				"Git: Fetch"
+			],
+			[
+				"git f",
+				"Git: Fetch"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"sas",
+				"SassBeautify"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"use",
+				"Preferences: Settings - User"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime lint",
+				"Preferences: SublimeLint Settings – Default"
+			],
+			[
+				"css lin",
+				"Preferences: SublimeLint Settings – Default"
+			],
+			[
+				"css lint",
+				"Preferences: SublimeLint Settings – Default"
+			],
+			[
+				"fet",
+				"Fetch: File"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"sy",
+				"Set Syntax: Sass"
+			],
+			[
+				"syn",
+				"Set Syntax: Sass"
+			],
+			[
+				"col",
+				"Color Picker"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"in",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"lint",
+				"JSLint"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				" git commi",
+				"Git: Quick Commit"
+			],
+			[
+				"sni",
+				"Snippet: html"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Emmet: Remove Tag"
+			],
+			[
+				"syn sa",
+				"Set Syntax: Sass"
+			],
+			[
+				"isntall",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"git branch",
+				"Git: New Branch"
+			],
+			[
+				"INSTA",
+				"Package Control: Install Package"
+			],
+			[
+				"markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"pack insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 431.0,
+		"history":
+		[
+			"git remote set-url origin https://PwrSerge@bitbucket.org/PwrSerge/guilmette-design.git",
+			"git init",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/Resume_gulp.sublime-project",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.gitignore",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.git/index",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.git/packed-refs",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.git/HEAD",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.git/config",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/node_modules/gulp-svg-symbols/test/output/github-symbol.css",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/icons/github.svg",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/gulpfile.js",
+		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/SublimeGit/SublimeGit.sublime-settings",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/guilmettedesign.sublime-project",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/guilmettedesign.sublime-workspace",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.gitattributes",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_grid.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_header.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_footer.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/css/main.css",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_media.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/index.html",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_images.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/index.html",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/sprites/svg-defs.html",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/sprites/svg-sprite.svg",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/sublime-github/GitHub.sublime-settings",
+		"/D/!PROJECTS/WebDesign/GuilmetteDesign/.git/config",
+		"/D/!PROJECTS/WebDesign/GuilmetteDesign/.git/sourcetreeconfig",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.git/config",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.git/HEAD",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.git/description",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeGit/SublimeGit.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SideBarGit/SideBarGit.sublime-settings",
+		"/C/Users/Sergio/Downloads/pure-layout-pricing/css/layouts/pricing.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/base/_base.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/index.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/sprites/svg-sprite.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_sprites.scss",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/SassBeautify.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/SG_resume.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/gulpfile.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/index.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_images.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_media.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_mixins.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_vars.scss",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SassBeautify/SassBeautify.sublime-settings",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/scripts/main.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.jshintrc",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/package.json",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/README.md",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/dist/jshint.js",
+		"/C/Users/Sergio/AppData/Roaming/npm/node_modules/jshint/bin/jshint",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/main.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/svg-defs.svg",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_navigation.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/main.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/preview-svg-sprite.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/icons/GD-logo1.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/preview-svg.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_typography.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/sprites/svg-sprite.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_sprites.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_sprites.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/preview-svg-sprite.html",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/node_modules/browser-sync/node_modules/connect/lib/middleware/staticCache.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/node_modules/gulp-svg-sprites/lib/css-render.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/node_modules/gulp-svg-sprites/node_modules/svgo/node_modules/sax/test/script.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/preview-svg.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/preview-svg-sprite.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/preview-svg-sprite.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/preview-svg.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-logo2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-logo1.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GDlogo1.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GDlogo2.svg",
+		"/C/Users/Sergio/Desktop/GD-logo2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/stylesheets/helpers/_sprites.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_sprite.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/layout/_grid.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/trianglify-background2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/css/sprites.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/trianglify-background2.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-04.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/icons/GD-03.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/sprites.css",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/sprites/svg-defs.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/GD-03.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/trianglify-background.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/scripts/plugins.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/scripts/vendor/jquery-1.11.0.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/scripts/vendor/modernizr-2.7.1.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/scripts/vendor/jquery-1.11.0.min.js",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_functions.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_buttons.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.awspublish-guilmettedesign.com",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/test.html",
+		"/D/DL/Adobe Illustrator CC 17.1 Final Multilanguage [ChingLiu]/Illustrator_17_LS20.7z",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/SG_resume.html",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/.gitignore",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/trianglify-background.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/GPlay.svg",
+		"/C/Users/Sergio/Downloads/GPlay.svg",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Sergio/Desktop/GD-03.svg",
+		"/C/Users/Sergio/Desktop/GD-01.svg",
+		"/C/Users/Sergio/Desktop/GD-02.svg",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/vendor/web-fonts.scss",
+		"/C/Users/Sergio/Downloads/Sass-Web-Fonts-master/Sass-Web-Fonts-master/web-fonts.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/vendor/web-font.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/css/main.min.css",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/sublimelint/SublimeLint.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/config.rb",
+		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/_units.scss",
+		"/C/Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/_vertical_rhythm.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_placeholders.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/layout/_header.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/base/_reset.scss",
+		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/User/Fetch.sublime-settings",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/pages/_home.scss",
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/pages/_footer.scss"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 109.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"white",
+			"symbol",
+			"black",
+			"white",
+			"flex",
+			"zz",
+			"container",
+			"styles",
+			"</g>",
+			"<g",
+			"G",
+			"g",
+			"scritp",
+			"tp",
+			"imag",
+			"h2",
+			"summary",
+			"sasdcasda",
+			"breakpoint",
+			"_sprite",
+			"013ff52744984f485532472de568bae69d73dc20",
+			"\n//",
+			"layout",
+			"sprite.png",
+			"sprite",
+			"sprite.png",
+			"css/sprite.png",
+			"../css/sprite.png",
+			"sprite.png",
+			"image",
+			"images",
+			"Images",
+			"images",
+			"div",
+			"me",
+			"about",
+			"li",
+			"projects",
+			"GRID",
+			"src/stylesheets/main.scss",
+			"$color",
+			"$brand-color",
+			"beige",
+			"p",
+			"</hgroup>",
+			"<hgroup>",
+			"class",
+			"perferendis",
+			"amet"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#000",
+			"#fff",
+			"sass",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								651,
+								651
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"__vi_external_disable": true,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close"
+							],
+							"draw_white_space": "none",
+							"git_repo": "C:\\Documents and Settings\\guilmets\\Desktop\\Serge\\guilmette-design",
+							"git_status": true,
+							"git_view": "status",
+							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 35,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12936,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 314.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"output.git-commit":
+	{
+		"height": 221.0
+	},
+	"output.git-fetch":
+	{
+		"height": 140.0
+	},
+	"output.git-init":
+	{
+		"height": 140.0
+	},
+	"output.git-pull":
+	{
+		"height": 140.0
+	},
+	"output.git-push":
+	{
+		"height": 100.0
+	},
+	"output.git-remote":
+	{
+		"height": 140.0
+	},
+	"project": "guilmettedesign.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gu",
+				"gulpfile.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\!PROJECTS\\WebDesign\\HTML5 site\\html5.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 276.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
