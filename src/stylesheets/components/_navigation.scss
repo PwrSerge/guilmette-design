@@ -3,7 +3,7 @@
 
 
 .nav-toggle {
-    padding-left: 45em;
+
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -26,7 +26,7 @@
 
     .nav-toggle {
         right: 5%;
-        top: 5%;
+        top: 50%;
     }
 
  }
@@ -36,7 +36,7 @@
 
 
 nav ul {
-    //max-height: 0;
+    @include reset-list;
     background-color: $base-color;
     color: #fff;
     overflow: hidden;
@@ -62,8 +62,6 @@ nav ul {
         max-height: 100%;
         }
 }
-
-
 
 
 .handle {

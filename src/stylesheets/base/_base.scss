@@ -27,7 +27,6 @@ article {
 }
 
 header {
-
   font-family: $heading-font;
   background-color: #fff;
   padding:  2em 0;
@@ -35,6 +34,7 @@ header {
   height: 4em;
   display: table;
   position: relative;
+   @include alpha-attribute('background-color', rgba(white, 0.8), black);
   //@include apply-side-rhythm-border(top, 2px, 1);
   //@include apply-side-rhythm-border(bottom, 2px, 1);
   //border-color: $brand-color;
@@ -52,7 +52,7 @@ header {
     @include type-weight(xtrabold);
     margin: 0;
     color: $base-color;
-    font-size: 4em;
+    @include type-scale(xxlarge);
     padding-left: 1.5em;
     position: relative;
     top: 50%;

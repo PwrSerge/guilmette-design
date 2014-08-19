@@ -84,8 +84,19 @@ svg {
 
 .fa-circle {
         color: $base-background-color;
+
+
 }
 
+.fa-stack-2x {
+            font-size: 1em;
+            line-height: 2em;
+        }
+
+        .fa-stack-1x {
+            font-size: .5em;
+            line-height: 4em;
+        }
 .fa-envelope {
     top: - 25%;
     color: $base-color;
