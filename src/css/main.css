@@ -116,14 +116,6 @@ a {
 *TYPOGRAPHY
 **************************************************/
 
-.date-ranges {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.6rem;
-  font-weight: 400;
-  color: #8cc63e;
-}
-
 /*************************************************
 *IMAGES
 **************************************************/
@@ -153,14 +145,6 @@ svg {
 .fa-envelope {
   top: -25%;
   color: #3e225b;
-}
-
-.header-wrapper {
-  height: 4em;
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  background-color: #fff;
 }
 
 .nav-toggle {
@@ -421,9 +405,30 @@ nav ul li:hover {
 *HEADER
 **************************************************/
 
+.header-wrapper {
+  height: 4em;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  background: rgba(1, 1, 1, 0.4);
+  z-index: -1;
+}
+
 /*************************************************
 *SIDEBAR
 **************************************************/
+
+.date-ranges {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  color: #8cc63e;
+}
+
+.job-end:before {
+  content: " - ";
+}
 
 /**
  * Print styles - h5bp.com/r

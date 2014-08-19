@@ -1,0 +1,16 @@
+
+
+.date-ranges {
+  font-family: $heading-font;
+  @include type-scale(medium);
+  @include type-weight(regular);
+  color: $brand-color;
+}
+
+
+.job-end {
+
+  &:before {
+    content: " - ";
+  }
+}

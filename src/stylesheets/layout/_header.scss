@@ -2,4 +2,12 @@
 *HEADER
 **************************************************/
 
+.header-wrapper {
+    height: 4em;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    background: rgba(1,1,1,.4);
 
+    z-index: -1;
+}
