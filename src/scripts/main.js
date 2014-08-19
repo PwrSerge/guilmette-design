@@ -6,7 +6,7 @@
 
 $(function() {
     $('.nav-toggle').on('click', function() {
-        $('.main-navigation').toggleClass('open');
+        $('.inner-wrapper').toggleClass('open');
     });
 });
 // var body = $('body'),

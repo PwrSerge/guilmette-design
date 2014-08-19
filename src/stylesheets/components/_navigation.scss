@@ -1,13 +1,6 @@
 // Main site navigation
-
-
-
 .nav-toggle {
-
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 
     // @include breakpoint($bp-medium) {
     //     display: none;
@@ -15,8 +8,7 @@
 }
 
 .main-navigation {
-    transform: translateY(-100%);
-    transition: transform 0.6s ease;
+    transform: translateY(-4em);
     top: 0;
     left: 0;
     width: 100%;
@@ -25,14 +17,21 @@
     text-align: center;
 
     .nav-toggle {
-        right: 5%;
-        top: 50%;
+        right: 10%;
+        top: 5%;
     }
-
  }
-.main-navigation.open {
+.wrapper {
+    overflow: hidden;
+}
+ .inner-wrapper {
+    position: absolute;
     transform: translateY(0);
-    }
+    transition: transform 0.6s ease;
+ }
+.inner-wrapper.open {
+    transform:  translateY(4em);
+}
 
 
 nav ul {

@@ -102,7 +102,7 @@ var sassTasks = lazypipe()
     })
     .pipe(uncss, ({
         html: ['src/index.html'],
-        ignore: ['.main-navigation', '.main-navigation.open', '.nav-toggle', '.main-navigation .nav-toggle']
+        ignore: ['.main-navigation', '.inner-wrapper', '.inner-wrapper.open', '.nav-toggle', '.main-navigation .nav-toggle']
     }));
 
 

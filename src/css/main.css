@@ -55,11 +55,6 @@ h1 {
   font-size: 2.95rem;
   line-height: 3.2rem;
   padding-left: 1.5em;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 h2 {
@@ -162,19 +157,12 @@ svg {
 
 .nav-toggle {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .main-navigation {
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.6s ease;
-  transition: transform 0.6s ease;
+  -webkit-transform: translateY(-4em);
+  -ms-transform: translateY(-4em);
+  transform: translateY(-4em);
   top: 0;
   left: 0;
   width: 100%;
@@ -184,14 +172,27 @@ svg {
 }
 
 .main-navigation .nav-toggle {
-  right: 5%;
-  top: 50%;
+  right: 10%;
+  top: 5%;
 }
 
-.main-navigation.open {
+.wrapper {
+  overflow: hidden;
+}
+
+.inner-wrapper {
+  position: absolute;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+}
+
+.inner-wrapper.open {
+  -webkit-transform: translateY(4em);
+  -ms-transform: translateY(4em);
+  transform: translateY(4em);
 }
 
 nav ul {
@@ -421,11 +422,9 @@ nav ul li:hover {
 **************************************************/
 
 .header-wrapper {
-  height: 4em;
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  z-index: -1;
 }
 
 /*************************************************
