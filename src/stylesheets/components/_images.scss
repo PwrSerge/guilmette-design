@@ -12,11 +12,11 @@
 }
 
 .circle {
-    display:  inline-block;
-    border-radius: 50%;
-    width: 2em;
-    height: 2em;
     background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    height: 2em;
+    width: 2em;
 }
 
 
@@ -56,11 +56,11 @@ svg {
 // icons
 //
 .logo {
+    height: 4em;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 4em;
-    height: 4em;
 }
 
 #icon-gd-logo2 {
@@ -83,23 +83,22 @@ svg {
 }
 
 .fa-circle {
-        color: $base-background-color;
-
-
+    color: $base-background-color;
 }
 
 .fa-stack-2x {
-            font-size: 1em;
-            line-height: 2em;
-        }
+    font-size: 1em;
+    line-height: 2em;
+    }
 
-        .fa-stack-1x {
-            font-size: .5em;
-            line-height: 4em;
-        }
+.fa-stack-1x {
+    font-size: .5em;
+    line-height: 4em;
+}
+
 .fa-envelope {
-    top: - 25%;
     color: $base-color;
+    top: - 25%;
 }
 
 

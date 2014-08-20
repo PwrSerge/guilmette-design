@@ -171,6 +171,9 @@ gulp.task('styles', function() {
         .pipe(cssminTasks())
         .pipe(gulp.dest('src/css'))
         .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
         .pipe(growlNotifier({
             title: 'STYLES.',
             message: 'Styles task complete'
@@ -196,11 +199,9 @@ gulp.task('scripts', function() {
         //.pipe(gulp.dest('src/scripts/'))
         .pipe(gulp.dest(paths.scripts.dest))
         .pipe(mainjs.restore())
-
-    .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(gulp.dest(paths.scripts.dest))
         .pipe(browserSync.reload({
             stream: true,
-            once: true
         }))
         .pipe(growlNotifier({
             title: 'SCRIPTS.',
