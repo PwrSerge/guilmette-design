@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    clean = require('gulp-clean'),
+    rimraf = require('gulp-rimraf'),
     growl = require('gulp-notify-growl'),
     cache = require('gulp-cache'),
     changed = require('gulp-changed'),
@@ -308,10 +308,11 @@ gulp.task('html', ['styles'], function() {
  ******************************************************************************/
 
 gulp.task('clean', function() {
-    return gulp.src(['dist/'], {
+    return gulp.src('./dist/*', {
             read: false
         })
-        .pipe(clean());
+        .pipe(rimraf());
+
 });
 
 /*******************************************************************************

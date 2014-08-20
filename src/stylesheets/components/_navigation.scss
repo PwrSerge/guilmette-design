@@ -1,7 +1,7 @@
 // Main site navigation
 .nav-toggle {
     cursor: pointer;
-    z-index: 1;
+    //z-index: 1;
 
     // @include breakpoint($bp-medium) {
     //     display: none;
@@ -9,28 +9,23 @@
 }
 
 .main-navigation {
-    top: 0;
-    left: 0;
-    width: 100%;
-    position: fixed;
-    text-align: center;
 
+    width: 100%;
+    text-align: center;
     .nav-toggle {
         right: 10%;
         top: 5%;
     }
  }
 
-.wrapper {
-    overflow: hidden;
-}
+// .wrapper {
+//     overflow: hidden;
+// }
 
-.inner-wrapper {
-    position: absolute;
-    transform: translateY(0);
-    transition: transform .6s ease;
-
-}
+// .inner-wrapper {
+//    /transform: translateY(0);
+//     transition: transform .6s ease;
+// }
 
 nav ul {
     @include reset-list;
@@ -55,9 +50,9 @@ nav ul {
         }
     }
 
-        @include breakpoint($bp-medium) {
-        max-height: 100%;
-        }
+        // @include breakpoint($bp-medium) {
+        // max-height: 100%;
+        // }
 }
 
 

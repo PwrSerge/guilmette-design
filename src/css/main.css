@@ -25,16 +25,9 @@ article {
   line-height: 1.5em;
 }
 
-header {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #fff;
-  padding: 2em 0;
-  overflow: hidden;
-  height: 4em;
-  display: table;
-  position: relative;
-  background-color: #cccccc;
-  background-color: rgba(255, 255, 255, 0.8);
+main {
+  position: absolute;
+  top: 10em;
 }
 
 h1,
@@ -157,33 +150,16 @@ svg {
 
 .nav-toggle {
   cursor: pointer;
-  z-index: 1;
 }
 
 .main-navigation {
-  top: 0;
-  left: 0;
   width: 100%;
-  position: fixed;
   text-align: center;
 }
 
 .main-navigation .nav-toggle {
   right: 10%;
   top: 5%;
-}
-
-.wrapper {
-  overflow: hidden;
-}
-
-.inner-wrapper {
-  position: absolute;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: -webkit-transform .6s ease;
-  transition: transform .6s ease;
 }
 
 nav ul {
@@ -213,12 +189,6 @@ nav ul li:hover {
     display: inline-block;
     padding: 20px;
     width: auto;
-  }
-}
-
-@media (min-width: 43.75em) {
-  nav ul {
-    max-height: 100%;
   }
 }
 
@@ -393,8 +363,7 @@ nav ul li:hover {
     padding-right: Infinity%;
   }
 
-  main,
-  .header-wrapper {
+  main {
     width: 41.66667%;
     float: left;
     padding-left: Infinity%;
@@ -412,12 +381,25 @@ nav ul li:hover {
 *HEADER
 **************************************************/
 
+header {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  height: 10em;
+  background-color: #cccccc;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #cccccc;
+  border-color: rgba(255, 255, 255, 0.8);
+  z-index: 5;
+}
+
 .header-wrapper {
-  display: table-cell;
   vertical-align: middle;
   width: 100%;
   height: 4em;
-  z-index: 1;
 }
 
 /*************************************************
