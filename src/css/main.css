@@ -47,7 +47,6 @@ h1 {
   color: #3e225b;
   font-size: 2.95rem;
   line-height: 3.2rem;
-  padding-left: 1.5em;
 }
 
 h2 {
@@ -115,32 +114,12 @@ svg {
   fill: currentColor;
 }
 
-.logo {
-  height: 4em;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 4em;
-}
-
 .fa-bars {
-  color: #3e225b;
-}
-
-.fa-circle {
   color: #f8f7f2;
 }
 
-.fa-stack-2x {
-  font-size: 1em;
-  line-height: 2em;
-}
-
-.fa-stack-1x {
-  font-size: .5em;
-  line-height: 4em;
+.fa-circle {
+  color: #3e225b;
 }
 
 .fa-envelope {
@@ -150,16 +129,34 @@ svg {
 
 .nav-toggle {
   cursor: pointer;
+  font-size: 1em;
+  float: right;
+  margin-right: 5%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media (min-width: 43.75em) {
+  .nav-toggle {
+    display: none;
+  }
 }
 
 .main-navigation {
-  width: 100%;
+  display: none;
   text-align: center;
 }
 
-.main-navigation .nav-toggle {
-  right: 10%;
-  top: 5%;
+@media (min-width: 78.125em) {
+  .main-navigation {
+    height: 6em;
+    line-height: 3em;
+    float: left;
+    display: inline-block;
+  }
 }
 
 nav ul {
@@ -171,6 +168,13 @@ nav ul {
   overflow: hidden;
   text-align: center;
   width: 100%;
+}
+
+@media (min-width: 43.75em) {
+  nav ul {
+    color: #3e225b;
+    background-color: transparent;
+  }
 }
 
 nav ul li {
@@ -189,6 +193,11 @@ nav ul li:hover {
     display: inline-block;
     padding: 20px;
     width: auto;
+  }
+
+  nav ul li:hover {
+    color: #fff;
+    background: #3e225b;
   }
 }
 
@@ -344,7 +353,30 @@ nav ul li:hover {
 *GRID
 **************************************************/
 
+header {
+  width: 100%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+
+main {
+  width: 83.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  margin-left: 9.16667%;
+  margin-right: 9.16667%;
+}
+
 @media (min-width: 43.75em) {
+  header {
+    width: 100%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+
   main {
     width: 66.66667%;
     float: left;
@@ -363,13 +395,27 @@ nav ul li:hover {
     padding-right: Infinity%;
   }
 
-  main {
+  .header-wrapper {
+    width: 58.33333%;
+    float: left;
+    padding-left: Infinity%;
+    padding-right: Infinity%;
+  }
+
+  .main-navigation {
     width: 41.66667%;
     float: left;
     padding-left: Infinity%;
     padding-right: Infinity%;
-    margin-left: 29.16667%;
-    margin-right: 29.16667%;
+  }
+
+  main {
+    width: 50%;
+    float: left;
+    padding-left: Infinity%;
+    padding-right: Infinity%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
 
@@ -388,7 +434,6 @@ header {
   right: 0;
   top: 0;
   overflow: hidden;
-  height: 10em;
   background-color: #cccccc;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: #cccccc;
@@ -396,10 +441,26 @@ header {
   z-index: 5;
 }
 
+.header-title {
+  float: left;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .header-wrapper {
   vertical-align: middle;
-  width: 100%;
+  height: 6em;
+}
+
+.header-logo {
+  display: inline-block;
   height: 4em;
+  width: 4em;
+  float: left;
+  margin: 1em;
 }
 
 /*************************************************

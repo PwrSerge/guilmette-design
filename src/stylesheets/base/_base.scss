@@ -25,6 +25,7 @@ article {
     line-height: 1.5em;
 
 }
+
 main {
      //margin-top: 10em;
      position: absolute;
@@ -43,8 +44,6 @@ main {
     margin: 0;
     color: $base-color;
     @include type-scale(xxlarge);
-    padding-left: 1.5em;
-
 }
 
 
@@ -86,10 +85,6 @@ small {
 }
 
 
-ul {
-//@include reset-list;
-
-}
 
 // Base anchors
 a {

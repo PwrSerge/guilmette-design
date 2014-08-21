@@ -2,10 +2,9 @@
 *GRID
 **************************************************/
 
-$susy: (columns: 12, gutters: 1/4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside, debug: (image: show, color: rgba(#66f, .25), output: overlay, toggle: top right));
+$susy: (columns: 12, gutters: 1 / 4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside, debug: (image: show, color: rgba(#6666ff, 0.25), output: overlay, toggle: top right));
 
-$widelayout: 24 1/4 fluid float inside (gutter-override: 0);
-
+$widelayout: 24 1 / 4 fluid float inside (gutter-override: 0);
 
 // main {
 //  @include container(80%);
@@ -15,7 +14,20 @@ $widelayout: 24 1/4 fluid float inside (gutter-override: 0);
 //   @include container(100%);
 // }
 
+ header {
+    @include span(12);
+    }
+main {
+        @include span(10);
+        margin-left: span(1) + gutter();
+        margin-right: span(1) + gutter();
+    }
+
 @include susy-breakpoint($bp-medium, 12) {
+    header {
+    @include span(12);
+    }
+
     main {
         @include span(8);
         margin-left: span(2) + gutter();
@@ -28,18 +40,21 @@ $widelayout: 24 1/4 fluid float inside (gutter-override: 0);
     header {
     @include span(24);
     }
-
-    main  {
-        @include span(10);
-        margin-left: span(7) ;
-        margin-right: span(7) ;
+    .header-wrapper {
+        @include span(14);
     }
-
+    .main-navigation {
+        @include span(10);
+    }
+      main  {
+          @include span(12);
+          margin-left: span(6) ;
+          margin-right: span(6) ;
+      }
     // aside {
     //   @include span(6  at 19);
     // }
 }
-
 
 
 // 960 px grid

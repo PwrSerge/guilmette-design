@@ -11,15 +11,6 @@
     @include background-size(contain);
 }
 
-.circle {
-    background-color: #000;
-    border-radius: 50%;
-    display: inline-block;
-    height: 2em;
-    width: 2em;
-}
-
-
 //Utiliy class for SVG
 .ui-img,
 %ui-img {
@@ -54,14 +45,8 @@ svg {
 }
 
 // icons
-//
-.logo {
-    height: 4em;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4em;
-}
+
+
 
 #icon-gd-logo2 {
     path:nth-of-type(1) {
@@ -73,28 +58,28 @@ svg {
     }
 }
 
-[class^="icon-"] {
-    height: 2em;
-    width: 2em;
-    }
+// [class^="icon-"] {
+//     height: 2em;
+//     width: 2em;
+//     }
 
 .fa-bars {
-    color: $base-color;
-}
-
-.fa-circle {
     color: $base-background-color;
 }
 
-.fa-stack-2x {
-    font-size: 1em;
-    line-height: 2em;
-    }
-
-.fa-stack-1x {
-    font-size: .5em;
-    line-height: 4em;
+.fa-circle {
+    color: $base-color;
 }
+
+// .fa-stack-2x {
+//     font-size: 1em;
+//     line-height: 2em;
+//     }
+
+// .fa-stack-1x {
+//     font-size: .5em;
+//     line-height: 4em;
+// }
 
 .fa-envelope {
     color: $base-color;
