@@ -1,43 +1,36 @@
 // Main site navigation
 .nav-toggle {
-    cursor: pointer;
-    font-size: 1em;
-    float:right;
-    margin-right: 5%;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-
-
+    background-color: #fff;
+    cursor: pointer;
+    float: right;
+    top: 2em;
+    z-index: 5;
     @include breakpoint($bp-medium) {
         display: none;
     }
 }
 
 .main-navigation {
-    display: none;
-    text-align: center;
 
-    @include breakpoint($bp-large) {
+    @include breakpoint($bp-medium) {
+        background-color: #fff;
         height: 6em;
-         line-height: 3em;
-        float:left;
-        display: inline-block;
         }
-
-
  }
 
 // .wrapper {
 //     overflow: hidden;
 // }
 
-// .inner-wrapper {
-//    /transform: translateY(0);
-//     transition: transform .6s ease;
-// }
+.inner-wrapper {
+    //transform: translateY(0);
+
+    transition: transform .6s ease;
+}
 
 nav ul {
+
     @include reset-list;
     background-color: $base-color;
     color: #fff;
@@ -45,22 +38,29 @@ nav ul {
     text-align: center;
     width: 100%;
 
+
      @include breakpoint($bp-medium) {
+        // position: relative;
+        // top: 50%;
+        // transform: translateY(-50%);
         color: $base-color;
         background-color: transparent;
+        display: inline-block;
         }
 
     li {
        @include hover-style($accent-color, 10%);
         display: block;
-        padding: 15px;
-        text-align: left;
+        padding: 1em;
         width: 100%;
 
 
         @include breakpoint($bp-medium) {
+            text-align: middle;
+            line-height: 4em;
+            height: 6em;
            display: inline-block;
-            padding: 20px;
+            padding: 0.75em;
             width: auto;
              &:hover {
              color: #fff;

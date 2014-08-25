@@ -7,7 +7,6 @@
 *,
 *:after,
 *:before {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -26,8 +25,10 @@ article {
 }
 
 main {
-  position: absolute;
-  top: 10em;
+  -webkit-transform: translateY(6em);
+  -ms-transform: translateY(6em);
+  transform: translateY(6em);
+  position: relative;
 }
 
 h1,
@@ -128,15 +129,12 @@ svg {
 }
 
 .nav-toggle {
-  cursor: pointer;
-  font-size: 1em;
-  float: right;
-  margin-right: 5%;
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  background-color: #fff;
+  cursor: pointer;
+  float: right;
+  top: 2em;
+  z-index: 5;
 }
 
 @media (min-width: 43.75em) {
@@ -145,18 +143,16 @@ svg {
   }
 }
 
-.main-navigation {
-  display: none;
-  text-align: center;
+@media (min-width: 43.75em) {
+  .main-navigation {
+    background-color: #fff;
+    height: 6em;
+  }
 }
 
-@media (min-width: 78.125em) {
-  .main-navigation {
-    height: 6em;
-    line-height: 3em;
-    float: left;
-    display: inline-block;
-  }
+.inner-wrapper {
+  -webkit-transition: -webkit-transform .6s ease;
+  transition: transform .6s ease;
 }
 
 nav ul {
@@ -174,13 +170,13 @@ nav ul {
   nav ul {
     color: #3e225b;
     background-color: transparent;
+    display: inline-block;
   }
 }
 
 nav ul li {
   display: block;
-  padding: 15px;
-  text-align: left;
+  padding: 1em;
   width: 100%;
 }
 
@@ -190,8 +186,11 @@ nav ul li:hover {
 
 @media (min-width: 43.75em) {
   nav ul li {
+    text-align: middle;
+    line-height: 4em;
+    height: 6em;
     display: inline-block;
-    padding: 20px;
+    padding: 0.75em;
     width: auto;
   }
 
@@ -356,57 +355,78 @@ nav ul li:hover {
 header {
   width: 100%;
   float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
+  padding-left: Infinity%;
+  padding-right: Infinity%;
+}
+
+.header-wrapper {
+  width: 83.33333%;
+  float: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav-toggle {
+  width: 16.66667%;
+  float: right;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.main-navigation {
+  width: 100%;
+  float: left;
+  padding-left: Infinity%;
+  padding-right: Infinity%;
 }
 
 main {
   width: 83.33333%;
   float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
-  margin-left: 9.16667%;
-  margin-right: 9.16667%;
+  padding-left: Infinity%;
+  padding-right: Infinity%;
+  margin-left: 8.33333%;
+  margin-right: 8.33333%;
 }
 
 @media (min-width: 43.75em) {
-  header {
-    width: 100%;
+  .header-wrapper {
+    width: 41.66667%;
     float: left;
-    padding-left: 0.83333%;
-    padding-right: 0.83333%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main-navigation {
+    width: 58.33333%;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   main {
     width: 66.66667%;
     float: left;
-    padding-left: 0.83333%;
-    padding-right: 0.83333%;
-    margin-left: 17.5%;
-    margin-right: 17.5%;
+    padding-left: Infinity%;
+    padding-right: Infinity%;
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;
   }
 }
 
 @media (min-width: 78.125em) {
-  header {
-    width: 100%;
-    float: left;
-    padding-left: Infinity%;
-    padding-right: Infinity%;
-  }
-
   .header-wrapper {
     width: 58.33333%;
     float: left;
-    padding-left: Infinity%;
-    padding-right: Infinity%;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .main-navigation {
     width: 41.66667%;
-    float: left;
-    padding-left: Infinity%;
-    padding-right: Infinity%;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   main {
@@ -429,20 +449,47 @@ main {
 
 header {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #fff;
-  position: fixed;
-  right: 0;
-  top: 0;
   overflow: hidden;
-  background-color: #cccccc;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: #cccccc;
-  border-color: rgba(255, 255, 255, 0.8);
-  z-index: 5;
+  position: fixed;
+  z-index: 10;
+}
+
+.header-wrapper {
+  height: 6em;
+  position: relative;
+  background-color: #fff;
+  word-wrap: break-word;
+  z-index: 10;
 }
 
 .header-title {
+  font-size: 2em;
+  line-height: 0.9em;
+  vertical-align: middle;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 2em;
+}
+
+.header-title:after {
+  content: " Design";
+  color: #8cc63e;
+}
+
+@media (min-width: 78.125em) {
+  .header-title {
+    font-size: 2.95em;
+    line-height: 3.2em;
+  }
+}
+
+.header-logo {
   float: left;
+  height: 3em;
+  width: 3em;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -450,17 +497,11 @@ header {
   transform: translateY(-50%);
 }
 
-.header-wrapper {
-  vertical-align: middle;
-  height: 6em;
-}
-
-.header-logo {
-  display: inline-block;
-  height: 4em;
-  width: 4em;
-  float: left;
-  margin: 1em;
+@media (min-width: 78.125em) {
+  .header-logo {
+    height: 4em;
+    width: 4em;
+  }
 }
 
 /*************************************************

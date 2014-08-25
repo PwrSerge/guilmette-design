@@ -2,34 +2,64 @@
 *HEADER
 **************************************************/
 header {
-    font-family: $heading-font;
-    background-color: #fff;
-    position: fixed;
-    right: 0;
-    top: 0;
-    overflow: hidden;
-    @include alpha-attribute("background-color", rgba(white, 0.8), black);
-    @include alpha-attribute("border-color", rgba(white, 0.8), black);
-    z-index: 5;
-}
 
-.header-title {
-    float: left;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    font-family: $heading-font;
+
+    overflow: hidden;
+    //position: absolute;
+    position: fixed;
+    //@include alpha-attribute("background-color", rgba(white, .8), black);
+    //@include alpha-attribute("border-color", rgba(white, .8), black);
+    z-index: 10;
 }
 
 .header-wrapper {
-    vertical-align: middle;
-
     height: 6em;
+    position: relative;
+    background-color: #fff;
+    word-wrap: break-word;
+    z-index: 10;
+}
+
+
+
+.header-title {
+    font-size: 2em;
+    line-height: 0.9em;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 2em;
+
+
+      &:after {
+      content:" Design";
+      color: $brand-color;
+      }
+
+
+    @include breakpoint($bp-large) {
+        font-size: 2.95em;
+        line-height: 3.2em;
+        }
+
 }
 
 .header-logo {
-    display: inline-block;
-    height: 4em;
-    width: 4em;
     float: left;
-    margin: 1em;
+    height: 3em;
+    width: 3em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    @include breakpoint($bp-large) {
+        height: 4em;
+    width: 4em;
+        }
+
+
+    // @include breakpoint($bp-small) {
+    //     display: block;
+    // }
 }
