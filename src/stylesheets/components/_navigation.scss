@@ -4,17 +4,23 @@
     background-color: #fff;
     cursor: pointer;
     float: right;
-    top: 2em;
+    height: 6em;
+    padding-top: 2em;
+
+
     z-index: 5;
     @include breakpoint($bp-medium) {
         display: none;
+
     }
 }
 
 .main-navigation {
-
+    position: relative;
+    z-index: 1;
+    transition: transform .6s ease;
     @include breakpoint($bp-medium) {
-        background-color: #fff;
+                background-color: #fff;
         height: 6em;
         }
  }

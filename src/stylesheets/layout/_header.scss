@@ -2,15 +2,15 @@
 *HEADER
 **************************************************/
 header {
-
+  height: 6em;
     font-family: $heading-font;
-
-    overflow: hidden;
+    background-color: #fff;
+    //overflow: hidden;
     //position: absolute;
     position: fixed;
     //@include alpha-attribute("background-color", rgba(white, .8), black);
     //@include alpha-attribute("border-color", rgba(white, .8), black);
-    z-index: 10;
+
 }
 
 .header-wrapper {

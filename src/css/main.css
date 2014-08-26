@@ -25,9 +25,6 @@ article {
 }
 
 main {
-  -webkit-transform: translateY(6em);
-  -ms-transform: translateY(6em);
-  transform: translateY(6em);
   position: relative;
 }
 
@@ -133,7 +130,8 @@ svg {
   background-color: #fff;
   cursor: pointer;
   float: right;
-  top: 2em;
+  height: 6em;
+  padding-top: 2em;
   z-index: 5;
 }
 
@@ -141,6 +139,13 @@ svg {
   .nav-toggle {
     display: none;
   }
+}
+
+.main-navigation {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: -webkit-transform .6s ease;
+  transition: transform .6s ease;
 }
 
 @media (min-width: 43.75em) {
@@ -448,10 +453,10 @@ main {
 **************************************************/
 
 header {
+  height: 6em;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  overflow: hidden;
+  background-color: #fff;
   position: fixed;
-  z-index: 10;
 }
 
 .header-wrapper {
