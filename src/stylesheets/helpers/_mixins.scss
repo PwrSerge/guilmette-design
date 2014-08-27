@@ -161,19 +161,16 @@
     }
 }
 
-// set to to false to extend else inject mixin
+// set to  false to extend else inject mixin
 @mixin cf($extend: true) {
     @if $extend {
         @extend %cf;
     } @else {
         *zoom: 1;
-        /* IE 6/7 fallback */
         &:before,
         &:after {
             content: ' ';
-            /* 1 */
             display: table;
-            /* 2 */
         }
 
         &:after {

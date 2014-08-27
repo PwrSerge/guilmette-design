@@ -7,6 +7,7 @@
 *,
 *:after,
 *:before {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -22,10 +23,6 @@ body {
 
 article {
   line-height: 1.5em;
-}
-
-main {
-  position: relative;
 }
 
 h1,
@@ -141,7 +138,7 @@ svg {
   }
 }
 
-.main-navigation {
+.nav-main {
   position: relative;
   z-index: 1;
   -webkit-transition: -webkit-transform .6s ease;
@@ -149,7 +146,7 @@ svg {
 }
 
 @media (min-width: 43.75em) {
-  .main-navigation {
+  .nav-main {
     background-color: #fff;
     height: 6em;
   }
@@ -378,7 +375,7 @@ header {
   padding-right: 0;
 }
 
-.main-navigation {
+.nav-main {
   width: 100%;
   float: left;
   padding-left: Infinity%;
@@ -402,7 +399,7 @@ main {
     padding-right: 0;
   }
 
-  .main-navigation {
+  .nav-main {
     width: 58.33333%;
     float: right;
     padding-left: 0;
@@ -427,7 +424,7 @@ main {
     padding-right: 0;
   }
 
-  .main-navigation {
+  .nav-main {
     width: 41.66667%;
     float: right;
     padding-left: 0;
@@ -452,11 +449,22 @@ main {
 *HEADER
 **************************************************/
 
-header {
+.header-container {
+  *zoom: 1;
   height: 6em;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
-  position: fixed;
+}
+
+.header-container:before,
+.header-container:after {
+  content: ' ';
+  display: table;
+}
+
+.header-container:after {
+  clear: both;
+  line-height: 0;
 }
 
 .header-wrapper {

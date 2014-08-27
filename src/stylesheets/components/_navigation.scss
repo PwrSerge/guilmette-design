@@ -6,8 +6,6 @@
     float: right;
     height: 6em;
     padding-top: 2em;
-
-
     z-index: 5;
     @include breakpoint($bp-medium) {
         display: none;
@@ -15,7 +13,7 @@
     }
 }
 
-.main-navigation {
+.nav-main {
     position: relative;
     z-index: 1;
     transition: transform .6s ease;

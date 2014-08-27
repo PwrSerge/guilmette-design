@@ -1,16 +1,23 @@
 /*************************************************
 *HEADER
 **************************************************/
-header {
-  height: 6em;
+.header-container {
+  @include cf($extend: false);
+    height: 6em;
     font-family: $heading-font;
     background-color: #fff;
+
     //overflow: hidden;
-    //position: absolute;
-    position: fixed;
     //@include alpha-attribute("background-color", rgba(white, .8), black);
     //@include alpha-attribute("border-color", rgba(white, .8), black);
+}
 
+.header-container-fixed {
+  width: 100%;
+  z-index: 9999;
+   position: fixed;
+   top: 0;
+   left: 0;
 }
 
 .header-wrapper {

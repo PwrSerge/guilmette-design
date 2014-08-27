@@ -26,7 +26,7 @@ header {
         @include span(2 at 11 of 12 last);
 
 }
-.main-navigation {
+.nav-main {
    @include span(12);
 }
 
@@ -37,12 +37,13 @@ main {
 }
 
 @include susy-breakpoint($bp-medium, $mediumlayout) {
+
     .header-wrapper {
 
         @include span(5 at 0 of 12);
     }
 
-    .main-navigation {
+    .nav-main {
         @include span(7 at 5 of 12 last);
     }
 
@@ -65,7 +66,7 @@ main {
         //margin-left: span(2);
     }
 
-    .main-navigation {
+    .nav-main {
         @include span(10 of 24 last);
         //margin-right: span(2);
     }
