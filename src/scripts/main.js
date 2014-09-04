@@ -1,4 +1,5 @@
 /*global describe:true*/
+/*global Modernizr:true */
 
 /*
   Header  -- Slide menu
@@ -7,78 +8,72 @@
 $(function() {
     var $page = $('.inner-wrapper'),
         $navToggle = $('.nav-toggle'),
-        $mainNavigation = $('.main-navigation'),
+        $mainNavigation = $('.nav-main '),
         $header = $('.header-container'),
         $headerHt = $header.height(),
         $menuHt = $mainNavigation.height(),
         $totalmenuHt = $headerHt + $menuHt,
-        $main = $('main');
+        $main = $('main'),
+        $root = $('html, body');
 
-    //fixed  header   on scroll
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 6) {
+    //fixed  header  on scroll
+    // $(window).scroll(function() {
+    //     if ($(this).scrollTop() > 1) {
+    //         $header.addClass("header-container-fixed");
+    //     } else {
+    //         $header.removeClass("header-container-fixed");
+    //     }
 
-            $header.addClass("header-container-fixed");
-        } else {
-            $header.removeClass("header-container-fixed");
+
+
+    //Toggle Slide Menu
+
+    //remove transitions on window resize
+    $(window).on('resize', function() {
+        if (Modernizr.mq('(min-width:500px)')) {
+            $mainNavigation.removeClass('nav-activated', 'open');
         }
     });
 
+    //Click event for sliding menu
+    $navToggle.on('click', function() {
+        $page.toggleClass('open').addClass('nav-activated');
+        $mainNavigation.toggleClass('open').addClass('nav-activated');
+    });
 
-    // Toggle Slide Menu
-    // if ($('.nav-toggle').css('display') === 'none') {
-    //     console.log('test');
-    //     $mainNavigation.css({
-    //         '-webkit-transform': 'translateY(0)',
-    //         '-ms-transform': 'translateY(0)',
-    //         'transform': 'translateY(0)'
-    //     });
+    $page.on('click', function(e) {
+        //$('.inner-wrapper').removeAttr('style');
+        $mainNavigation.removeClass('open', 'nav-activated');
+        $page.removeClass('open', 'nav-activated');
+        e.preventDefault();
+    });
 
-    // } else {
-    //     $mainNavigation.css({
-    //         '-webkit-transform': 'translateY(-' + $menuHt + 'px)',
-    //         '-ms-transform': 'translateY(-' + $menuHt + 'px)',
-    //         'transform': 'translateY(-' + $menuHt + 'px)'
-    //     });
+    /**
+     * Smooth scrolling when clicking anchor link
+     *
+     */
 
-    // }
+    $("a[href*=#]").click(function() {
+        var href = $.attr(this, 'href');
+
+        if ($(".nav-toggle").css("display") === "none") {
+            $root.animate({
+                scrollTop: $(href).offset().top - ($headerHt + 30)
+            }, 600, function() {
+                window.location.hash = href;
+            });
+
+        } else {
+            $root.animate({
+                scrollTop: $(href).offset().top - ($totalmenuHt + 138)
+            }, 600, function() {
+                window.location.hash = href;
+            });
+        }
+        return false;
+    });
 
 
-    // $navToggle.on('click', function() {
-    //     $page.toggleClass('open');
 
-    //     if ($page.hasClass('open')) {
-    //         $mainNavigation.css({
-    //             '-webkit-transform': 'translateY(0)',
-    //             '-ms-transform': 'translateY(0)',
-    //             'transform': 'translateY(0)'
-    //         });
-
-    //         $('.inner-wrapper.open').css({
-    //             '-webkit-transform': 'translateY(' + $menuHt + 'px)',
-    //             '-ms-transform': 'translateY(' + $menuHt + 'px)',
-    //             'transform': 'translateY(' + $menuHt + 'px)'
-    //         });
-    //     } else {
-    //         $('.inner-wrapper').removeAttr('style');
-    //         $mainNavigation.css({
-    //             '-webkit-transform': 'translateY(-' + $menuHt + 'px)',
-    //             '-ms-transform': 'translateY(-' + $menuHt + 'px)',
-    //             'transform': 'translateY(-' + $menuHt + 'px)'
-    //         });
-
-    //         $('.inner-wrapper').css({
-    //             '-webkit-transform': 'translateY(-' + $menuHt + 'px)',
-    //             '-ms-transform': 'translateY(-' + $menuHt + 'px)',
-    //             'transform': 'translateY(-' + $menuHt + 'px)'
-    //         });
-    //     }
-    // });
-
-    // $main.on('click', function(e) {
-    //     $('.inner-wrapper').removeAttr('style');
-    //     $page.removeClass('open');
-    //     e.preventDefault();
-    // });
 
 });

@@ -6,42 +6,49 @@
     float: right;
     height: 6em;
     padding-top: 2em;
-    z-index: 5;
+    z-index: 2;
+    display: inline-block;
     @include breakpoint($bp-medium) {
         display: none;
-
     }
 }
 
 .nav-main {
+    height: 6em;
     position: relative;
     z-index: 1;
-    transition: transform .6s ease;
+    transform: translate3d(0,-18em,0);
     @include breakpoint($bp-medium) {
-                background-color: #fff;
+        transform: translate3d(0,0,0);
+        background-color: #fff;
         height: 6em;
+
         }
  }
+.nav-main.nav-activated, .inner-wrapper.nav-activated {
+ transition: transform .4s ease;
+ }
 
-// .wrapper {
-//     overflow: hidden;
-// }
+ .nav-main.open, {
+ transform: translate3d(0,0,0);
+ }
+
+ .inner-wrapper.open {
+ transform: translate3d(0,18em,0)
+
+ }
 
 .inner-wrapper {
-    //transform: translateY(0);
-
-    transition: transform .6s ease;
+    transform: translate3d(0,6em,0);
 }
 
 nav ul {
-
     @include reset-list;
     background-color: $base-color;
     color: #fff;
     overflow: hidden;
     text-align: center;
     width: 100%;
-
 
      @include breakpoint($bp-medium) {
         // position: relative;

@@ -102,7 +102,7 @@ var sassTasks = lazypipe()
     })
     .pipe(uncss, ({
         html: ['src/index.html'],
-        ignore: ['.main-navigation', '.inner-wrapper', '.inner-wrapper.open', '.nav-toggle', '.main-navigation .nav-toggle']
+        ignore: ['.nav-main ', '.inner-wrapper', '.inner-wrapper.open', '.nav-toggle', '.nav-main  .nav-toggle', '.header-container-fixed', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
     }));
 
 
@@ -406,4 +406,6 @@ gulp.task('build', function() {
  * DEFAULT TASK
  ******************************************************************************/
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', function() {
+    runSequence('build', 'watch');
+});
