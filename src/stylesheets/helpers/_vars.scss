@@ -11,9 +11,42 @@ $img: '../image/';
 // Colours
 //--------------------------------------------------------------------
 
-//
+// Neutral color palette
+$palette-neutral--xdark:  #2C3643;
+$palette-neutral--dark:   #3B444F;
+$palette-neutral--base:   #67747C;
+$palette-neutral--light:  #99A9B3;
+$palette-neutral--xlight: #DBE6EC;
+
+// Primary color palette
+$palette-blue--dark:  #1D508D;
+$palette-blue--base:  #206FAC;
+$palette-blue--light: #288AD6;
+$palette-red:         #FA5E5B;
+$palette-green:       #16C98D;
+$palette-orange:      #FFC83F;
+$palette-yellow:      #FEEF6D;
+
+// Themes
+$themes: (
+  brand: (
+    primary: $palette-blue--base,
+    secondary: $palette-blue--dark,
+    contrast: white
+  ),
+  highlight: (
+    primary: $palette-yellow,
+    secondary: $palette-orange,
+    contrast: $palette-neutral--dark
+  ),
+  neutral: (
+    primary: $palette-neutral--light,
+    secondary: $palette-neutral--xlight,
+    contrast: $palette-neutral--xdark
+  )
+);
 // main colors
-//$base-background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMDAnIGhlaWdodD0nMzAwJyB2aWV3Qm94PScwIDAgMTUwIDE1MCc+Cgk8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCQk8ZmVUdXJidWxlbmNlIHR5cGU9J3R1cmJ1bGVuY2UnIGJhc2VGcmVxdWVuY3k9Jy43JyByZXN1bHQ9J2Z1enonIG51bU9jdGF2ZXM9JzInIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz4KCQk8ZmVDb21wb3NpdGUgaW49J1NvdXJjZUdyYXBoaWMnIGluMj0nZnV6eicgb3BlcmF0b3I9J2FyaXRobWV0aWMnIGsxPScwJyBrMj0nMC45NycgazM9Jy0wLjE0JyBrND0nLjAxJyAvPgoJPC9maWx0ZXI+Cgk8cmVjdCB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDAwMDAwJy8+Cgk8cmVjdCB4PSctMSUnIHk9Jy0xJScgd2lkdGg9JzEwMiUnIGhlaWdodD0nMTAyJScgZmlsbD0nI2Y4ZjdmMicgZmlsdGVyPSd1cmwoI24pJyBvcGFjaXR5PScxJy8+Cjwvc3ZnPg==');
+
 $base-background-image: url(../image/newBG-grey2.svg);
 $base-color: #3e225b;
 $base-background-color: #f8f7f2;
@@ -148,6 +181,16 @@ $easein-back: cubic-bezier(.6, -.28, .735, .045);
 $easeout-back: cubic-bezier(.175, .885, .32, 1.275);
 $easeinout-back: cubic-bezier(.68, -.55, .265, 1.55);
 
-//
+//Z-index
+//see http://css-tricks.com/handling-z-index/
+//--------------------------------------------------------------------
+
+$zindex: (
+  modal     : 9000,
+  overlay   : 8000,
+  dropdown  : 7000,
+  header    : 6000,
+  footer    : 5000
+);
 
 

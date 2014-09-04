@@ -1,4 +1,7 @@
-// Main site navigation
+/*************************************************
+*NAVIGATION
+**************************************************/
+
 .nav-toggle {
     position: relative;
     background-color: #fff;
@@ -17,65 +20,68 @@
     height: 6em;
     position: relative;
     z-index: 1;
-    transform: translate3d(0,-18em,0);
+    transform: translate3d(0, -18em, 0);
     @include breakpoint($bp-medium) {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
         background-color: #fff;
         height: 6em;
+    }
+}
 
-        }
- }
 .nav-main.nav-activated, .inner-wrapper.nav-activated {
- transition: transform .4s ease;
- }
+    transition: transform .4s ease;
+}
 
- .nav-main.open, {
- transform: translate3d(0,0,0);
- }
+.nav-main.open {
+    transform: translate3d(0, 0, 0);
+}
 
- .inner-wrapper.open {
- transform: translate3d(0,18em,0)
-
- }
+.inner-wrapper.open {
+    transform: translate3d(0, 18em, 0);
+}
 
 .inner-wrapper {
-    transform: translate3d(0,6em,0);
+    transform: translate3d(0, 6em, 0);
 }
 
 nav ul {
     @include reset-list;
-    background-color: $base-color;
     color: #fff;
     overflow: hidden;
     text-align: center;
     width: 100%;
-
-     @include breakpoint($bp-medium) {
-        // position: relative;
-        // top: 50%;
-        // transform: translateY(-50%);
+    @include breakpoint($bp-medium) {
         color: $base-color;
-        background-color: transparent;
+        //background-color: transparent;
         display: inline-block;
-        }
+    }
 
     li {
-       @include hover-style($accent-color, 10%);
+        //@include hover-style($accent-color, 10%);
         display: block;
         padding: 1em;
         width: 100%;
+        &:hover {
+            // background: tint(red, 80%);
+            //
 
-
+        }
         @include breakpoint($bp-medium) {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
+            background-size: auto 200%;
+            transition:   background-position .5s ease-out ;
+            background-position: 0 100%;
+
             text-align: middle;
             line-height: 4em;
             height: 6em;
-           display: inline-block;
+            display: inline-block;
             padding: 0.75em;
             width: auto;
-             &:hover {
-             color: #fff;
-            background: $base-color;
+            &:hover {
+                background-color: $brand-color;
+                background-position: 0 0;
+
             }
         }
     }
@@ -90,7 +96,6 @@ nav ul {
 
 .showing--inactive {
     animation: bouncyUp 1s forwards;
-
     @include breakpoint($bp-medium) {
         animation: none;
         height: 100%;
@@ -103,83 +108,78 @@ nav ul {
     //     max-height: 25em;
     //     transition: max-height 1s ease-in;
     // }
-
 }
 
-@keyframes bouncyDown {
-      0%, 50%, 100% {
-
-      -webkit-transition-timing-function: cubic-bezier(.215, .610, .355, 1);
-      transition-timing-function: cubic-bezier(.215, .610, .355, 1);
+@keyframes opacityIn {
+    0% {
+        opacity: 0;
     }
+    100% {
+        opacity: 1;
+    }
+}
 
+
+@keyframes bouncyDown {
+    0%, 50%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
     0% {
         transform: translate3d(0, -25em, 0);
     }
-
     50% {
         transform: translate3d(0, 5em, 0);
     }
-
     // 75% {
     //     transform: translate3d(0, -.5em, 0);
     // }
     // 90% {
     //     transform: translate3d(0, .75em, 0);
     // }
-
     100% {
-        transform: translate3d(0, 0, 0) ;
-
+        transform: translate3d(0, 0, 0);
     }
 }
 
+
 @keyframes bouncyUp {
-
     0% {
-        transform: translate3d(0, 0, 0) ;
-
+        transform: translate3d(0, 0, 0);
     }
-
     50% {
         transform: translate3d(0, 5em, 0);
     }
-
     100% {
-        transform: translate3d(0, -25em, 0) ;
-
+        transform: translate3d(0, -25em, 0);
     }
 }
 
+
 @keyframes bounceInDown {
-  0%, 60%, 75%, 90%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(.215, .61, .355, 1);
-    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -80em, 0);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate3d(0, 10em, 0);
-  }
-
-  75% {
-    transform: translate3d(0, -5em, 0);
-  }
-
-  90% {
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
+    0%, 60%, 75%, 90%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -80em, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 10em, 0);
+    }
+    75% {
+        transform: translate3d(0, -5em, 0);
+    }
+    90% {
+        transform: translate3d(0, 5em, 0);
+    }
+    100% {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
 }
 
 
@@ -202,7 +202,6 @@ nav ul {
 
 .flex-nav-item {
     @extend %flex-nav-item;
-
     &:hover {
         background-color: #aaa;
     }
@@ -217,7 +216,6 @@ nav ul {
         max-width: 500px;
         width: 100%;
     }
-
     input {
         @include box-sizing(border-box);
         display: block;

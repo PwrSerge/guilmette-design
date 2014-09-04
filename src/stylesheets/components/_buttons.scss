@@ -15,34 +15,41 @@
   white-space: nowrap;
   background: transparent;
   border: 1px solid;
-  -webkit-appearance: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+   user-select: none;
 
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: none;
-  }
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
 
-  &:disabled,
-  &.is-disabled {
-    cursor: default;
-  }
+    &:disabled,
+    &.is-disabled {
+      cursor: default;
+    }
 
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+    // Button modifiers
+    &--full {
+    display: block;
+    width: 100%;
   }
 }
 
-// Button modifiers
 
-.button--full {
-  display: block;
-  width: 100%;
+// Button color variations
+@each $name, $theme in $themes {
+  .btn--#{$name} {
+    color: map-get($theme, contrast);
+    background: map-get($theme, primary);
+
+    &:hover {
+      background: map-get($theme, secondary);
+    }
+  }
 }
 
 // buttons using John W. Long alpha-attributes mixins

@@ -2,7 +2,6 @@
  * Print styles - h5bp.com/r
  *
  */
-
 @media print {
   * {
     -webkit-filter: none !important;
@@ -14,7 +13,6 @@
   }
 
   /* Black prints faster: h5bp.com/s */
-
   a,
   a:visited {
     text-decoration: underline;
@@ -24,25 +22,41 @@
     content: ' (" attr(href) ")';
   }
 
+  abbr[title]:after {
+    content: ' (" attr(title) ")';
+  }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: '';
   }
 
   /* Don't show links for images, or javascript/internal links */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
 
   /* h5bp.com/t */
+  tr,
+  img {
+    page-break-inside: avoid; }
 
-@page {
-    margin: .5cm;
-}
+  img {
+    max-width: 100% !important; }
 
+  @page {
+    margin: .5cm; }
   p,
-  h2 {
+  h2,
+  h3 {
     orphans: 3;
-    widows: 3;
-  }
+    widows: 3; }
 
-  h2 {
-    page-break-after: avoid;
-  }
-}
+  h2,
+  h3 {
+    page-break-after: avoid; } }

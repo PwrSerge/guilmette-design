@@ -99,11 +99,11 @@ var sassTasks = lazypipe()
         indent: '  ',
         openbrace: 'end-of-line',
         autosemicolon: true
-    })
-    .pipe(uncss, ({
-        html: ['src/index.html'],
-        ignore: ['.nav-main ', '.inner-wrapper', '.inner-wrapper.open', '.nav-toggle', '.nav-main  .nav-toggle', '.header-container-fixed', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
-    }));
+    });
+// .pipe(uncss, ({
+//     html: ['src/index.html'],
+//     ignore: ['[class^="nav-"]', '[class^="inner-"]', '[class^="header-"]', '.open', '.nav-activated']
+// }));
 
 
 var cssminTasks = lazypipe()

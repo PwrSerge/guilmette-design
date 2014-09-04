@@ -24,11 +24,6 @@
     @return rgba(255,255,255,$opacity)
 };
 
-// .my-class{
-//     background:black(0.15);
-//     color:white(0.9);
-// }
-
 
 // Source: https://github.com/devatrox/Sunglass/
 $imgbase: "../img/" !default;
@@ -79,3 +74,12 @@ $imgbase: "../img/" !default;
   }
 }
 
+
+// get  z-index from map
+@function zindex($level: 'modal') {
+    @return map-get($zindex, $level);
+}
+
+// .modal {
+//   z-index: zindex(modal);
+// }
