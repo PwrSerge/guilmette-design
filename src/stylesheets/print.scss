@@ -1,9 +1,7 @@
-// Print
+// ====================================================
+//Print Styles
+//Based on h5bp.com/r
 
-/**
- * Print styles - h5bp.com/r
- *
- */
 @media print {
     * {
         filter: none !important;
@@ -33,7 +31,7 @@
         content: '';
     }
 
-    /* Don't show links for images, or javascript/internal links */
+   //Don't show links for images, or javascript/internal links
     pre,
     blockquote {
         border: 1px solid #999;
@@ -44,7 +42,6 @@
         display: table-header-group;
     }
 
-    /* h5bp.com/t */
     tr,
     img {
         page-break-inside: avoid;

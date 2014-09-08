@@ -46,15 +46,13 @@ svg {
 
 // icons
 
-
-
 #icon-gd-logo2 {
     path:nth-of-type(1) {
-        fill: $base-color;
+        fill: $color-base;
     }
 
     path:nth-of-type(2) {
-        fill:$accent-color;
+        fill: $color-secondary;
     }
 }
 
@@ -64,11 +62,11 @@ svg {
 //     }
 
 .fa-bars {
-    color: $base-background-color;
+    color: $color-base-background;
 }
 
 .fa-circle {
-    color: $base-color;
+    color: $color-base;
 }
 
 // .fa-stack-2x {
@@ -82,7 +80,7 @@ svg {
 // }
 
 .fa-envelope {
-    color: $base-color;
+    color: $color-base;
     top: - 25%;
 }
 

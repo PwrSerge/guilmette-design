@@ -44,34 +44,33 @@
     transform: translate3d(0, 6em, 0);
 }
 
-nav ul {
+.nav-main__list {
     @include reset-list;
     color: #fff;
     overflow: hidden;
     text-align: center;
     width: 100%;
+    background-color: $color-secondary;
     @include breakpoint($bp-medium) {
-        color: $base-color;
-        //background-color: transparent;
+        color: $color-base;
+        background-color: transparent;
         display: inline-block;
     }
+ }
 
-    li {
-        //@include hover-style($accent-color, 10%);
-        display: block;
+.nav-main__item {
+        //display: block;
         padding: 1em;
         width: 100%;
         &:hover {
-            // background: tint(red, 80%);
-            //
+                background-color: $color-base;
+            }
 
-        }
         @include breakpoint($bp-medium) {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
             background-size: auto 200%;
             transition:   background-position .5s ease-out ;
-            background-position: 0 100%;
-
+            background-position: 0 -100%;
             text-align: middle;
             line-height: 4em;
             height: 6em;
@@ -79,36 +78,12 @@ nav ul {
             padding: 0.75em;
             width: auto;
             &:hover {
-                background-color: $brand-color;
+                background-color: darken(#fff, 10%);
                 background-position: 0 0;
-
             }
         }
     }
-}
 
-.showing {
-    @include breakpoint($bp-medium) {
-        animation: none;
-        height: 100%;
-    }
-}
-
-.showing--inactive {
-    animation: bouncyUp 1s forwards;
-    @include breakpoint($bp-medium) {
-        animation: none;
-        height: 100%;
-    }
-}
-
-.showing--active {
-    animation: bouncyDown 1s forwards;
-    //     &:before {
-    //     max-height: 25em;
-    //     transition: max-height 1s ease-in;
-    // }
-}
 
 @keyframes opacityIn {
     0% {

@@ -16,7 +16,7 @@
     //@include alpha-attribute("border-color", rgba(white, .8), black);
 }
 
-.header-container-fixed {
+.header-container--fixed {
   background-color: #fff;
   width: 100%;
   z-index: 2;
@@ -47,7 +47,7 @@
 
       &:after {
       content:" Design";
-      color: $brand-color;
+      color: $color-secondary;
       }
 
 
