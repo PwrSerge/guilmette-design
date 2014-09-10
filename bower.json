@@ -1,29 +1,34 @@
 {
-    "name": "GuilmetteDesign",
-    "version": "0.0.1",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "jquery": "git://github.com/jquery/jquery.git#~2.1.1",
-        "Modernizr": "~2.8.3",
-        "normalize.css": "~3.0.1"
-
+  "name": "GuilmetteDesign",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.3",
+    "normalize.css": "~3.0.1",
+    "fontawesome": "~4.2.0",
+    "trmix": "~1.1.0"
+  },
+  "overrides": {
+    "jcrop": {
+      "main": [
+        "./js/jquery.Jcrop.js",
+        "./css/jquery.Jcrop.css",
+        "./css/Jcrop.gif"
+      ]
     },
-    "overrides": {
-        "jcrop": {
-            "main": [
-                "./js/jquery.Jcrop.js",
-                "./css/jquery.Jcrop.css",
-                "./css/Jcrop.gif"
-            ]
-        },
-        "Modernizr": {
-            "main": "./modernizr.js"
-        }
+    "Modernizr": {
+      "main": "./modernizr.js"
     }
+  },
+  "authors": [
+    "Serge Guilmette <sergeguilmette@gmail.com>"
+  ],
+  "license": "MIT"
 }

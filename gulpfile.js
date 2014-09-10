@@ -66,7 +66,6 @@ var growlNotifier = growl({
 });
 
 // fileinclude
-
 var fileincludecfg = {
     prefix: '@@',
     basepath: '@file'
@@ -155,7 +154,7 @@ gulp.task('libs', function() {
     // grab vendor font files from bower_components and push in /public
     .pipe(fontFilter)
         .pipe(flatten())
-        .pipe(gulp.dest(paths.src + '/fonts'))
+        .pipe(gulp.dest('src/fonts'))
 });
 
 /*******************************************************************************
@@ -170,6 +169,7 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('src/css'))
         .pipe(cssminTasks())
         .pipe(gulp.dest('src/css'))
+        .pipe(size())
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.reload({
             stream: true
@@ -285,7 +285,7 @@ gulp.task('html', ['styles'], function() {
         addRootSlash: false
     }))
     //vendor sripts injection
-    .pipe(inject(gulp.src(['./src/scripts/vendor/*.min.js', '!./src/scripts/vendor/modernizr*.min.js'], {
+    .pipe(inject(gulp.src(['./src/scripts/vendor/*.min.js', '!./src/scripts/vendor/modernizr*.min.js', '!./src/scripts/vendor/*.min.min.js'], {
         read: false
     }), {
         starttag: '<!-- inject:bower:{{ext}} -->',

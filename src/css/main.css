@@ -202,15 +202,15 @@ h1 {
   font-weight: 900;
   margin: 0;
   color: #3e225b;
-  font-size: 2.95rem;
-  line-height: 3.2rem;
+  font-size: 2.44141rem;
+  line-height: 3.25rem;
 }
 
 h2 {
-  font-size: 1.95rem;
-  line-height: 2.4rem;
+  font-size: 1.95313rem;
+  line-height: 2.4375rem;
   font-weight: 700;
-  border-bottom-width: 0.1rem;
+  border-bottom-width: 0.125rem;
   border-bottom-style: solid;
   padding-bottom: 1.5rem;
   border-color: gray;
@@ -219,8 +219,8 @@ h2 {
 
 p {
   font-size: 1.25rem;
-  line-height: 1.6rem;
-  margin-bottom: 1.6rem;
+  line-height: 1.625rem;
+  margin-bottom: 1.625rem;
   word-break: break-word;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -371,90 +371,6 @@ svg {
   }
 }
 
-@keyframes opacityIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes bouncyDown {
-  0%, 50%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    -webkit-transform: translate3d(0, -25em, 0);
-    transform: translate3d(0, -25em, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes bouncyUp {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, -25em, 0);
-    transform: translate3d(0, -25em, 0);
-  }
-}
-
-@keyframes bounceInDown {
-  0%, 60%, 75%, 90%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -80em, 0);
-    transform: translate3d(0, -80em, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 10em, 0);
-    transform: translate3d(0, 10em, 0);
-  }
-
-  75% {
-    -webkit-transform: translate3d(0, -5em, 0);
-    transform: translate3d(0, -5em, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-}
-
 /*************************************************
 *GRID
 **************************************************/
@@ -560,7 +476,7 @@ main {
 
 .footer-main {
   padding: 1em 4em;
-  margin-top: 3.2rem;
+  margin-top: 3.25rem;
   border-color: #e6e6e6;
   background: #ccc;
 }

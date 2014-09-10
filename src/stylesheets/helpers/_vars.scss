@@ -85,25 +85,31 @@ $heading-font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $sans-serif-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif-font: Georgia, Times, "Times New Roman", serif;
 
-// Font weights
-$type-weight: (thin: 200, light: 300, regular: 400, bold: 700, xtrabold: 900);
-
-// Base Font
-$base-font-family: $sans-serif-font;
-$base-font-size: 20px;
-$base-line-height: 32px;
-
-// Rhythm unit (Compass vertical rhythm)
-$rhythm-unit: 'rem';
-$rem-with-px-fallback: false;
-
 // Fixed Font
 $fixed-font-family: monospace;
 $fixed-font-size: 85%;
 $fixed-line-height: $base-line-height;
 
+// Font weights
+$type-weight: (thin: 200, light: 300, regular: 400, bold: 700, xtrabold: 900);
+
+// Base Font
+$base-font-family: $sans-serif-font;
+$base-font-size: 16px;
+$base-line-height: 26px;
+
+// Rhythm unit (Compass vertical rhythm)
+$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height
+$rhythm-unit: 'rem';// Sets rhythm unit to rem. Remove to use default em unit.
+$rem-with-px-fallback: false;
+
+// configs for modular scale
+$ms-base: 1rem;
+$ms-ratio: $major-third;  // 1.25
+
+
 //Sass map (Sass v3.3) with different font sizes using scale
-$type-scale: (tiny: (font-size: 13px, base-lines: .5), small: (font-size: 16px, base-lines: .75), base: (font-size: $base-font-size, base-lines: 1), medium: (font-size: 25px, base-lines: 1), large: (font-size: 31px, base-lines: 1), xlarge: (font-size: 39px, base-lines: 1.5), xxlarge: (font-size: 59px, base-lines: 2));
+$type-scale: (tiny: (font-size: ms(-2), base-lines: .5), small: (font-size: ms(-1), base-lines: .75), base: (font-size: ms(0), base-lines: 1), medium: (font-size: ms(1), base-lines: 1), large: (font-size: ms(2), base-lines: 1), xlarge: (font-size: ms(3), base-lines: 1.5), xxlarge: (font-size: ms(4), base-lines: 2));
 
 //
 // Dimensions
