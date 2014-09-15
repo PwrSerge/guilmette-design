@@ -1,176 +1,22 @@
 @import url(http://fonts.googleapis.com/css?family=Kavoon|Wendy+One|Montserrat);
 
-@-webkit-keyframes opacityIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacityIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes bouncyDown {
-  0%, 50%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    -webkit-transform: translate3d(0, -25em, 0);
-    transform: translate3d(0, -25em, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes bouncyDown {
-  0%, 50%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    -webkit-transform: translate3d(0, -25em, 0);
-    transform: translate3d(0, -25em, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@-webkit-keyframes bouncyUp {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, -25em, 0);
-    transform: translate3d(0, -25em, 0);
-  }
-}
-
-@keyframes bouncyUp {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, -25em, 0);
-    transform: translate3d(0, -25em, 0);
-  }
-}
-
-@-webkit-keyframes bounceInDown {
-  0%, 60%, 75%, 90%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -80em, 0);
-    transform: translate3d(0, -80em, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 10em, 0);
-    transform: translate3d(0, 10em, 0);
-  }
-
-  75% {
-    -webkit-transform: translate3d(0, -5em, 0);
-    transform: translate3d(0, -5em, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes bounceInDown {
-  0%, 60%, 75%, 90%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -80em, 0);
-    transform: translate3d(0, -80em, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 10em, 0);
-    transform: translate3d(0, 10em, 0);
-  }
-
-  75% {
-    -webkit-transform: translate3d(0, -5em, 0);
-    transform: translate3d(0, -5em, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, 5em, 0);
-    transform: translate3d(0, 5em, 0);
-  }
-
-  100% {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
+.header-title,
+.header-logo {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /*************************************************
 *BASE
 **************************************************/
+
+html {
+  font-size: 100%;
+  line-height: 1.625em;
+}
 
 *,
 *:after,
@@ -233,6 +79,10 @@ a {
   text-decoration: none;
 }
 
+object {
+  max-width: 100%;
+}
+
 /*************************************************
 *BUTTONS
 **************************************************/
@@ -253,6 +103,19 @@ a {
 /*************************************************
 *IMAGES
 **************************************************/
+
+.my-svg-container {
+  height: 0;
+  position: relative;
+  width: 10%;
+  padding-top: 10%;
+}
+
+.my-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 svg {
   fill: currentColor;
@@ -507,11 +370,6 @@ main {
   font-size: 2em;
   line-height: 0.9em;
   vertical-align: middle;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   padding-left: 2em;
 }
 
@@ -531,11 +389,6 @@ main {
   float: left;
   height: 3em;
   width: 3em;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 @media (min-width: 78.125em) {

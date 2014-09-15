@@ -3,7 +3,9 @@
 **************************************************/
 // Html element styling only
 
-// Establish a vertical rhythm @include establish-baseline;
+// Establish a vertical rhythm
+@include establish-baseline;
+
 *,
 *:after,
 *:before {

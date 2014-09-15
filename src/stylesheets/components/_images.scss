@@ -12,6 +12,25 @@
 }
 
 //Utiliy class for SVG
+
+//padding hack
+//@cudos: Sarah Soueidan
+.my-svg-container {
+    height: 0;
+    position: relative;
+    width: 10%;
+    padding-top: 10%;
+
+}
+.my-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //width: 100%; //only required for <img />
+}
+
+
+
 .ui-img,
 %ui-img {
     background-image: url("#{$img}/sprites/sprite.svg");
@@ -69,19 +88,13 @@ svg {
     color: $color-base;
 }
 
-// .fa-stack-2x {
-//     font-size: 1em;
-//     line-height: 2em;
-//     }
-
-// .fa-stack-1x {
-//     font-size: .5em;
-//     line-height: 4em;
-// }
-
 .fa-envelope {
     color: $color-base;
     top: - 25%;
+}
+
+.icon-home {
+    fill: red;
 }
 
 

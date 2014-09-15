@@ -29,6 +29,7 @@ var gulp = require('gulp'),
     gulpFilter = require('gulp-filter'),
     lazypipe = require('lazypipe'),
     runSequence = require('run-sequence'),
+    gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline']),
     plumber = require('gulp-plumber');
 
 
@@ -164,12 +165,15 @@ gulp.task('libs', function() {
 gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
         //.pipe(changed(paths.styles.dest))
+        // .pipe(plumber(function(error) {
+        //     gutil.log(gutil.colors.red(error.message));
+        //     this.emit('end');
+        // }))
         .pipe(plumber())
         .pipe(sassTasks())
         .pipe(gulp.dest('src/css'))
         .pipe(cssminTasks())
         .pipe(gulp.dest('src/css'))
-        .pipe(size())
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.reload({
             stream: true

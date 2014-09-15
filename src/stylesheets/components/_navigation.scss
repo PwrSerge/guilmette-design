@@ -21,6 +21,7 @@
     position: relative;
     z-index: 1;
     transform: translate3d(0, -18em, 0);
+
     @include breakpoint($bp-medium) {
         transform: translate3d(0, 0, 0);
         background-color: #fff;

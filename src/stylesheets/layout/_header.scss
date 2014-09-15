@@ -36,12 +36,10 @@
 
 
 .header-title {
+  @extend %vertical-align;
     font-size: 2em;
     line-height: 0.9em;
     vertical-align: middle;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     padding-left: 2em;
 
 
@@ -59,15 +57,13 @@
 }
 
 .header-logo {
+   @extend %vertical-align;
     float: left;
     height: 3em;
     width: 3em;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     @include breakpoint($bp-large) {
         height: 4em;
-    width: 4em;
+        width: 4em;
         }
 
 
