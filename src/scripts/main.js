@@ -1,3 +1,10 @@
+/**
+ * Guilmette-design-site - GuilmetteDesign portfolio
+ * @version v1.0.1
+ * @link http://www.guilmettedesign.com
+ * @license ISC
+ */
+
 /*global describe:true*/
 /*global Modernizr:true */
 

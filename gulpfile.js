@@ -22,14 +22,15 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     uncss = require('gulp-uncss'),
     pngcrush = require('imagemin-pngcrush'),
+    svgo = require('imagemin-svgo'),
     inject = require("gulp-inject"),
     mainBowerFiles = require('main-bower-files'),
     size = require('gulp-filesize'),
     flatten = require('gulp-flatten'),
     gulpFilter = require('gulp-filter'),
-    lazypipe = require('lazypipe'),
     runSequence = require('run-sequence'),
-    gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline']),
+    gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline','lazypipe']),
+    bump = require('gulp-bump');
     plumber = require('gulp-plumber');
 
 
@@ -83,9 +84,9 @@ var banner = ['/**',
     ''
 ].join('\n');
 
-//lazypipe tasks
+//lazypipe tasks using gulp-load-utils
 
-var sassTasks = lazypipe()
+var sassTasks = gutil.lazypipe()
     .pipe(sass, {
         //style: 'expanded',
         //sourcemap: true,
@@ -106,19 +107,18 @@ var sassTasks = lazypipe()
     }));
 
 
-var cssminTasks = lazypipe()
+var cssminTasks = gutil.lazypipe()
     .pipe(rename, {
         suffix: '.min'
     })
     .pipe(minifycss);
 
-var jsminTasks = lazypipe()
-    .pipe(jshint)
-    .pipe(jshint.reporter, stylish)
+var jsminTasks = gutil.lazypipe()
     .pipe(rename, {
         suffix: '.min'
     })
     .pipe(uglify);
+
 
 
 /*******************************************************************************
@@ -138,11 +138,11 @@ gulp.task('libs', function() {
     // grab vendor js files from bower_components, minify and push in /public
     .pipe(jsFilter)
         .pipe(gulp.dest('src/scripts/vendor'))
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: ".min"
-        }))
-        .pipe(gulp.dest('src/scripts/vendor'))
+    // .pipe(uglify())
+    // .pipe(rename({
+    //     suffix: ".min"
+    // }))
+    .pipe(gulp.dest('src/scripts/vendor'))
         .pipe(jsFilter.restore())
 
     // grab vendor css files from bower_components, minify and push in /public
@@ -189,24 +189,30 @@ gulp.task('styles', function() {
  ******************************************************************************/
 
 gulp.task('scripts', function() {
-    var mainjs = gulpFilter(['*.js', '!src/scripts/vendor']);
-    //var vendorjs = gulpFilter('src/scripts/vendor/*.min.js');
+    var mainjs = gulpFilter('main.js');
+    var vendorjs = gulpFilter(['main.min.js','vendor/jquery.js','vendor/*.js' ,'!vendor/modernizr.js']);
+    var importantjs = gulpFilter('vendor/modernizr.js');
     return gulp.src(paths.scripts.src)
-        //.pipe(changed(paths.scripts.dest))
-        .pipe(mainjs)
-        .pipe(plumber())
-        .pipe(concat('main.js'))
-        .pipe(header(banner, {
+    //.pipe(changed(paths.scripts.dest))
+    .pipe(plumber())
+    .pipe(jsminTasks())
+    .pipe(gulp.dest(paths.scripts.src))
+    .pipe(mainjs)
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish))
+    .pipe(mainjs.restore())
+    .pipe(vendorjs)
+    .pipe(concat('main.min.js')) // Concatenates vendor plugins and libraries
+    .pipe(header(banner, {
             packg: packg
-        }))
-        .pipe(jsminTasks())
-        //.pipe(gulp.dest('src/scripts/'))
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(mainjs.restore())
-        .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(browserSync.reload({
-            stream: true,
-        }))
+      }))
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(vendorjs.restore())
+    .pipe(importantjs) // js that needs to be placed in the head
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(browserSync.reload({
+        stream: true,
+    }))
         .pipe(growlNotifier({
             title: 'SCRIPTS.',
             message: 'Scripts task complete'
@@ -219,16 +225,19 @@ gulp.task('scripts', function() {
 
 gulp.task('image', function() {
     return gulp.src(paths.image.src)
-        //.pipe(changed(paths.image.dest))
+        .pipe(changed(paths.image.dest))
         .pipe(plumber())
         .pipe(cache(imagemin({
             optimizationLevel: 3,
             progressive: true,
             svgoPlugins: [{
-                removeViewBox: false
+                removeViewBox: false,
+                removeUselessStrokeAndFill: false,
+                cleanupIDs: false
             }],
             use: [pngcrush()],
-            interlaced: true
+            interlaced: true,
+
         })))
         .pipe(size())
         .pipe(gulp.dest(paths.image.dest))
@@ -249,7 +258,11 @@ var config = {
     svgId: 'icon-%f',
     className: '.icon-%f',
     fontSize: 16,
-    css: false
+    css: false,
+    svgoConfig: {
+        removeViewBox: false,
+        cleanupIDs: false
+    }
 };
 
 gulp.task('sprites', function() {
@@ -274,6 +287,7 @@ gulp.task('html', ['styles'], function() {
         //.pipe(changed(paths.html.src))
         .pipe(plumber())
         .pipe(fileinclude(fileincludecfg))
+        //modernizr injection
         .pipe(inject(gulp.src('./src/scripts/vendor/modernizr*.min.js', {
             read: false
         }), {
@@ -281,21 +295,13 @@ gulp.task('html', ['styles'], function() {
             ignorePath: 'src/',
             addRootSlash: false
         }))
-
-    .pipe(inject(gulp.src(['./src/css/*.min.css', './dist/scripts/*.min.js'], {
-        read: false
-    }), {
-        ignorePath: ['src/', 'dist/'],
-        addRootSlash: false
-    }))
-    //vendor sripts injection
-    .pipe(inject(gulp.src(['./src/scripts/vendor/*.min.js', '!./src/scripts/vendor/modernizr*.min.js', '!./src/scripts/vendor/*.min.min.js'], {
-        read: false
-    }), {
-        starttag: '<!-- inject:bower:{{ext}} -->',
-        ignorePath: 'src/',
-        addRootSlash: false
-    }))
+        // stylesheet and main javascripts injection
+        .pipe(inject(gulp.src(['./src/css/*.min.css', './dist/scripts/*.min.js'], {
+            read: false
+        }), {
+            ignorePath: ['src/', 'dist/'],
+            addRootSlash: false
+        }))
         .pipe(size())
         .pipe(gulp.dest('./dist'))
         .pipe(browserSync.reload({
@@ -364,6 +370,17 @@ gulp.task('publish', function() {
 });
 
 /*******************************************************************************
+ *BUMP VERSION
+ ******************************************************************************/
+
+gulp.task('bump', function() {
+    return gulp.src(['./package.json', './bower.json'])
+        .pipe(bump())
+        .pipe(gulp.dest('./'));
+});
+
+
+/*******************************************************************************
  *BROWSER_SYNC
  ******************************************************************************/
 
@@ -411,5 +428,5 @@ gulp.task('build', function() {
  ******************************************************************************/
 
 gulp.task('default', function() {
-    runSequence('build', 'watch');
+    runSequence('clean', ['scripts', 'image', 'html'], 'watch');
 });

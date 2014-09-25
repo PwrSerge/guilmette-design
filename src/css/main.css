@@ -79,10 +79,6 @@ a {
   text-decoration: none;
 }
 
-object {
-  max-width: 100%;
-}
-
 /*************************************************
 *BUTTONS
 **************************************************/
@@ -103,19 +99,6 @@ object {
 /*************************************************
 *IMAGES
 **************************************************/
-
-.my-svg-container {
-  height: 0;
-  position: relative;
-  width: 10%;
-  padding-top: 10%;
-}
-
-.my-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 svg {
   fill: currentColor;

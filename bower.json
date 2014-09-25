@@ -1,6 +1,6 @@
 {
   "name": "GuilmetteDesign",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -10,10 +10,11 @@
   ],
   "dependencies": {
     "jquery": "~2.1.1",
-    "modernizr": "~2.8.3",
     "normalize.css": "~3.0.1",
-    "fontawesome": "~4.2.0",
-    "trmix": "~1.1.0"
+    "trmix": "~1.1.0",
+    "svg4everybody": "*",
+    "snap.svg": "~0.3.0",
+    "modernizr": "~2.8.3"
   },
   "overrides": {
     "jcrop": {
@@ -22,13 +23,11 @@
         "./css/jquery.Jcrop.css",
         "./css/Jcrop.gif"
       ]
-    },
-    "Modernizr": {
-      "main": "./modernizr.js"
     }
   },
   "authors": [
     "Serge Guilmette <sergeguilmette@gmail.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {}
 }
