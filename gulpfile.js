@@ -1,18 +1,7 @@
 // Load plugins
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    rimraf = require('gulp-rimraf'),
     growl = require('gulp-notify-growl'),
-    cache = require('gulp-cache'),
-    changed = require('gulp-changed'),
     awspublish = require('gulp-awspublish'),
     header = require('gulp-header'),
     cssbeautify = require('gulp-cssbeautify'),
@@ -30,11 +19,12 @@ var gulp = require('gulp'),
     gulpFilter = require('gulp-filter'),
     runSequence = require('run-sequence'),
     gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline','lazypipe']),
-    bump = require('gulp-bump');
-    plumber = require('gulp-plumber');
-
-
-
+    bump = require('gulp-bump'),
+    sourcemaps = require('gulp-sourcemaps'),
+    gp = require("gulp-load-plugins")({
+           pattern: ['gulp-*', 'gulp.*'],
+           replaceString: /\bgulp[\-.]/
+    });
 
 /*******************************************************************************
  *CONFIGS
@@ -53,7 +43,7 @@ var paths = {
         dest: 'dist/css'
     },
     image: {
-        src: 'src/image/**/*',
+        src: ['src/image/*.png', 'src/image/*.jpg'],
         dest: 'dist/image'
     },
     html: {
@@ -85,9 +75,8 @@ var banner = ['/**',
 ].join('\n');
 
 //lazypipe tasks using gulp-load-utils
-
 var sassTasks = gutil.lazypipe()
-    .pipe(sass, {
+    .pipe(gp.sass, {
         //style: 'expanded',
         //sourcemap: true,
         lineNumbers: false,
@@ -95,29 +84,29 @@ var sassTasks = gutil.lazypipe()
         trace: true,
         require: ['susy', 'modular-scale', 'breakpoint']
     })
-    .pipe(autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
-    .pipe(cssbeautify, {
+    .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
+    .pipe(gp.cssbeautify, {
         indent: '  ',
         openbrace: 'end-of-line',
         autosemicolon: true
     })
-    .pipe(uncss, ({
+    .pipe(gp.uncss, ({
         html: ['src/index.html'],
         ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open ', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
     }));
 
 
 var cssminTasks = gutil.lazypipe()
-    .pipe(rename, {
+    .pipe(gp.rename, {
         suffix: '.min'
     })
-    .pipe(minifycss);
+    .pipe(gp.minifycss);
 
 var jsminTasks = gutil.lazypipe()
-    .pipe(rename, {
+    .pipe(gp.rename, {
         suffix: '.min'
     })
-    .pipe(uglify);
+    .pipe(gp.uglify);
 
 
 
@@ -138,8 +127,8 @@ gulp.task('libs', function() {
     // grab vendor js files from bower_components, minify and push in /public
     .pipe(jsFilter)
         .pipe(gulp.dest('src/scripts/vendor'))
-    // .pipe(uglify())
-    // .pipe(rename({
+    // .pipe(gp.uglify())
+    // .pipe(gp.rename({
     //     suffix: ".min"
     // }))
     .pipe(gulp.dest('src/scripts/vendor'))
@@ -164,12 +153,12 @@ gulp.task('libs', function() {
 
 gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
-        //.pipe(changed(paths.styles.dest))
+        //.pipe(gp.changed(paths.styles.dest))
         // .pipe(plumber(function(error) {
         //     gutil.log(gutil.colors.red(error.message));
         //     this.emit('end');
         // }))
-        .pipe(plumber())
+        .pipe(gp.plumber())
         .pipe(sassTasks())
         .pipe(gulp.dest('src/css'))
         .pipe(cssminTasks())
@@ -187,29 +176,26 @@ gulp.task('styles', function() {
 /*******************************************************************************
  *SCRIPTS
  ******************************************************************************/
+gulp.task('scripts-concat', function() {
 
-gulp.task('scripts', function() {
-    var mainjs = gulpFilter('main.js');
-    var vendorjs = gulpFilter(['main.min.js','vendor/jquery.js','vendor/*.js' ,'!vendor/modernizr.js']);
-    var importantjs = gulpFilter('vendor/modernizr.js');
-    return gulp.src(paths.scripts.src)
-    //.pipe(changed(paths.scripts.dest))
-    .pipe(plumber())
+    return gulp.src(['src/scripts/vendor/jquery.js','src/scripts/main.js','src/scripts/vendor/*.js' ,'!src/scripts/vendor/modernizr.js'])
+    .pipe(gp.plumber())
+    .pipe(gp.jshint())
+    .pipe(gp.jshint.reporter(stylish, { verbose: true }))
+    .pipe(gp.sourcemaps.init()) //  minify and concatenates vendor plugins and libraries
     .pipe(jsminTasks())
-    .pipe(gulp.dest(paths.scripts.src))
-    .pipe(mainjs)
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish))
-    .pipe(mainjs.restore())
-    .pipe(vendorjs)
-    .pipe(concat('main.min.js')) // Concatenates vendor plugins and libraries
-    .pipe(header(banner, {
-            packg: packg
-      }))
+    .pipe(gp.concat('main.min.js', {newLine:'\n\n'}))
+    .pipe(gp.sourcemaps.write('../scripts/maps', {
+      sourceMappingURLPrefix: 'https://guilmettedesign.com'
+    }))
+    .pipe(gp.size())
     .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(vendorjs.restore())
-    .pipe(importantjs) // js that needs to be placed in the head
-    .pipe(gulp.dest(paths.scripts.dest))
+});
+
+gulp.task('scripts', ['scripts-concat'], function() {
+    return gulp.src('src/scripts/vendor/modernizr.js')   // js that needs to be placed in the head
+    .pipe(jsminTasks())
+    .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
     .pipe(browserSync.reload({
         stream: true,
     }))
@@ -222,22 +208,15 @@ gulp.task('scripts', function() {
 /*******************************************************************************
  *IMAGES
  ******************************************************************************/
-
-gulp.task('image', function() {
+gulp.task('image', ['sprites'], function() {
     return gulp.src(paths.image.src)
-        .pipe(changed(paths.image.dest))
-        .pipe(plumber())
-        .pipe(cache(imagemin({
+        .pipe(gp.changed(paths.image.dest))
+        .pipe(gp.plumber())
+        .pipe(gp.cache(gp.imagemin({
             optimizationLevel: 3,
             progressive: true,
-            svgoPlugins: [{
-                removeViewBox: false,
-                removeUselessStrokeAndFill: false,
-                cleanupIDs: false
-            }],
             use: [pngcrush()],
             interlaced: true,
-
         })))
         .pipe(size())
         .pipe(gulp.dest(paths.image.dest))
@@ -267,10 +246,11 @@ var config = {
 
 gulp.task('sprites', function() {
     return gulp.src('src/image/icons/*.svg')
-        .pipe(plumber())
-        .pipe(svgSymbols(config))
-        .pipe(size())
+        .pipe(gp.plumber())
+        .pipe(gp.svgSymbols(config))
+        .pipe(gp.size())
         .pipe(gulp.dest('src/image/sprites'))
+        .pipe(gulp.dest('dist/image/sprites'))
         .pipe(growlNotifier({
             title: 'SPRITES.',
             message: 'Sprites task complete'
@@ -284,19 +264,19 @@ gulp.task('sprites', function() {
 
 gulp.task('html', ['styles'], function() {
     return gulp.src('src/index.html')
-        //.pipe(changed(paths.html.src))
-        .pipe(plumber())
+        //.pipe(gp.changed(paths.html.src))
+        .pipe(gp.plumber())
         .pipe(fileinclude(fileincludecfg))
         //modernizr injection
-        .pipe(inject(gulp.src('./src/scripts/vendor/modernizr*.min.js', {
+        .pipe(inject(gulp.src('./dist/scripts/vendor/modernizr*.min.js', {
             read: false
         }), {
             starttag: '<!-- inject:head:{{ext}} -->',
-            ignorePath: 'src/',
+            ignorePath: 'dist/',
             addRootSlash: false
         }))
         // stylesheet and main javascripts injection
-        .pipe(inject(gulp.src(['./src/css/*.min.css', './dist/scripts/*.min.js'], {
+        .pipe(inject(gulp.src(['./dist/css/*.min.css', './dist/scripts/*.min.js'], {
             read: false
         }), {
             ignorePath: ['src/', 'dist/'],
@@ -321,7 +301,7 @@ gulp.task('clean', function() {
     return gulp.src('./dist/*', {
             read: false
         })
-        .pipe(rimraf());
+        .pipe(gp.rimraf());
 
 });
 
@@ -349,7 +329,7 @@ gulp.task('publish', function() {
     // gzip, Set Content-Encoding headers and add .gz extension
     //.pipe(awspublish.gzip({ ext: '.gz' }))
 
-    .pipe(rename(function(path) {
+    .pipe(gp.rename(function(path) {
         path.dirname = '/' + path.dirname;
     }))
 
