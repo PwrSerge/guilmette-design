@@ -1,30 +1,18 @@
 // Load plugins
 var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
-    growl = require('gulp-notify-growl'),
-    awspublish = require('gulp-awspublish'),
-    header = require('gulp-header'),
-    cssbeautify = require('gulp-cssbeautify'),
     browserSync = require('browser-sync'),
-    svgSymbols = require('gulp-svg-symbols'),
-    fileinclude = require('gulp-file-include'),
-    svgmin = require('gulp-svgmin'),
-    uncss = require('gulp-uncss'),
     pngcrush = require('imagemin-pngcrush'),
     svgo = require('imagemin-svgo'),
-    inject = require("gulp-inject"),
     mainBowerFiles = require('main-bower-files'),
-    size = require('gulp-filesize'),
-    flatten = require('gulp-flatten'),
     gulpFilter = require('gulp-filter'),
     runSequence = require('run-sequence'),
     gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline','lazypipe']),
-    bump = require('gulp-bump'),
-    sourcemaps = require('gulp-sourcemaps'),
-    gp = require("gulp-load-plugins")({
+    gp = require('gulp-load-plugins')({
            pattern: ['gulp-*', 'gulp.*'],
            replaceString: /\bgulp[\-.]/
     });
+
 
 /*******************************************************************************
  *CONFIGS
@@ -53,7 +41,7 @@ var paths = {
 };
 
 //Initialize the notifier
-var growlNotifier = growl({
+var growlNotifier = gp.notifyGrowl({
     hostname: '127.0.0.1' // IP or Hostname to notify, default to localhost
 });
 
@@ -76,7 +64,7 @@ var banner = ['/**',
 
 //lazypipe tasks using gulp-load-utils
 var sassTasks = gutil.lazypipe()
-    .pipe(gp.sass, {
+   .pipe(gp.rubySass, {
         //style: 'expanded',
         //sourcemap: true,
         lineNumbers: false,
@@ -84,13 +72,13 @@ var sassTasks = gutil.lazypipe()
         trace: true,
         require: ['susy', 'modular-scale', 'breakpoint']
     })
-    .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
-    .pipe(gp.cssbeautify, {
+   .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
+   .pipe(gp.cssbeautify, {
         indent: '  ',
         openbrace: 'end-of-line',
         autosemicolon: true
     })
-    .pipe(gp.uncss, ({
+   .pipe(gp.uncss, ({
         html: ['src/index.html'],
         ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open ', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
     }));
@@ -100,7 +88,7 @@ var cssminTasks = gutil.lazypipe()
     .pipe(gp.rename, {
         suffix: '.min'
     })
-    .pipe(gp.minifycss);
+    .pipe(gp.minifyCss);
 
 var jsminTasks = gutil.lazypipe()
     .pipe(gp.rename, {
@@ -115,7 +103,6 @@ var jsminTasks = gutil.lazypipe()
  ******************************************************************************/
 // grab libraries files from bower_components, minify and push in /public
 gulp.task('libs', function() {
-
     var jsFilter = gulpFilter('*.js');
     var cssFilter = gulpFilter('*.css');
     var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);
@@ -143,7 +130,7 @@ gulp.task('libs', function() {
 
     // grab vendor font files from bower_components and push in /public
     .pipe(fontFilter)
-        .pipe(flatten())
+        .pipe(gp.flatten())
         .pipe(gulp.dest('src/fonts'))
 });
 
@@ -177,7 +164,6 @@ gulp.task('styles', function() {
  *SCRIPTS
  ******************************************************************************/
 gulp.task('scripts-concat', function() {
-
     return gulp.src(['src/scripts/vendor/jquery.js','src/scripts/main.js','src/scripts/vendor/*.js' ,'!src/scripts/vendor/modernizr.js'])
     .pipe(gp.plumber())
     .pipe(gp.jshint())
@@ -218,7 +204,7 @@ gulp.task('image', ['sprites'], function() {
             use: [pngcrush()],
             interlaced: true,
         })))
-        .pipe(size())
+        .pipe(gp.size())
         .pipe(gulp.dest(paths.image.dest))
         .pipe(browserSync.reload({
             stream: true
@@ -266,9 +252,9 @@ gulp.task('html', ['styles'], function() {
     return gulp.src('src/index.html')
         //.pipe(gp.changed(paths.html.src))
         .pipe(gp.plumber())
-        .pipe(fileinclude(fileincludecfg))
+        .pipe(gp.fileInclude(fileincludecfg))
         //modernizr injection
-        .pipe(inject(gulp.src('./dist/scripts/vendor/modernizr*.min.js', {
+        .pipe(gp.inject(gulp.src('./dist/scripts/vendor/modernizr*.min.js', {
             read: false
         }), {
             starttag: '<!-- inject:head:{{ext}} -->',
@@ -276,7 +262,7 @@ gulp.task('html', ['styles'], function() {
             addRootSlash: false
         }))
         // stylesheet and main javascripts injection
-        .pipe(inject(gulp.src(['./dist/css/*.min.css', './dist/scripts/*.min.js'], {
+        .pipe(gp.inject(gulp.src(['./dist/css/*.min.css', './dist/scripts/*.min.js'], {
             read: false
         }), {
             ignorePath: ['src/', 'dist/'],
@@ -312,7 +298,7 @@ gulp.task('clean', function() {
 gulp.task('publish', function() {
 
     // create a new publisher
-    var publisher = awspublish.create({
+    var publisher = gp.awspublish.create({
         key: 'AKIAJXFBVOWZJCTIBP6Q',
         secret: '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',
         bucket: 'guilmettedesign.com'
@@ -344,7 +330,7 @@ gulp.task('publish', function() {
     // .pipe(publisher.sync())
 
     // print upload updates to console
-    .pipe(awspublish.reporter({
+    .pipe(gp.awspublish.reporter({
         states: ['create', 'update', 'delete']
     }));
 });
@@ -355,7 +341,7 @@ gulp.task('publish', function() {
 
 gulp.task('bump', function() {
     return gulp.src(['./package.json', './bower.json'])
-        .pipe(bump())
+        .pipe(gp.bump())
         .pipe(gulp.dest('./'));
 });
 
