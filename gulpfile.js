@@ -227,6 +227,7 @@ var config = {
     svgoConfig: {
         removeViewBox: false,
         cleanupIDs: false
+
     }
 };
 
@@ -268,7 +269,7 @@ gulp.task('html', ['styles'], function() {
             ignorePath: ['src/', 'dist/'],
             addRootSlash: false
         }))
-        .pipe(size())
+        .pipe(gp.size())
         .pipe(gulp.dest('./dist'))
         .pipe(browserSync.reload({
             stream: true
