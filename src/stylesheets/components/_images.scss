@@ -29,8 +29,6 @@
     //width: 100%; //only required for <img />
 }
 
-
-
 .ui-img,
 %ui-img {
     background-image: url("#{$img}/sprites/sprite.svg");
@@ -44,7 +42,6 @@
 svg {
     fill: currentColor;
 }
-
 
 .no-bleed {
     position: relative;
@@ -64,7 +61,6 @@ svg {
 }
 
 // icons
-
 #icon-gd-logo2 {
     path:nth-of-type(1) {
         fill: $color-base;
@@ -75,27 +71,12 @@ svg {
     }
 }
 
-// [class^="icon-"] {
-//     height: 2em;
-//     width: 2em;
-//     }
+[role^="img"] {
+    height: 1em;
+    width: 1em;
+    }
 
-.fa-bars {
-    color: $color-base-background;
-}
 
-.fa-circle {
-    color: $color-base;
-}
-
-.fa-envelope {
-    color: $color-base;
-    top: - 25%;
-}
-
-.icon-home {
-    fill: red;
-}
 
 
 

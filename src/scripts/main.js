@@ -8,9 +8,12 @@
 /*global describe:true*/
 /*global Modernizr:true */
 
+
 /*
   Header  -- Slide menu
 */
+require('jquery') (window);
+
 
 $(function() {
     var $page = $('.inner-wrapper'),
@@ -79,8 +82,4 @@ $(function() {
         }
         return false;
     });
-
-
-
-
 });

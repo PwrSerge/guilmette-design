@@ -1,5 +1,7 @@
 // Load plugins
 var gulp = require('gulp'),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream'),
     stylish = require('jshint-stylish'),
     browserSync = require('browser-sync'),
     pngcrush = require('imagemin-pngcrush'),
@@ -97,6 +99,18 @@ var jsminTasks = gutil.lazypipe()
     .pipe(gp.uglify);
 
 
+/*******************************************************************************
+ *BROWSERIFY
+ ******************************************************************************/
+gulp.task('browserify', function() {
+    return browserify('./src/scripts/main.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('bundle.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest(paths.scripts.src))
+});
+
 
 /*******************************************************************************
  *BOWER
@@ -164,13 +178,13 @@ gulp.task('styles', function() {
  *SCRIPTS
  ******************************************************************************/
 gulp.task('scripts-concat', function() {
-    return gulp.src(['src/scripts/vendor/jquery.js','src/scripts/main.js','src/scripts/vendor/*.js' ,'!src/scripts/vendor/modernizr.js'])
+    // return gulp.src(['src/scripts/vendor/jquery.js','src/scripts/main.js','src/scripts/vendor/*.js' ,'!src/scripts/vendor/modernizr.js'])
+    return gulp.src('src/scripts/bundle.js')
     .pipe(gp.plumber())
     .pipe(gp.jshint())
     .pipe(gp.jshint.reporter(stylish, { verbose: true }))
     .pipe(gp.sourcemaps.init()) //  minify and concatenates vendor plugins and libraries
     .pipe(jsminTasks())
-    .pipe(gp.concat('main.min.js', {newLine:'\n\n'}))
     .pipe(gp.sourcemaps.write('../scripts/maps', {
       sourceMappingURLPrefix: 'https://guilmettedesign.com'
     }))
@@ -178,7 +192,7 @@ gulp.task('scripts-concat', function() {
     .pipe(gulp.dest(paths.scripts.dest))
 });
 
-gulp.task('scripts', ['scripts-concat'], function() {
+gulp.task('scripts',  function() {
     return gulp.src('src/scripts/vendor/modernizr.js')   // js that needs to be placed in the head
     .pipe(jsminTasks())
     .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
@@ -387,7 +401,7 @@ gulp.task('watch', ['browser-sync'], function() {
  ******************************************************************************/
 
 gulp.task('build', function() {
-    runSequence('clean', ['scripts', 'image', 'html']);
+    runSequence('clean', ['browserify','scripts', 'image', 'html']);
 });
 
 /*******************************************************************************

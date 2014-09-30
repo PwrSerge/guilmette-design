@@ -21,6 +21,7 @@ html {
 *,
 *:after,
 *:before {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -101,6 +102,11 @@ a {
 
 svg {
   fill: currentColor;
+}
+
+[role^="img"] {
+  height: 1em;
+  width: 1em;
 }
 
 /*************************************************
