@@ -16,14 +16,14 @@
     "mootools"      : false,
     "dojo"          : false,
     "jquery"    : true,
+    "browserify": true,
+
+"globals": {
+    "module": false,
+    "require": false
+},
 
 
-
-    "predef"        : [  // Custom globals.
-
-        //"anotherCoolGlobal",
-        //"iLoveDouglas"
-    ],
 
 
 

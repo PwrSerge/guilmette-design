@@ -42,11 +42,6 @@ var paths = {
     }
 };
 
-//Initialize the notifier
-var growlNotifier = gp.notifyGrowl({
-    hostname: '127.0.0.1' // IP or Hostname to notify, default to localhost
-});
-
 // fileinclude
 var fileincludecfg = {
     prefix: '@@',
@@ -85,7 +80,6 @@ var sassTasks = gutil.lazypipe()
         ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open ', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
     }));
 
-
 var cssminTasks = gutil.lazypipe()
     .pipe(gp.rename, {
         suffix: '.min'
@@ -104,15 +98,14 @@ var jsminTasks = gutil.lazypipe()
  ******************************************************************************/
 gulp.task('browserify', function() {
     return browserify('./src/scripts/main.js')
+        // .pipe(gp.jshint('.jshintrc'))
+        //.pipe(gp.jshint.reporter(stylish, { verbose: true }))
         .bundle()
-        // //Pass desired output filename to vinyl-source-stream
-        .pipe(source('bundle.js'))
-<<<<<<< HEAD
-        // // Start piping stream to tasks!
-=======
+        // Pass desired output filename to vinyl-source-stream
+        .pipe(source('global.js'))
         // Start piping stream to tasks!
->>>>>>> 6a6da8848fa4c36c378b075e4ca12d23e851cb9d
-        .pipe(gulp.dest('./src/scripts/'))
+        .pipe(gulp.dest(paths.scripts.src))
+
 });
 
 /*******************************************************************************
@@ -157,11 +150,6 @@ gulp.task('libs', function() {
 
 gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
-        //.pipe(gp.changed(paths.styles.dest))
-        // .pipe(plumber(function(error) {
-        //     gutil.log(gutil.colors.red(error.message));
-        //     this.emit('end');
-        // }))
         .pipe(gp.plumber())
         .pipe(sassTasks())
         .pipe(gulp.dest('src/css'))
@@ -171,29 +159,29 @@ gulp.task('styles', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(growlNotifier({
-            title: 'STYLES.',
-            message: 'Styles task complete'
-        }));
+        .pipe(gp.notify({
+            title: (gutil.colors.green('STYLES')),
+            message: 'Styles task complete',
+         }));
 });
 
 /*******************************************************************************
  *SCRIPTS
  ******************************************************************************/
 gulp.task('scripts', ['browserify'], function() {
-    return gulp.src('src/scripts/bundle.js')
+    return gulp.src('src/scripts/global.js')
     .pipe(gp.size())
     .pipe(gp.plumber())
-    .pipe(gp.jshint())
-    .pipe(gp.jshint.reporter(stylish, { verbose: true }))
     .pipe(gp.sourcemaps.init())
     .pipe(jsminTasks())
     .pipe(gp.sourcemaps.write('../scripts/maps', {
       sourceMappingURLPrefix: 'https://guilmettedesign.com'
     }))
-    // .pipe(gp.gzip())
-    // .pipe(gp.size())
-    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(gulp.dest('dist/scripts/'))
+    .pipe(gp.notify({
+             title: (gutil.colors.green('SCRIPTS')),
+            message: 'Scripts task complete'
+        }));
 });
 
 gulp.task('modernizr',  function() {
@@ -203,9 +191,9 @@ gulp.task('modernizr',  function() {
     .pipe(browserSync.reload({
         stream: true,
     }))
-        .pipe(growlNotifier({
-            title: 'SCRIPTS.',
-            message: 'Scripts task complete'
+        .pipe(gp.notify({
+            title: 'modernizr',
+            message: 'modernizr task complete'
         }));
 });
 
@@ -227,8 +215,8 @@ gulp.task('image', ['sprites'], function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(growlNotifier({
-            title: 'IMAGES.',
+        .pipe(gp.notify({
+            title: 'IMAGES',
             message: 'Image task complete'
         }));
 });
@@ -245,7 +233,6 @@ var config = {
     svgoConfig: {
         removeViewBox: false,
         cleanupIDs: false
-
     }
 };
 
@@ -256,7 +243,7 @@ gulp.task('sprites', function() {
         .pipe(gp.size())
         .pipe(gulp.dest('src/image/sprites'))
         .pipe(gulp.dest('dist/image/sprites'))
-        .pipe(growlNotifier({
+        .pipe(gp.notify({
             title: 'SPRITES.',
             message: 'Sprites task complete'
         }));
@@ -289,10 +276,13 @@ gulp.task('html', ['styles'], function() {
         }))
         .pipe(gp.size())
         .pipe(gulp.dest('./dist'))
+        // .pipe(gp.gzip())
+        // .pipe(gp.size())
+        .pipe(gulp.dest('./dist'))
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(growlNotifier({
+        .pipe(gp.notify({
             title: 'HTML.',
             message: 'HTML task complete'
         }));
@@ -326,14 +316,12 @@ gulp.task('publish', function() {
     // define custom headers
     var headers = {
         'Cache-Control': 'max-age=315360000, no-transform, public'
-        // ...
     };
 
     return gulp.src('./dist/**/*')
 
     // gzip, Set Content-Encoding headers and add .gz extension
-    //.pipe(awspublish.gzip({ ext: '.gz' }))
-
+    .pipe(gp.awspublish.gzip({ ext: '.gz' }))
     .pipe(gp.rename(function(path) {
         path.dirname = '/' + path.dirname;
     }))

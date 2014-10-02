@@ -8,13 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
     <!-- inject:head:js -->
-    <script src="scripts/vendor/modernizr.min.js"></script>
+    <!-- only importantFile.js will be injected here -->
     <!-- endinject -->
 
     <!-- inject:css -->
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/print.min.css">
     <!-- endinject -->
+
+    <!--[if lt IE 9]>
+            <script src="html5shiv.min.js"></script>
+     <![endif]-->
 
   </head>
   <body>
@@ -71,7 +75,7 @@ Portfolio</h2>
     </div>
     <!--.inner-wrapper-->
     <!-- inject:js -->
-    <script src="scripts/bundle.min.js"></script>
+    <!-- the main *.js files will be injected here -->
     <!-- endinject -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script>

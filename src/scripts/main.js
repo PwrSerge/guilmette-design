@@ -5,17 +5,16 @@
  * @license ISC
  */
 
-/*global describe:true*/
-/*global Modernizr:true */
-
-
 /*
   Header  -- Slide menu
 */
-
-
 //require('jquery') (window);
+//require('./plugins.js')
 
+
+// require('browsernizr/test/css/rgba');
+// require('browsernizr/test/file/filesystem');
+// require('browsernizr/test/websockets');
 
 $(function() {
     var $page = $('.inner-wrapper'),
