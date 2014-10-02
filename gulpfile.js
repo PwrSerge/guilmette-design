@@ -105,12 +105,11 @@ var jsminTasks = gutil.lazypipe()
 gulp.task('browserify', function() {
     return browserify('./src/scripts/main.js')
         .bundle()
-        //Pass desired output filename to vinyl-source-stream
+        // //Pass desired output filename to vinyl-source-stream
         .pipe(source('bundle.js'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest(paths.scripts.src))
+        // // Start piping stream to tasks!
+        .pipe(gulp.dest('./src/scripts/'))
 });
-
 
 /*******************************************************************************
  *BOWER
