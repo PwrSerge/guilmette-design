@@ -108,7 +108,7 @@ gulp.task('browserify', function() {
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('bundle.js'))
         // Start piping stream to tasks!
-        .pipe(gulp.dest(paths.scripts.src))
+        .pipe(gulp.dest('./src/scripts/'))
 });
 
 
@@ -177,22 +177,23 @@ gulp.task('styles', function() {
 /*******************************************************************************
  *SCRIPTS
  ******************************************************************************/
-gulp.task('scripts-concat', function() {
-    // return gulp.src(['src/scripts/vendor/jquery.js','src/scripts/main.js','src/scripts/vendor/*.js' ,'!src/scripts/vendor/modernizr.js'])
+gulp.task('scripts', ['browserify'], function() {
     return gulp.src('src/scripts/bundle.js')
+    .pipe(gp.size())
     .pipe(gp.plumber())
     .pipe(gp.jshint())
     .pipe(gp.jshint.reporter(stylish, { verbose: true }))
-    .pipe(gp.sourcemaps.init()) //  minify and concatenates vendor plugins and libraries
+    .pipe(gp.sourcemaps.init())
     .pipe(jsminTasks())
     .pipe(gp.sourcemaps.write('../scripts/maps', {
       sourceMappingURLPrefix: 'https://guilmettedesign.com'
     }))
-    .pipe(gp.size())
+    // .pipe(gp.gzip())
+    // .pipe(gp.size())
     .pipe(gulp.dest(paths.scripts.dest))
 });
 
-gulp.task('scripts',  function() {
+gulp.task('modernizr',  function() {
     return gulp.src('src/scripts/vendor/modernizr.js')   // js that needs to be placed in the head
     .pipe(jsminTasks())
     .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
