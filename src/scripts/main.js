@@ -12,7 +12,9 @@
 /*
   Header  -- Slide menu
 */
-require('jquery') (window);
+
+
+//require('jquery') (window);
 
 
 $(function() {
