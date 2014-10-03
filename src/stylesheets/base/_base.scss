@@ -38,12 +38,12 @@ main {
     @include font-feature;
 }
 
- h1 {
+h1 {
     //@include type-scale(xxlarge);
-    @include type-weight(xtrabold);
-    margin: 0;
-    color: $color-base;
     @include type-scale(xxlarge);
+    @include type-weight(xtrabold);
+    color: $color-base;
+    margin: 0;
  }
 
 

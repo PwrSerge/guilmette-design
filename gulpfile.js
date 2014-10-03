@@ -1,10 +1,9 @@
 // Load plugins
 var gulp = require('gulp'),
-    browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     stylish = require('jshint-stylish'),
     browserSync = require('browser-sync'),
-    pngcrush = require('imagemin-pngcrush');
+    pngcrush = require('imagemin-pngcrush'),
     svgo = require('imagemin-svgo'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter = require('gulp-filter'),
@@ -97,15 +96,10 @@ var jsminTasks = gutil.lazypipe()
  *BROWSERIFY
  ******************************************************************************/
 gulp.task('browserify', function() {
-    return browserify('./src/scripts/main.js')
-        // .pipe(gp.jshint('.jshintrc'))
-        //.pipe(gp.jshint.reporter(stylish, { verbose: true }))
-        .bundle()
-        // Pass desired output filename to vinyl-source-stream
-        .pipe(source('global.js'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest('src/scripts/'))
-
+    return  gulp.src('./src/scripts/main.js')
+    .pipe(gp.browserify())
+    .pipe(gp.rename('global.js'))
+    .pipe(gulp.dest('src/scripts/'))
 });
 
 /*******************************************************************************
@@ -169,18 +163,19 @@ gulp.task('styles', function() {
  *SCRIPTS
  ******************************************************************************/
 gulp.task('scripts', ['browserify'], function() {
+
     return gulp.src('src/scripts/global.js')
     .pipe(gp.size())
     .pipe(gp.plumber())
     .pipe(gp.sourcemaps.init())
     .pipe(jsminTasks())
     .pipe(gp.sourcemaps.write('../scripts/maps', {
-      sourceMappingURLPrefix: 'https://guilmettedesign.com'
+      //sourceMappingURLPrefix: 'guilmettedesign.com'
     }))
     .pipe(gulp.dest('dist/scripts/'))
     .pipe(gp.notify({
-             title: (gutil.colors.green('SCRIPTS')),
-            message: 'Scripts task complete'
+             title: (gutil.colors.green.bold('SCRIPTS')),
+            message: (gutil.colors.green.bold( 'Scripts task complete'))
         }));
 });
 
@@ -241,7 +236,6 @@ gulp.task('sprites', function() {
         .pipe(gp.plumber())
         .pipe(gp.svgSymbols(config))
         .pipe(gp.size())
-        .pipe(gulp.dest('src/image/sprites'))
         .pipe(gulp.dest('dist/image/sprites'))
         .pipe(gp.notify({
             title: 'SPRITES.',
@@ -318,7 +312,7 @@ gulp.task('publish', function() {
     return gulp.src('./dist/**/*')
 
     // gzip, Set Content-Encoding headers and add .gz extension
-    .pipe(gp.awspublish.gzip({ ext: '.gz' }))
+    .pipe(gp.awspublish.gzip())
     .pipe(gp.rename(function(path) {
         path.dirname = '/' + path.dirname;
     }))
@@ -331,7 +325,7 @@ gulp.task('publish', function() {
     .pipe(publisher.cache())
 
     //sync bucket files
-    // .pipe(publisher.sync())
+   //.pipe(publisher.sync())
 
     // print upload updates to console
     .pipe(gp.awspublish.reporter({
@@ -390,7 +384,7 @@ gulp.task('watch', ['browser-sync'], function() {
  ******************************************************************************/
 
 gulp.task('build', function() {
-    runSequence('clean', ['browserify','scripts', 'image', 'html']);
+    runSequence('clean', ['browserify','modernizr','scripts', 'image', 'html']);
 });
 
 /*******************************************************************************

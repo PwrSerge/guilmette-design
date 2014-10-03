@@ -9,9 +9,6 @@
   Header  -- Slide menu
 */
 var $ = require('jquery');
-
-
-
 require('./plugins.js')
 
 
