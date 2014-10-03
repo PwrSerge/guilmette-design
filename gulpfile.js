@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     stylish = require('jshint-stylish'),
     browserSync = require('browser-sync'),
-    pngcrush = require('imagemin-pngcrush'),
+    pngcrush = require('imagemin-pngcrush');
     svgo = require('imagemin-svgo'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter = require('gulp-filter'),
@@ -104,7 +104,7 @@ gulp.task('browserify', function() {
         // Pass desired output filename to vinyl-source-stream
         .pipe(source('global.js'))
         // Start piping stream to tasks!
-        .pipe(gulp.dest(paths.scripts.src))
+        .pipe(gulp.dest('src/scripts/'))
 
 });
 
@@ -275,9 +275,6 @@ gulp.task('html', ['styles'], function() {
             addRootSlash: false
         }))
         .pipe(gp.size())
-        .pipe(gulp.dest('./dist'))
-        // .pipe(gp.gzip())
-        // .pipe(gp.size())
         .pipe(gulp.dest('./dist'))
         .pipe(browserSync.reload({
             stream: true

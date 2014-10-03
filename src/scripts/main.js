@@ -8,13 +8,12 @@
 /*
   Header  -- Slide menu
 */
-//require('jquery') (window);
-//require('./plugins.js')
+var $ = require('jquery');
 
 
-// require('browsernizr/test/css/rgba');
-// require('browsernizr/test/file/filesystem');
-// require('browsernizr/test/websockets');
+
+require('./plugins.js')
+
 
 $(function() {
     var $page = $('.inner-wrapper'),
@@ -84,3 +83,4 @@ $(function() {
         return false;
     });
 });
+
