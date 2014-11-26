@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"h",
+				"height"
+			],
+			[
+				"gz",
+				"gzip"
+			],
+			[
 				"moder",
 				"modernizr"
 			],
@@ -176,96 +184,43 @@
 	"buffers":
 	[
 		{
-			"file": "src/scripts/main.js",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 2206,
+				"buffer_size": 2203,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Package Control Messages\n========================\n\nSublimeLinter-php:\n-----------------\n\n  SublimeLinter-php\n  -------------------------------\n  This linter plugin for SublimeLinter provides an interface to php -l.\n  \n  ** IMPORTANT! **\n  \n  Before this plugin will activate, you *must*\n  follow the installation instructions here:\n  \n  https://github.com/SublimeLinter/SublimeLinter-php\n  \n\nSublimeLinter:\n-------------\n\n  \n    ____        _     _ _                _     _       _\n   / ___| _   _| |__ | (_)_ __ ___   ___| |   (_)_ __ | |_ ___ _ __\n   \\___ \\| | | | '_ \\| | | '_ ` _ \\ / _ \\ |   | | '_ \\| __/ _ \\ '__|\n    ___) | |_| | |_) | | | | | | | |  __/ |___| | | | | ||  __/ |\n   |____/ \\__,_|_.__/|_|_|_| |_| |_|\\___|_____|_|_| |_|\\__\\___|_|\n  \n  \n  Welcome to SublimeLinter, a linter framework for Sublime Text 3.\n  \n                   * * * IMPORTANT! * * *\n  \n          SublimeLinter 3 is NOT a drop-in replacement for\n          earlier versions.\n  \n          Linters *NOT* included with SublimeLinter 3, they\n          must be installed separately.\n  \n          Settings are different.\n  \n                  * * * READ THE DOCS! * * *\n  \n  Otherwise you will never know how to install linters, nor will\n  you know about all of the great new features in SublimeLinter 3.\n  \n  For complete documentation on how to install and use SublimeLinter,\n  please see:\n  \n  http://sublimelinter.readthedocs.org\n  \n  \n                   _   _      _       _\n                  | | | | ___| |_ __ | |\n                  | |_| |/ _ \\ | '_ \\| |\n                  |  _  |  __/ | |_) |_|\n                  |_| |_|\\___|_| .__/(_)\n                               |_|\n  \n  \n  I spent hundreds of hours writing and documenting SublimeLinter\n  to make it the best it can be — easy to use, easy to configure,\n  easy to update, easy to extend. If you use SublimeLinter and feel\n  it is making your coding life better and easier, please consider\n  making a donation to help fund development and support.\n  \n  To donate: https://github.com/SublimeLinter/SublimeLinter3#share-the-love\n  \n  Thank you!\n  \n\n\nSublimeLinter-csslint:\n---------------------\n\n  SublimeLinter-csslint\n  -------------------------------\n  This linter plugin for SublimeLinter provides an interface to csslint.\n  \n  ** IMPORTANT! **\n  \n  Before this plugin will activate, you *must*\n  follow the installation instructions here:\n  \n  https://github.com/SublimeLinter/SublimeLinter-csslint\n  \n",
+			"contents": "Package Control Messages\n========================\n\nAdvancedNewFile:\n---------------\n\n  Thank you for installing the AdvancedNewFile plugin.\n  \n  For more information please visit https://github.com/skuroda/Sublime-AdvancedNewFile.\n  \n  Note you may need to restart Sublime Text after installing this plugin.\n  \n  If you have any questions, comments, or run into issues, please let me know! Hope you enjoy the plugin.\n  \n  Thank you!\n",
 			"settings":
 			{
-				"buffer_size": 2444,
+				"buffer_size": 433,
 				"line_ending": "Windows",
 				"name": "Package Control Messages",
 				"scratch": true
 			}
 		},
 		{
-			"file": "src/css/main.css",
+			"contents": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>Untitled Document</title>\n</head>\n\n<body>\n<p><img width=\"152\" height=\"128\" src=\"file:///C|/Web-Sites/Internet/se-fm/clip_image002.gif\" alt=\"Hill-Knowles Canada New Logo\" /></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p align=\"right\"><strong>Travaux publics et Services gouvernementaux Canada</strong></p>\n<p align=\"right\"><strong>Secteur de l’intégrité opérationnelle</strong></p>\n<p align=\"right\"><strong>Projet Service fédéral de traitement des demandes de  soins de santé (SFTDSS)</strong></p>\n<p align=\"right\"><strong>&nbsp;</strong></p>\n<p align=\"right\">&nbsp;</p>\n<p align=\"right\"><strong>RAPPORT FINAL DE L’ENTREPRENEUR SURVEILLANT DE  L’ÉQUITÉ</strong></p>\n<p align=\"right\">&nbsp;</p>\n<p align=\"right\">12 juillet 2013</p>\n<p>&nbsp;</p>\n<p align=\"right\"><strong>Soumis à:</strong><br />\n  Directeur  général<br />\n  Secteur de  l’intégrité opérationnelle</p>\n<p>&nbsp;</p>\n<p align=\"right\"><strong>Soumis par:</strong> <br />\n  Knowles  Consultancy Services Inc. et<br />\n  Hill  International Inc. en coentreprise</p>\n<p><strong>&nbsp;</strong></p>\n<strong><br clear=\"all\" />\n</strong>\n<p align=\"center\"><strong>&nbsp;</strong></p>\n<p align=\"center\"><strong>&nbsp;</strong></p>\n<p align=\"center\"><strong>&nbsp;</strong></p>\n<p align=\"center\"><strong>&nbsp;</strong></p>\n<p align=\"center\"><strong>&nbsp;</strong></p>\n<p align=\"center\"><strong>Table des matières</strong></p>\n<p>&nbsp;</p>\n<p>Contexte et  Introduction.................................................................................................. 2<br />\n  Exigences du  projet......................................................................................................... 3<br />\n  Attestation d’assurance................................................................................................... 5<br />\n  Objectifs du  mandat du Surveillant de l’équité et méthodologie............................. 6<br />\n  Activités et  constatations spécifiques du Surveillant de l’équité............................. 7<br />\n  Documents de  référence.............................................................................................. 10</p>\n<strong><br clear=\"all\" />\n</strong>\n<p><strong><u>Contexte et Introduction</u></strong></p>\n<p>En qualité  de Surveillant de l’équité, Knowles Consultancy Services Inc. et Hill  International Inc. en coentreprise (ci-après dénommé le Surveillant de  l’équité) a été engagé comme un Surveillant de l’équité (SE) pour observer le  processus compétitif d’approvisionnement pour l’acquisition du Service fédéral  de traitement des demandes de soins de santé (SFTDSS) pour Anciens Combattants  Canada, les Forces canadiennes et la Gendarmerie royale du Canada. Ce processus  compétitif a été entrepris par Travaux publics et Services gouvernementaux  Canada (TPSGC) par la voie de la Demande d’offre numéro 51019-07200/K. Knowles  Consultancy Services Inc. et Hill International Inc. en coentreprise est une  tierce partie indépendante en ce qui concerne cette activité.</p>\n<p>Nous avons  examiné toute l’information fournie et observé toutes les activités  pertinentes.</p>\n<p>Nous  soumettons le présent rapport final couvrant par ordre chronologique, nos  activités à partir de juin 2011, par le moyen de deux Lettres d’intérêt (LI),  deux Demandes de renseignements (DR) et une Demande de propositions (DP) en  version ébauche jusqu’à la DP en version finale et l’évaluation des  propositions reçues en réponse à la DP.</p>\n<p>Ce rapport  résume aussi nos activités avec un précédent processus pour des services  similaires qui a été annulé avant l’émission d’une DP.</p>\n<p>Ce rapport  inclus notre attestation d’assurance, une vue d’ensemble du projet, les  méthodologies appliquées à notre mandat, les activités entreprises et les  constatations pertinentes.</p>\n<p>&nbsp;</p>\n<br clear=\"all\" />\n<p><strong><u>Exigences du projet</u></strong></p>\n<p>Le  Gouvernement du Canada a  besoin du  Service fédéral de traitement des demandes de soins de santé (SFTDSS), qui  comprend la fourniture des services et des systèmes pour le traitement et le  règlement des demandes de remboursement des frais liés aux soins de santé et  garantir le respect des politiques concernant les programmes applicables  incluant la vérification, l’établissement des rapports et le contrôle financier  utilisés par divers ministères du gouvernement fédéral. Les ministères  partenaires inclus dans cette demande sont Anciens Combattants Canada, les  Forces canadiennes et la Gendarmerie royale du Canada. Inclus dans la demande  est le droit du Gouvernement du Canada d’étendre la prestation du résultant  contrat à des plans et programmes additionnels du gouvernement fédéral, aux  conditions spécifiées dans le contrat pour SFTDSS.</p>\n<p>Les  bénéfices et services disponibles pour les trois ministères partenaires sont  consolidés dans le cadre des Programmes de choix. Le SFTDSS sera utilisé pour  administrer les Programmes de choix suivants:</p>\n<ul>\n  <li>Aides à la vie quotidienne</li>\n  <li>Services d’ambulance y compris les  déplacements à des fins médicales</li>\n  <li>Services d’audiologie</li>\n  <li>Services dentaires</li>\n  <li>Services hospitaliers</li>\n  <li>Services médicaux</li>\n  <li>Fournitures médicales</li>\n  <li>Soins infirmiers </li>\n  <li>Inhalothérapie</li>\n  <li>Médicaments  sur ordonnance</li>\n  <li>Prothèses et orthèses</li>\n  <li>Services  paramédicaux</li>\n  <li>Equipement spécial</li>\n  <li>Soins de la vue</li>\n  <li>Programme pour l’autonomie des  anciens combattants (ACC seulement)</li>\n  <li>Soins de longue durée (ACC  seulement)</li>\n</ul>\n<p>&nbsp;</p>\n<p>Les  services de traitement incluent:</p>\n<ul>\n  <li>inscription des clients et  établissement du niveau d’admissibilité approprié;</li>\n  <li>services de communication multimodes  à l’intention des membres/clients, fournisseurs et employés;</li>\n  <li>inscription des fournisseurs,  relations avec les fournisseurs et services de vérification des fournisseurs;</li>\n  <li>services d’autorisation de  traitement y compris les autorisations spéciales de demandes de pharmacies, les  demandes de prédétermination des soins dentaires et des demandes d’autorisation  pour d’autres services et avantages médicaux;</li>\n  <li>traitement manuel et électronique  des demandes y compris la saisie de données sur la demande, le suivi des  demandes, le règlement des demandes et le paiement ainsi que la production et  la distribution d’états récapitulatifs des demandes;</li>\n  <li>services de pharmacie pour le  règlement et le traitement électroniques des avantages;</li>\n  <li>services d’évaluation de  l’utilisation des médicaments;</li>\n  <li>opérations financières qui englobent  les pratiques financières pour demander, rapprocher et traiter les montants des  paiements et des recouvrements;</li>\n  <li>assurance  de la qualité et rapport sur le rendement;</li>\n  <li>conception,  élaboration, mise à l’essai et la mise en œuvre du système; et</li>\n  <li>les services opérationnels y compris  la vérification, la planification, la gestion du changement, la formation,  l’entretien et la gestion des systèmes, la production de rapports et la  conservation des dossiers.</li>\n</ul>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<br clear=\"all\" />\n<p><strong><u>Attestation d’assurance</u></strong></p>\n<p>Le SE  fourni le suivant énoncé d’assurance sans réserve concernant le processus  compétitif pour l’approvisionnement du Service fédéral de traitement des  demandes de soins de santé:</p>\n<p>Il est de  notre opinion professionnelle que le processus compétitif que nous avons  observé, a été exécuté conformément avec la documentation pertinente de la  demande d’offre et le processus a été mené de façon  équitable, ouverte et transparente.</p>\n<p>Note:  Pendant le cours du processus, des commentaires relatifs à l’équité ont été  fournis aux responsables du projet et il est confirmé qu’au besoin, les  responsables du projet ont fourni au SE les éclaircissements ou ont pris les  mesures appropriées pour traiter les commentaires, de sorte qu’aucune lacune en  matière d’équité n’a été notée.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>______________________________                        _____________________________<br />\n  Roger Bridges                                                             Bruce  Maynard Ing.<br />\n  Président                                                                     Chef  d’équipe SE<br />\n  Knowles Consultancy Services Inc.                                                                                       <br />\n  Représentant  de l’entrepreneur SE</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>______________________________<br />\n  Peter Woods<br />\n  Spécialiste  SE</p>\n<br clear=\"all\" />\n<p><strong><u>Objectifs du mandat du Surveillant de l’équité et méthodologie</u></strong></p>\n<p>L’objectif  global était le suivant&nbsp;: fournir à TPSGC une observation indépendante des  activités d’approvisionnement du projet; fournir aux responsables du projet,  des commentaires relatifs à l’équité aussitôt que possible, afin que les  mesures appropriées puissent être prises pour résoudre à l’avance les  préoccupations qui pourraient influer sur l’équité; porter à l’attention du  Secteur de l’intégrité opérationnelle toutes les préoccupations potentielles  d’équité, s’il n’y a pas de résolution en temps opportun avec les responsables  du projet et attester de l’équité du processus d’approvisionnement incluant son  exécution.<br />\n  <br />\n  Pour  réaliser l’objectif, nous avons entrepris les activités suivantes et s’il y  avait lieu, nous avons fourni à l’autorité contractante des commentaires  relatifs à l’équité:</p>\n<ul>\n  <li>devenus  familiers avec la structure de gouvernance du projet;</li>\n</ul>\n<p>&nbsp;</p>\n<ul>\n  <li>examiné  toutes les LIs, DRs et la DP sous formes ébauche et finale;</li>\n</ul>\n<ul>\n  <li>examiné  toutes les modifications aux LIs, DRs et la DP incluant les questions soumises  par les promoteurs et les réponses fournies;</li>\n</ul>\n<p>&nbsp;</p>\n<ul>\n  <li>observé  les journées de l’industrie, les rencontres individuelles avec les fournisseurs  intéressés et la conférence des soumissionnaires;</li>\n</ul>\n<ul>\n  <li>examiné  les soumissions des fournisseurs intéressés;</li>\n</ul>\n<p>&nbsp;</p>\n<ul>\n  <li>examiné  les procédures à être utilisées pour l’évaluation des réponses et l’orientation  fournie à l’équipe d’évaluation;</li>\n</ul>\n<ul>\n  <li>observé  l’évaluation des réponses à la DP dans le but d’assurer que les procédures  d’évaluation et de sélection et la politique ministérielle prescrites ont été  suivies et appliquées de façon constante durant le processus d’évaluation et de  sélection; et</li>\n</ul>\n<p>&nbsp;</p>\n<ul>\n  <li>observé  les comptes rendus auprès des soumissionnaires non retenus. (Cette activité  fera l’objet d’un ajout au présent rapport après que les comptes rendus auront  été fournis). </li>\n</ul>\n<p><strong>&nbsp;</strong></p>\n<p><strong>&nbsp;</strong></p>\n<strong><br clear=\"all\" />\n</strong>\n<p><strong><u>Activités et constatations spécifiques du Surveillant de l’équité</u></strong></p>\n<p><strong>Activités et  constatations du Surveillant de l’équité relatives à un précédent processus  d’approvisionnement SFTDSS- décembre 2007 au 1er mars 2011</strong></p>\n<p>Un  précédent processus d’approvisionnement pour SFTDSS a été annulé le 1er  mars 2011, à cause d’importants changements aux exigences d’approvisionnement  de Anciens Combattants Canada. Durant ce précédent processus  débutant en décembre 2007, nous avons examiné  le contexte du projet et l’information sur la gouvernance, discuté avec  l’autorité contractante les exigences, la voie vers l’avant et les enjeux,  examiné les trois Demandes de renseignements (DR) en versions ébauche et finale  et des parties variées d’une Demande de proposition (DP) en version ébauche,  examiné les soumissions reçues de fournisseurs intéressés résultant des DRs et  observé les rencontres individuelles entre l’équipe du projet et les  fournisseurs intéressés. Nous avons aussi examiné en versions ébauche et finale  des Avis de projet de marchés (APM) affichés sur MERX, un le 16 octobre 2010  avisant d’un délai dans le processus et le second le 1er mars 2011  avisant que le processus d’approvisionnement était annulé. Des commentaires  relatifs à l’équité ont été fournis à l’autorité contractante durant tout le  processus d’approvisionnement annulé et les mesures appropriées ont été prises.</p>\n<p><strong>Activités et constatations du Surveillant de l’équité durant la phase de  la Lettre d’intérêt (LI) et de la Demande de renseignements (DR)</strong></p>\n<p>Le 19 mai  2011, nous avons examiné une ébauche de l’APM et le 3 juin 2011, nous avons  examiné la version affichée de l’APM   (Document 1) annonçant une journée de l’industrie.  Le 24 juin 2011, nous avons examiné la  proposition de la présentation planifiée pour la journée de l’industrie. Le 29  juin 2011, nous avons observé la journée de l’industrie durant laquelle,  Anciens Combattants Canada (ACC)  a  fourni de l’information sur les plans de transformation de ACC, des nouvelles  directions pour le projet SFTDSS et la voie vers l’avant. Durant la période du  15 septembre 2011 au 21 septembre 2011, nous avons examiné une LI en versions  ébauche et finale (Document 2) fournissant les présentations de la journée de  l’industrie du 29 juin 2011 et une mise à jour sur la voie vers l’avant. Des  commentaires relatifs à l’équité ont été fournis à l’autorité contractante  durant tout le processus de consultation auprès de l’industrie et les mesures  appropriées ont été prises. </p>\n<p>Durant la  période du 2 décembre 2011 au 12 février 2012, nous avons examiné des documents  en version ébauche, surveillé des téléconférences sur la voie vers l’avant et  la planification pour une autre journée de l’industrie et examiné une DR en  versions ébauche et finale (Document 3). Les 14   et 15 février 2012, nous avons observé une journée de l’industrie et le  suivi des rencontres individuelles avec les fournisseurs intéressés. Durant la  période du 22 mai 2012 au 30 mai 2012, nous avons examiné la LI (Document 4)  qui fournissait les présentations, les questions et les réponses de la journée  de l’industrie et des rencontres subséquentes. Des commentaires relatifs à  l’équité ont été fournis à l’autorité contractante durant tout le processus de  consultation auprès de l’industrie et les mesures appropriées ont été prises.</p>\n<p>Le 26 juin  2012, nous avons examiné la DR qui a été publiée sur MERX le 27 juin 2012  (Document 5) et le 26 juin et le 9 juillet 2012, nous avons examiné l’ébauche  de l’énoncé des travaux (ET) qui était joint à la DR. Durant la période du 7 au  15 août 2012, nous avons examiné les réponses reçues suite à la DR et le  sommaire  de ces réponses de ACC. Aucune  lacune en matière d’équité n’a été décelée.</p>\n<p>Durant la  période du 16 août 2012 au 26 novembre 2012, nous avons discuté avec l’autorité  contractante de la voie vers l’avant et avons surveillé des téléconférences  avec les responsables du projet concernant les changements proposés à des  parties de l’ébauche de la DP. Des commentaires relatifs à l’équité ont été  fournis à l’autorité contractante et les mesures appropriées ont été prises.</p>\n<p>Durant la  période du 12 décembre 2012 au 15 janvier 2013, nous avons examiné l’ébauche de  la DP et fourni à l’autorité contractante des commentaires relatifs à l’équité  et les mesures appropriées ont été prises.</p>\n<p><strong>Activités et  constatations du Surveillant de l’équité durant la période d’affichage de la DP</strong></p>\n<p>Le 25  janvier 2013, nous avons mené un examen préliminaire de la DP qui avait été  affichée sur MERX le 24 janvier 2013 (Document 6) et les 12 et 13 février 2013,  nous avons mené un examen détaillé de la DP. Des commentaires relatifs à  l’équité ont été fournis à l’autorité contractante et les mesures appropriées  ont été prises. Le 24 février 2013, nous avons examiné l’ordre du jour proposé  pour la conférence des soumissionnaires et le 26 février 2013 nous avons  observé la conférence des soumissionnaires. Des commentaires relatifs à  l’équité ont été fournis à l’autorité contractante et les mesures appropriées  ont été prises.<br />\n  <br />\n  Durant la  période du 12 mars 2013 au 3 mai 2013, nous avons examiné les modifications 1 à  6 à la DP (Documents 7 à 12) sous formes ébauche et finale. Des commentaires  relatifs à l’équité ont été fournis à l’autorité contractante et les mesures  appropriées ont été prises.</p>\n<p>La date de  fermeture de la DP était le 14 mai 2013.</p>\n<p><strong>&nbsp;</strong></p>\n<p><strong>Activités et  constatations du Surveillant de l’équité relatives à l’évaluation</strong></p>\n<p>Durant la  période du 29 avril 2013 au 23 mai 2013, nous avons examiné des versions  ébauche  du plan d’évaluation, participé  à des appels téléconférences et avons eu des discussions avec l’autorité  contractante relatives à son développement et finalisation. Des commentaires  relatifs à l’équité ont été fournis à l’autorité contractante et les mesures  appropriées ont été prises.<br />\n  Le 7 juin  2013, nous avons surveillé une téléconférence de l’équipe d’évaluation au cours  de laquelle un consensus a été atteint sur la conformité des exigences  obligatoires. Une proposition était conforme avec toutes les exigences  obligatoires. Aucune lacune en matière d’équité n’a été décelée.</p>\n<p>Le 13 juin  2013 et le 26 juin 2013, nous avons surveillé des appels téléconférences de  l’équipe d’évaluation qui étaient prévues et qui étaient limitées à vérifier le  progrès de chaque évaluateur sur les évaluations des exigences obligatoires à  des fins de planification. Il n’y a pas eu de discussion des résultats  d’évaluation. <br />\n  <br />\n  Durant la  période du 2 juillet 2013 au 5 juillet 2013, nous avons observé les discussions  par l’équipe d’évaluation de toutes les exigences cotées de la proposition qui  avait satisfait aux exigences obligatoires et à laquelle des pointages de  consensus ont été convenus. Nous avons aussi examiné une question  d’éclaircissement envoyée au soumissionnaire et la réponse reçue. Tous les  pointages minimums obligatoires ont été atteints. Des commentaires relatifs à  l’équité ont été fournis à l’autorité contractante et les mesures appropriées  ont été prises.</p>\n<p>Le 10  juillet 2013, nous avons été informés par téléphone par l’autorité contractante  sur les résultats de l’évaluation de la proposition financière qui avait  satisfait aux exigences obligatoires. La proposition financière était conforme  et avait été revérifiée pour conformité par un collègue. Comme il n’y avait  qu’une seule proposition conforme, il n’y avait pas lieu d’appliquer la base du  processus de sélection.                                                                                                                                                   </p>\n<p>&nbsp;</p>\n<br clear=\"all\" />\n<p><strong><u>Documents de référence</u></strong></p>\n<p>Les  documents suivants sont identifiés par numéro dans le présent rapport. Sauf  indication contraire, ces  documents sont  disponibles au bureau du projet SFTDSS. Seuls les documents publiés  subséquemment à la reprise du processus d’approvisionnement en juin 2011 sont  inscrits puisque les documents publiés précédemment ne sont pas pertinents.</p>\n<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>No</p></td>\n    <td width=\"246\" valign=\"top\"><p>Document</p></td>\n    <td width=\"293\" valign=\"top\"><p>Information additionnelle</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>1</p></td>\n    <td width=\"246\" valign=\"top\"><p>Avis de projet de marchés (APM)</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publié sur MERX le 3 juin 2011</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>2</p></td>\n    <td width=\"246\" valign=\"top\"><p>Lettre d’intérêt (LI)</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 21 septembre    2011</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>3</p></td>\n    <td width=\"246\" valign=\"top\"><p>Demande de renseignements (DR)</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 2 février 2012</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>4</p></td>\n    <td width=\"246\" valign=\"top\"><p>Lettre d’intérêt (LI)</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 30 mai 2012</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>5</p></td>\n    <td width=\"246\" valign=\"top\"><p>Demande de renseignements (DR)</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 27 juin 2012</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>6</p></td>\n    <td width=\"246\" valign=\"top\"><p>Demande de proposition (DP) avec    pièce jointe 1</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 24 janvier    2013</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>7</p></td>\n    <td width=\"246\" valign=\"top\"><p>Modification 1 à la DP</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 12 mars 2013</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>8</p></td>\n    <td width=\"246\" valign=\"top\"><p>Modification 2 à la DP</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 14 mars 2013</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>9</p></td>\n    <td width=\"246\" valign=\"top\"><p>Modification 3 à la DP avec pièce    jointe 2</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 26 mars 2013</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>10</p></td>\n    <td width=\"246\" valign=\"top\"><p>Modification 4 à la DP</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 11 avril 2013</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>11</p></td>\n    <td width=\"246\" valign=\"top\"><p>Modification 5 à la DP</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 23 avril 2013</p></td>\n  </tr>\n  <tr>\n    <td width=\"28\" valign=\"top\"><p>12</p></td>\n    <td width=\"246\" valign=\"top\"><p>Modification 6 à la DP avec pièce    jointe 3</p></td>\n    <td width=\"293\" valign=\"top\"><p>Publiée sur MERX le 3 mai 2013</p></td>\n  </tr>\n</table>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<ul>\n  <li>&nbsp;</li>\n</ul>\n<br clear=\"all\" />\n<p align=\"center\"><strong>AJOUT AU RAPPORT   FINAL </strong><br />\n  <strong>10 février 2014</strong></p>\n<p><strong>Ajout au rapport final de l’entrepreneur Surveillant de l’équité daté le  12 juillet 2013 concernant le projet du Service fédéral de traitement des  demandes de soins de santé</strong></p>\n<p>Cet ajout  au rapport final de l’entrepreneur Surveillant de l’équité, couvre la période  suivant la conclusion de la phase d’évaluation et inclus l’attribution du  contrat et le compte rendu auprès d’un soumissionnaire.</p>\n<p>Un contrat  a été attribué le 6 janvier 2014 au soumissionnaire retenu. Le 13 janvier 2014,  nous avons examiné la lettre envoyée au soumissionnaire non retenu. La lettre  expliquait pourquoi la proposition du soumissionnaire n’avait pas été acceptée  et invitait le soumissionnaire à demander un compte rendu détaillé. Le 6  février 2014, nous avons été informé par les responsables du projet, qu’aucune  demande n’avait été reçue. Aucune lacune en matière d’équité n’a été décelée.</p>\n<p><strong>&nbsp;</strong></p>\n<p><strong>Attestation  d’assurance du Surveillant de l’équité</strong><br />\n  <br />\n  C’est  l’opinion du Surveillant de l’équité que les activités postérieures à  l’évaluation, incluant le compte rendu écrit, pour le projet  d’approvisionnement du Service fédéral de traitement des demandes de soins de  santé ont été menées de façon équitable. Dans ce contexte, l’équité est définie  comme étant des décisions prises objectivement, sans favoritisme personnel et  influence politique et englobe les éléments d’ouverture, de compétitivité, de  transparence et de conformité.</p>\n<ul>\n  <li>&nbsp;</li>\n  <li>&nbsp;</li>\n  <li>&nbsp;</li>\n</ul>\n<p>_____________________________                          _____________________________<br />\n  Roger Bridges                                                             Bruce  Maynard Ing.<br />\n  Président                                                                     Chef  d’équipe SE<br />\n  Knowles  Consultancy Services Inc.<br />\n  Représentant  de l’entrepreneur SE</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>____________________________<br />\n  Peter Woods<br />\n  Spécialiste  SE</p>\n<p align=\"center\"><strong>MODIFICATION À L’ADDENDA RELATIF AU RAPPORT FINAL</strong><br />\n  <strong>19 mai 2014</strong><br />\n  <strong>Modification à l’addenda daté le 10 février 2014 relatif au rapport  final de l’entrepreneur Surveillant de l’équité daté le 12 juillet 2013  concernant le projet du Service fédéral de traitement des demandes de soins de  santé (SFTDSS)</strong></p>\n<p>L’addenda  au rapport final daté le 10 février 2014, indiquait que trois semaines après  avoir été avisés des résultats de l’approvisionnement concurrentiel du SFTDSS,  aucun soumissionnaire n’avait demandé un compte rendu verbal. Comme la DP  stipulait que tout compte rendu verbal devait être demandé dans les 15 jours  suivant la notification des résultats, aucun compte rendu verbal n’était prévu.<br />\n  Au début du  mois de mai 2014, les deux soumissionnaires ont demandé un compte rendu verbal  et l’autorité contractante a accepté de les fournir. Le 14 mai 2014 et le 15  mai 2014, le Surveillant de l’équité a surveillé les comptes rendus fournis aux  deux soumissionnaires. Les meilleures pratiques relatives aux comptes rendus  ont été suivies et aucune lacune en matière   d’équité n’a été décelée.</p>\n<p><strong>Attestation  d’assurance du Surveillant de l’équité</strong><br />\n  Le Surveillant de l’équité est d’avis que les activités subséquentes à  l’évaluation, incluant les comptes rendus écrits et verbaux dans le cadre du  projet d’approvisionnement du Service fédéral de traitement des demandes de  soins de santé, ont été menées de façon équitable. Dans ce contexte, l’équité  est définie comme étant des décisions prises objectivement, sans favoritisme  personnel et influence politique et englobe les éléments d’ouverture, de  concurrence, d’intégrité et d’imputabilité.</p>\n<p>&nbsp;</p>\n<p>_________________________                                              __________________________<br />\n  Roger Bridges                                                                         Bruce  Maynard Ing.<br />\n  Président                                                                                 Chef  d’équipe SE<br />\n  Knowles  Consultancy Services Inc.<br />\n  Représentant  de l’entrepreneur SE</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>__________________________<br />\n  Peter Woods<br />\n  Spécialiste  SE</p>\n</body>\n</html>\n",
+			"file": "test.html",
+			"file_size": 0,
+			"file_write_time": 130613319107343750,
 			"settings":
 			{
-				"buffer_size": 7758,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gulpfile.js",
-			"settings":
-			{
-				"buffer_size": 12123,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".jshintignore",
-			"settings":
-			{
-				"buffer_size": 43,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stylesheets/components/_images.scss",
-			"settings":
-			{
-				"buffer_size": 1283,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dist/index.html",
-			"settings":
-			{
-				"buffer_size": 9826,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".jshintrc",
-			"settings":
-			{
-				"buffer_size": 3635,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/stylesheets/base/_base.scss",
-			"settings":
-			{
-				"buffer_size": 1821,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/index.html",
-			"settings":
-			{
-				"buffer_size": 9824,
-				"line_ending": "Unix"
+				"buffer_size": 27194,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 191.0,
 		"selected_items":
 		[
 			[
-				"inst",
+				"install ",
 				"Package Control: Install Package"
 			],
 			[
@@ -275,6 +230,70 @@
 			[
 				"remo",
 				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git st",
+				"Git: Stash Include Untracked"
+			],
+			[
+				"quic",
+				"Git: Quick Commit"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"sas",
+				"SassBeautify"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git quick",
+				"Git: Quick Commit"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"git q",
+				"Git: Quick Commit"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
 			],
 			[
 				"re",
@@ -289,24 +308,12 @@
 				"Git: Pull"
 			],
 			[
-				"git push",
-				"Git: Push"
-			],
-			[
 				"git qui",
 				"Git: Quick Commit"
 			],
 			[
-				"git pull",
-				"Git: Pull"
-			],
-			[
 				" sta",
 				"Git: Stash"
-			],
-			[
-				"git sta",
-				"Git: Status"
 			],
 			[
 				"git c",
@@ -327,10 +334,6 @@
 			[
 				"git  qui",
 				"Git: Quick Commit"
-			],
-			[
-				"git pu",
-				"Git: Pull"
 			],
 			[
 				"bea",
@@ -357,14 +360,6 @@
 				"Git: Stash"
 			],
 			[
-				"list",
-				"Package Control: List Packages"
-			],
-			[
-				"sass",
-				"SassBeautify"
-			],
-			[
 				"pull",
 				"Git: Pull Current Branch"
 			],
@@ -379,10 +374,6 @@
 			[
 				"push",
 				"Git: Push"
-			],
-			[
-				"git stat",
-				"Git: Status"
 			],
 			[
 				"java",
@@ -445,10 +436,6 @@
 				"Git: Pull"
 			],
 			[
-				"git st",
-				"Git: Status"
-			],
-			[
 				"git br",
 				"Git: Pull Current Branch"
 			],
@@ -493,20 +480,8 @@
 				"Package Control: Install Package"
 			],
 			[
-				"sas",
-				"SassBeautify"
-			],
-			[
 				"rem",
 				"Package Control: Remove Package"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: List Packages"
 			],
 			[
 				"use",
@@ -523,10 +498,6 @@
 			[
 				"remove pa",
 				"Package Control: Remove Package"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"sublime lint",
@@ -597,10 +568,6 @@
 				"Gist: Open Gist"
 			],
 			[
-				"install ",
-				"Package Control: Install Package"
-			],
-			[
 				"remove ",
 				"Emmet: Remove Tag"
 			],
@@ -637,11 +604,11 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 472.0
+		"width": 520.0
 	},
 	"console":
 	{
-		"height": 377.0,
+		"height": 401.0,
 		"history":
 		[
 			"git remote set-url origin https://PwrSerge@bitbucket.org/PwrSerge/guilmette-design.git",
@@ -660,29 +627,35 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/css",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets"
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design"
 	],
 	"file_history":
 	[
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/guilmettedesign.sublime-workspace",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/main.js",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_grid.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_header.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_navigation.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/GD-logo2.svg",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/index.html",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_images.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/global.js",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/gulpfile.js",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/package.json",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/index.html",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/sprites/svg-symbols.svg",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/sprites/svg-symbols.svg",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/base/_base.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.jshintignore",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.jshintrc",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/aws-credentials.json",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/css/main.css",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/bundle.js",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.jshintrc",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/package.json",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/gulpfile.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.gitignore",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/main.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/scripts/bundle.js",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.jshintignore",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/sprites/svg-symbols.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/guilmettedesign.sublime-project",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/scripts/vendor/modernizr.min.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/scripts/main.min.js",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/sprites/svg-symbols.svg",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/index.html",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/scripts/master.min.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/scripts/test.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/main.min.js",
@@ -692,23 +665,17 @@
 		"/C/Documents and Settings/guilmets/My Documents/Downloads/svg4everybody-master/svg4everybody-master/svg4everybody.ie8.js",
 		"/C/Documents and Settings/guilmets/My Documents/Downloads/svg4everybody-master/svg4everybody-master/svg4everybody.ie8.min.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/svg-symbols.svg",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_grid.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_footer.scss",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_images.scss",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_navigation.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/helpers/_mixins.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/helpers/_placeholders.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/helpers/_vars.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_typography.scss",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/base/_base.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/main.scss",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/index.html",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/twitter.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/github.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/sprites/svgsprite.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/sprites/svg-symbols.css",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/home.svg",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/layout/_header.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/vendor/font-awesome.css",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/icons/home.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/npm-debug.log",
@@ -734,7 +701,6 @@
 		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/User/LiveReload.sublime-settings",
 		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/LiveReload/LiveReload.sublime-settings",
 		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/guilmettedesign.sublime-workspace",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.scss-lint.yml",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.sass-cache/14cb0164ea66349a3357af900aed2a1512df9b8b/_sprite-img.scssc",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.sass-cache/6839f11d411e28eaa3f8cb9a79a790b59ec9985a/_isolate.scssc",
@@ -792,10 +758,7 @@
 		"/D/!PROJECTS/WebDesign/Resume_gulp/src/svg-defs.svg",
 		"/C/Users/Sergio/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
 		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_navigation.scss",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/main.scss",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/preview-svg-sprite.html",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/image/sprites/svg-defs.svg",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/image/sprites/svg-defs.svg"
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/main.scss"
 	],
 	"find":
 	{
@@ -951,19 +914,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/scripts/main.js",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2206,
+						"buffer_size": 2203,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								220,
-								220
+								662,
+								662
 							]
 						],
 						"settings":
@@ -976,36 +939,11 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1016,24 +954,48 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"spell_check": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 336.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1044,15 +1006,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2444,
+						"buffer_size": 433,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2288,
-								2288
+								433,
+								433
 							]
 						],
 						"settings":
@@ -1065,36 +1027,11 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1105,6 +1042,21 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1114,13 +1066,23 @@
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
-								"bh_double_quote_content"
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1071.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1128,24 +1090,25 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/css/main.css",
+					"file": "test.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7758,
+						"buffer_size": 27194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								389,
-								389
+								291,
+								291
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
+							"_anf_new": "",
 							"bh_regions":
 							[
 								"bh_c_define",
@@ -1153,36 +1116,11 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1193,6 +1131,21 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1202,9 +1155,19 @@
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
-								"bh_double_quote_content"
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1213,627 +1176,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "gulpfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12123,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8368,
-								8368
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5274.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": ".jshintignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								43,
-								43
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/stylesheets/components/_images.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1283,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1210,
-								1210
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1114.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "dist/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9826,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								490,
-								490
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": ".jshintrc",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3635,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								567,
-								567
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/stylesheets/base/_base.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1821,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								198,
-								198
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1890.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9824,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9110,
-								9110
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2654.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1900,7 +1242,7 @@
 	},
 	"output.git-push":
 	{
-		"height": 100.0
+		"height": 158.0
 	},
 	"output.git-remote":
 	{
@@ -1956,7 +1298,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 325.0,
+	"side_bar_width": 377.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

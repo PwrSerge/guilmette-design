@@ -103,9 +103,18 @@ svg {
   fill: currentColor;
 }
 
-[role^="img"] {
+.icon {
   height: 1em;
   width: 1em;
+}
+
+.icon--big {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.icon--colorprimary {
+  color: #8cc63e;
 }
 
 /*************************************************
@@ -335,6 +344,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .header-wrapper {

@@ -15,7 +15,6 @@
     "gulp-autoprefixer": "0.0.8",
     "gulp-awspublish": "0.0.22",
     "gulp-beautify": "~1.0.3",
-    "gulp-browserify": "^0.5.0",
     "gulp-bump": "^0.1.11",
     "gulp-cache": "~0.2.1",
     "gulp-changed": "~0.4.0",
@@ -55,6 +54,7 @@
   },
   "dependencies": {
     "browser-sync": "^1.5.2",
+    "browserify": "^6.3.3",
     "browsernizr": "^1.0.2",
     "chalk": "^0.5.1",
     "dateformat": "^1.0.8",
@@ -72,6 +72,9 @@
     "minimist": "^1.1.0",
     "multipipe": "^0.1.1",
     "run-sequence": "^0.3.6",
-    "tiny-lr": "0.0.5"
+    "snapsvg": "^0.3.0",
+    "svg4everybody": "0.0.2",
+    "tiny-lr": "0.0.5",
+    "vinyl-buffer": "^1.0.0"
   }
 }

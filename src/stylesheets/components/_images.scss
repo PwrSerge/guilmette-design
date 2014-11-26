@@ -11,24 +11,6 @@
     @include background-size(contain);
 }
 
-//Utiliy class for SVG
-
-//padding hack
-//@cudos: Sarah Soueidan
-.my-svg-container {
-    height: 0;
-    position: relative;
-    width: 10%;
-    padding-top: 10%;
-
-}
-.my-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    //width: 100%; //only required for <img />
-}
-
 .ui-img,
 %ui-img {
     background-image: url("#{$img}/sprites/sprite.svg");
@@ -37,10 +19,6 @@
     .no-svg & {
         background-image: url("#{$img}/ui-separate-std-sprite.png");
     }
-}
-
-svg {
-    fill: currentColor;
 }
 
 .no-bleed {
@@ -60,21 +38,55 @@ svg {
     }
 }
 
-// icons
-#icon-gd-logo2 {
-    path:nth-of-type(1) {
-        fill: $color-base;
-    }
 
-    path:nth-of-type(2) {
-        fill: $color-secondary;
-    }
+//Utiliy class for SVG
+
+//padding hack
+//@cudos: Sarah Soueidan
+.my-svg-container {
+    height: 0;
+    position: relative;
+    width: 10%;
+    padding-top: 10%;
+
+}
+.my-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //width: 100%; //only required for <img />
 }
 
-[role^="img"] {
+// icons
+svg {
+     fill: currentColor;
+}
+
+
+// svg init
+.icon {
     height: 1em;
     width: 1em;
-    }
+}
+// #icon-gd-logo2 {
+//     path:nth-of-type(1) {
+//         fill: $color-base;
+//     }
+
+//     path:nth-of-type(2) {
+//         fill: $color-secondary;
+//     }
+// }
+.icon--big {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.icon--colorprimary {
+    color: $color-secondary;
+ }
+
+
 
 
 
