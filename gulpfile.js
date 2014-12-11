@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     pngcrush = require('imagemin-pngcrush'),
     svgo = require('imagemin-svgo'),
+    styleguide = require("sc5-styleguide");
     //Modernizr = require('browsernizr'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter = require('gulp-filter'),
@@ -132,6 +133,40 @@ gulp.task('libs', function() {
         .pipe(gp.flatten())
         .pipe(gulp.dest('src/fonts'))
 });
+
+/*******************************************************************************
+ *STYLEGUIDE (living style guide based on KSS notation)
+ ******************************************************************************/
+
+gulp.task("styleguide", function() {
+  var outputPath = 'src/';
+
+  return gulp.src(paths.styles.dest)
+    .pipe(styleguide({
+        title: "My Styleguide",
+        server: true,
+        rootPath: outputPath,
+        //styleVariables: '<LESS/SASS variable file>',
+        overviewPath: 'src/overview.md',
+        sass: {
+            // Options passed to gulp-sass
+        },
+        less: {
+            // Options passed to gulp-less
+        }
+      }))
+    .pipe(gulp.dest(outputPath));
+});
+
+gulp.task("styleguide-watch", ["styleguide"], function() {
+  // Start watching changes and update styleguide whenever changes are detected
+  // Styleguide automatically detects existing server instance
+  gulp.watch((paths.styles.src), ["styleguide"]);
+});
+
+
+
+
 
 /*******************************************************************************
  *STYLES
