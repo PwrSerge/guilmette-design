@@ -1,6 +1,17 @@
 /*************************************************
 *BUTTONS
 **************************************************/
+// base button
+//
+// :btn               -  default button
+// .hover       - hover state
+// .focus  - focus state
+// :disabled          - disabled state
+// :is-disabled          - is disabled state
+// ::-moz-focus-inner  -moz focus state
+// --full - full state
+//
+// Styleguide 1
 
 .btn {
   display: inline-block;

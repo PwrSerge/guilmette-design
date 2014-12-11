@@ -139,9 +139,9 @@ gulp.task('libs', function() {
  ******************************************************************************/
 
 gulp.task("styleguide", function() {
-  var outputPath = 'src/';
+  var outputPath = 'src/styleguide';
 
-  return gulp.src(paths.styles.dest)
+  return gulp.src('src/stylesheets/components/*.scss')
     .pipe(styleguide({
         title: "My Styleguide",
         server: true,
@@ -161,11 +161,8 @@ gulp.task("styleguide", function() {
 gulp.task("styleguide-watch", ["styleguide"], function() {
   // Start watching changes and update styleguide whenever changes are detected
   // Styleguide automatically detects existing server instance
-  gulp.watch((paths.styles.src), ["styleguide"]);
+  gulp.watch(('src/stylesheets/components/*.scss'), ["styleguide"]);
 });
-
-
-
 
 
 /*******************************************************************************
