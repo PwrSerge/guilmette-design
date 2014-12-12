@@ -1,0 +1,103 @@
+/*************************************************
+*BASE
+**************************************************/
+
+// Base element styling only
+
+
+@include establish-baseline;
+
+*,
+*:after,
+*:before {
+    @include box-sizing(border-box);
+}
+
+body {
+    background: $color-base-background;
+    background-size: cover;
+    font-family: $base-font-family;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    //background: $base-background-color url(../image/creampaper.png);
+}
+
+article {
+    line-height: 1.5em;
+}
+
+main {
+    //margin-top: 6em;
+    //position: relative;
+}
+
+#{h1, h2, h3, h4, h5} {
+    font-family: $heading-font;
+    @include font-feature;
+}
+
+h1 {
+    //@include type-scale(xxlarge);
+    @include type-scale(xxlarge);
+    @include type-weight(xtrabold);
+    color: $color-base;
+    margin: 0;
+}
+
+h2 {
+    @include type-scale(xlarge);
+    @include type-weight(bold);
+    @include apply-side-rhythm-border(bottom, 2px, 1);
+    border-color: darken(white, 50%);
+    color: $color-base;
+}
+
+h3 {
+    @include type-scale(large);
+    @include type-weight(regular);
+    color: $color-secondary;
+}
+
+h4 {
+    @include type-scale(medium);
+    @include type-weight(regular);
+}
+
+h5 {
+    @include type-scale(base);
+}
+
+p {
+    @include type-scale(medium);
+    @include margin-trailer(1);
+    @include word-break(break-word);
+    @include hyphens(auto);
+}
+
+small {
+    @include type-scale(small);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+}
+
+img,
+object,
+embed {
+    max-width: 100%;
+}

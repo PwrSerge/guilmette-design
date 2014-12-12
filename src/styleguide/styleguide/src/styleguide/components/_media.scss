@@ -1,0 +1,100 @@
+/*************************************************
+*MEDIA
+**************************************************/
+
+//
+// Retina.
+// Currently only set to 'double' retina, meaning,
+// assets only have to be twice the normal size,
+// @reference http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
+//
+
+@media (-webkit-min-device-pixel-ratio: 2),
+        (min--moz-min-device-pixel-ratio: 2),
+        (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+}
+
+
+// Ported from @stubbornella
+
+.media {
+  overflow: hidden;
+
+  .media__obj {
+    float: left;
+
+    img {
+      display: block;
+    }
+  }
+
+  .media__obj--ext {
+    float: right;
+  }
+}
+
+.media__bd {
+  overflow: hidden;
+}
+
+// Flexible media styles  (videos, ifram, object)
+
+.flex__container {
+  display:block;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+
+  &:before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+}
+
+  .flex__item,
+  iframe,
+  object,
+  embed {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+// Added these based on @necolas FlexEmbed
+
+.flex__container--16x9:before {
+  padding-bottom: 56.25%;
+}
+
+.flex__container--4x3:before {
+  padding-bottom: 75%;
+}
+
+//  hides from  visual design but still accessible by screen reader
+.element--invisible {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+//Base on FlexBox
+//http://www.w3.org/TR/css3-flexbox/
+//http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+.container__centered-box {
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    background-color: rgba(skyblue, 0.2);
+    height: 500px;
+    width: 100%;
+}
