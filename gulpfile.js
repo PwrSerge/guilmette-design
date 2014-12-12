@@ -1,13 +1,13 @@
 // Load plugins
 var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
-    browserify = require('browserify');
-    buffer = require('vinyl-buffer');
+    browserify = require('browserify'),
+    buffer = require('vinyl-buffer'),
     stylish = require('jshint-stylish'),
     browserSync = require('browser-sync'),
     pngcrush = require('imagemin-pngcrush'),
     svgo = require('imagemin-svgo'),
-    styleguide = require("sc5-styleguide");
+    styleguide = require("sc5-styleguide"),
     //Modernizr = require('browsernizr'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter = require('gulp-filter'),
@@ -143,13 +143,16 @@ gulp.task("styleguide", function() {
 
   return gulp.src('src/stylesheets/components/*.scss')
     .pipe(styleguide({
-        title: "My Styleguide",
+        title: "guilmettedesign Styleguide",
         server: true,
         rootPath: outputPath,
-        //styleVariables: '<LESS/SASS variable file>',
-        overviewPath: 'src/overview.md',
+        styleVariables: 'src/stylesheets/helpers/_vars.scss',
+        overviewPath: 'src/stylesheets/overview.md',
         sass: {
-            // Options passed to gulp-sass
+            lineNumbers: false,
+            compass: true,
+            trace: true,
+            require: ['susy', 'modular-scale', 'breakpoint']
         },
         less: {
             // Options passed to gulp-less
@@ -173,17 +176,15 @@ gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
         .pipe(gp.plumber())
         .pipe(sassTasks())
-        .pipe(gulp.dest('src/css'))
         .pipe(cssminTasks())
-        .pipe(gulp.dest('src/css'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.reload({
             stream: true
         }))
         .pipe(gp.notify({
-            title: (gutil.colors.cyan.bold('HTML')),
+            title: (gutil.colors.cyan.bold('STYLES')),
             message: (gutil.colors.green.bold('Styles task complete'))
-            }));
+         }))
 });
 
 /*******************************************************************************

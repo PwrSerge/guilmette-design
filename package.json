@@ -76,6 +76,6 @@
     "svg4everybody": "0.0.2",
     "tiny-lr": "0.0.5",
     "vinyl-buffer": "^1.0.0",
-    "sc5-styleguide": "~0.2.13"
+    "sc5-styleguide": "~0.2.14"
   }
 }
