@@ -8,16 +8,22 @@
 //
 // Styleguide 1
 
-// General styles
+// General Styles
 //
-// Add even more descriptive text...
+// These are the base buttons
 //
-// :hover - State: Hovered
-// :active - State: Active
+// .btn                 - default button
+// :hover               - hover state
+// :focus               - focus state
+// :active              - active state
+// :disabled            - disabled state
+// .is-disabled         - is disabled state
+// ::-moz-focus-inner   - moz focus state
+// --full               - full state
 // .btn-medium - Size: Medium
 // .btn-large - Size: Large
 //
-// Markup:
+//Markup:
 // <!-- Default button: -->
 // <button type="submit" class="btn {$modifiers}">
 //   Label
@@ -28,101 +34,76 @@
 // </a>
 //
 // Styleguide 1.1
+button {
+  border: 0;
+}
 
 .btn {
-
-  background: #83B81B;
-  border: 2px solid #83B81B;
+  @include type-scale(base);
+  font-family: $heading-font;
+  background: $color-base;
   color: #fff;
-  font-family: sans-serif;
-  font-size: 0.75em;
-  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  line-height: normal;
+  text-align: center;
   text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  user-select: none;
 
-  &:hover {
-    background: #fff;
-    color: #83B81B;
+    &:hover{
+      background: $color-secondary;
+
+    }
+    &:focus,
+    &:active {
+      background: $color-tertiary;
+
+    }
+
+    &:disabled,
+    &.is-disabled {
+      background: $palette-neutral--dark;
+      color: #fff;
+      cursor: default;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+    // Button modifiers
+    &--full {
+    display: block;
+    width: 100%;
   }
-
-  &:active {
-    background: #fff;
-    border-color: #000;
-    color: #000;
-  }
-
-  &.btn-medium {
-    font-size: 1.25em;
+   &.btn-medium {
+    @include type-scale(medium);
   }
 
   &.btn-large {
-    font-size: 2em;
+    @include type-scale(large);
   }
-
 }
 
 
+// Button color variations
+@each $name, $theme in $themes {
+  .btn--#{$name} {
+    color: map-get($theme, contrast);
+    background: map-get($theme, primary);
 
-// // base button
-// //
-// // :btn               -  default button
-// // .hover       - hover state
-// // .focus  - focus state
-// // :disabled          - disabled state
-// // :is-disabled          - is disabled state
-// // ::-moz-focus-inner  -moz focus state
-// // --full - full state
-// //
-// // Styleguide 1
-
-// .btn {
-//   display: inline-block;
-//   position: relative;
-//   margin: 0;
-//   padding: 5px 10px;
-//   cursor: pointer;
-//   line-height: normal;
-//   text-align: center;
-//   text-decoration: none;
-//   vertical-align: middle;
-//   white-space: nowrap;
-//   background: transparent;
-//   border: 1px solid;
-//    user-select: none;
-
-//     &:hover,
-//     &:focus,
-//     &:active {
-//       text-decoration: none;
-//     }
-
-//     &:disabled,
-//     &.is-disabled {
-//       cursor: default;
-//     }
-
-//     &::-moz-focus-inner {
-//       border: 0;
-//       padding: 0;
-//     }
-//     // Button modifiers
-//     &--full {
-//     display: block;
-//     width: 100%;
-//   }
-// }
-
-
-// // Button color variations
-// @each $name, $theme in $themes {
-//   .btn--#{$name} {
-//     color: map-get($theme, contrast);
-//     background: map-get($theme, primary);
-
-//     &:hover {
-//       background: map-get($theme, secondary);
-//     }
-//   }
-// }
+    &:hover {
+      background: map-get($theme, secondary);
+    }
+  }
+}
 
 // // buttons using John W. Long alpha-attributes mixins
 

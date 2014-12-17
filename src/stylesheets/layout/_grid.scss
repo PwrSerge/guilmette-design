@@ -2,10 +2,10 @@
 *GRID
 **************************************************/
 
-$susy: (columns: 12, gutters: 1 / 4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside, gutter-override: 0, debug: (image: show, color: rgba(#66f, .25), output: overlay, toggle: top right));
+$susy: (columns: 12, gutters: 1 / 4, math: fluid, output: float, global-box-sizing: border-box, gutter-position: inside,  debug: (image: show, color: rgba(#66f, .25), output: overlay, toggle: top right));
 
-$widelayout: 24 1 / 4 fluid float inside (gutter-override: 0);
-$mediumlayout: 12 1 / 4 fluid float inside (gutter-override: 0);
+$widelayout: 24 1 / 4 fluid float inside ;
+$mediumlayout: 12 1 / 4 fluid float inside ;
 // main {
 //  @include container(80%);
 // }

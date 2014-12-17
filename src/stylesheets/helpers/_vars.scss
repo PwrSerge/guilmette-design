@@ -2,14 +2,14 @@
 // VARIABLES
 //============================================================
 
-//
+//undefined
 // Project  paths
 //--------------------------------------------------------------------
 
 // Image directory. Change this to the optimised path when deploying
 $img: '../image/';
 
-//
+//undefined
 // Colours
 //--------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ $palette-purple-base: #3e225b;
 $palette-purple-light: #9362c4;
 $palette-green-dark: #5f8728;
 $palette-green-base: #8cc63e;
-$palette-green-light: #b3d980;
+$palette-green-light: #CFF898;
 
 $palette-red:         #FA5E5B;
 $palette-orange:      #FFC83F;
@@ -60,14 +60,14 @@ $base-background-image: url(../image/newBG-grey2.svg);
 $color-base:  $palette-purple-base;
 $color-base-background: $palette-neutral--base;
 $color-secondary: $palette-green-base;
-$color-tertiary:  $palette-purple-base;
+$color-tertiary:  $palette-green-light;
 $color-accent: $palette-orange;
 $color-attention: $palette-red;
 
 
 
 
-//
+//undefined
 // Fonts
 //--------------------------------------------------------------------
 //Google fonts
@@ -78,7 +78,7 @@ $font-t: Montserrat;
 
 // Or directly:
 //$fonts: Kavoon, Wendy One, Bonbon;
-//
+//undefined
 
 // Font Family
 $heading-font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -111,7 +111,7 @@ $ms-ratio: $major-third;  // 1.25
 //Sass map (Sass v3.3) with different font sizes using scale
 $type-scale: (tiny: (font-size: ms(-2), base-lines: .5), small: (font-size: ms(-1), base-lines: .75), base: (font-size: ms(0), base-lines: 1), medium: (font-size: ms(1), base-lines: 1), large: (font-size: ms(2), base-lines: 1), xlarge: (font-size: ms(3), base-lines: 1.5), xxlarge: (font-size: ms(4), base-lines: 2));
 
-//
+//undefined
 // Dimensions
 //--------------------------------------------------------------------
 
@@ -147,9 +147,9 @@ $breakpoint-wide-portrait-mono: (max-width 700px) (orientation portrait) monochr
 $breakpoint-mono: monochrome;
 $breakpoint-hi-rez: min-resolution 1.5dppx;
 
-//
+//undefined
 // Easing
-//
+//undefined
 // @see http://robertpenner.com/
 // @see http://matthewlein.com/ceaser/
 //--------------------------------------------------------------------

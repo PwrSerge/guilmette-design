@@ -12,10 +12,10 @@ var gulp = require('gulp'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter = require('gulp-filter'),
     runSequence = require('run-sequence'),
-    gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline','lazypipe']),
+    gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline', 'lazypipe']),
     gp = require('gulp-load-plugins')({
-           pattern: ['gulp-*', 'gulp.*'],
-           replaceString: /\bgulp[\-.]/
+        pattern: ['gulp-*', 'gulp.*'],
+        replaceString: /\bgulp[\-.]/
     });
 
 
@@ -65,7 +65,7 @@ var banner = ['/**',
 
 //lazypipe tasks using gulp-load-utils
 var sassTasks = gutil.lazypipe()
-   .pipe(gp.rubySass, {
+    .pipe(gp.rubySass, {
         //style: 'expanded',
         //sourcemap: true,
         lineNumbers: false,
@@ -73,13 +73,13 @@ var sassTasks = gutil.lazypipe()
         trace: true,
         require: ['susy', 'modular-scale', 'breakpoint']
     })
-   .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
-   .pipe(gp.cssbeautify, {
+    .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
+    .pipe(gp.cssbeautify, {
         indent: '  ',
         openbrace: 'end-of-line',
         autosemicolon: true
     })
-   .pipe(gp.uncss, ({
+    .pipe(gp.uncss, ({
         html: ['src/index.html'],
         ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open ', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
     }));
@@ -114,11 +114,11 @@ gulp.task('libs', function() {
     // grab vendor js files from bower_components, minify and push in /public
     .pipe(jsFilter)
         .pipe(gulp.dest('src/scripts/vendor'))
-    // .pipe(gp.uglify())
-    // .pipe(gp.rename({
-    //     suffix: ".min"
-    // }))
-    .pipe(gulp.dest('src/scripts/vendor'))
+        // .pipe(gp.uglify())
+        // .pipe(gp.rename({
+        //     suffix: ".min"
+        // }))
+        .pipe(gulp.dest('src/scripts/vendor'))
         .pipe(jsFilter.restore())
 
     // grab vendor css files from bower_components, minify and push in /public
@@ -138,33 +138,49 @@ gulp.task('libs', function() {
  *STYLEGUIDE (living style guide based on KSS notation)
  ******************************************************************************/
 
-gulp.task("styleguide", function() {
-  var outputPath = 'src/styleguide';
+gulp.task('gs-clean', function() {
+    return gulp.src('src/styleguide/*', {
+            read: false
+        })
+        .pipe(gp.rimraf());
+});
 
-  return gulp.src('src/stylesheets/components/*.scss')
-    .pipe(styleguide({
-        title: "guilmettedesign Styleguide",
-        server: true,
-        rootPath: outputPath,
-        styleVariables: 'src/stylesheets/helpers/_vars.scss',
-        overviewPath: 'src/stylesheets/overview.md',
-        sass: {
-            lineNumbers: false,
-            compass: true,
-            trace: true,
-            require: ['susy', 'modular-scale', 'breakpoint']
-        },
-        less: {
-            // Options passed to gulp-less
-        }
-      }))
-    .pipe(gulp.dest(outputPath));
+gulp.task('gs-main', function() {
+    return gulp.src('src/css/main.css')
+        .pipe(gp.rename('styleguide.css'))
+        .pipe(gulp.dest('src/styleguide'))
+});
+
+gulp.task("gs-styleguide", function() {
+    var outputPath = 'src/styleguide';
+    return gulp.src('src/stylesheets/components/*.scss')
+        .pipe(styleguide({
+            title: "guilmettedesign Styleguide",
+            server: true,
+            rootPath: outputPath,
+            styleVariables: 'src/stylesheets/helpers/_vars.scss',
+            overviewPath: 'src/stylesheets/overview.md',
+            sass: {
+                lineNumbers: false,
+                compass: true,
+                trace: true,
+                require: ['susy', 'modular-scale', 'breakpoint']
+            },
+            less: {
+                // Options passed to gulp-less
+            }
+        }))
+        .pipe(gulp.dest(outputPath));
+});
+
+gulp.task("styleguide", function() {
+    runSequence('gs-clean', ['styles','gs-styleguide', 'gs-main']);
 });
 
 gulp.task("styleguide-watch", ["styleguide"], function() {
-  // Start watching changes and update styleguide whenever changes are detected
-  // Styleguide automatically detects existing server instance
-  gulp.watch(('src/stylesheets/components/*.scss'), ["styleguide"]);
+    // Start watching changes and update styleguide whenever changes are detected
+    // Styleguide automatically detects existing server instance
+    gulp.watch(('src/stylesheets/*'), ["styleguide"]);
 });
 
 
@@ -175,6 +191,17 @@ gulp.task("styleguide-watch", ["styleguide"], function() {
 gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
         .pipe(gp.plumber())
+        .pipe(gp.rubySass({
+            //style: 'expanded',
+            //sourcemap: true,
+            lineNumbers: false,
+            compass: true,
+            trace: true,
+            require: ['susy', 'modular-scale', 'breakpoint']
+        }))
+        .pipe(gp.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+
+    .pipe(gulp.dest('src/css'))
         .pipe(sassTasks())
         .pipe(cssminTasks())
         .pipe(gulp.dest(paths.styles.dest))
@@ -184,53 +211,55 @@ gulp.task('styles', function() {
         .pipe(gp.notify({
             title: (gutil.colors.cyan.bold('STYLES')),
             message: (gutil.colors.green.bold('Styles task complete'))
-         }))
+        }))
 });
 
 /*******************************************************************************
  *SCRIPTS
  ******************************************************************************/
 
-var getBundleName = function () {
-  var name = require('./package.json').name;
-  return name + '.' + 'min';
+var getBundleName = function() {
+    var name = require('./package.json').name;
+    return name + '.' + 'min';
 };
 
 gulp.task('scripts', function() {
 
-  var bundler = browserify({
-    entries: ['./src/scripts/main.js'],
-    debug: true
-  });
+    var bundler = browserify({
+        entries: ['./src/scripts/main.js'],
+        debug: true
+    });
 
-  var bundle = function() {
-    return bundler
-      .bundle()
-      .pipe(source(getBundleName() + '.js'))
-      .pipe(buffer())
-      .pipe(gp.sourcemaps.init({loadMaps: true}))
-        // Add transformation tasks to the pipeline here.
-      .pipe(gulp.dest('./src/scripts/'))
-      .pipe(gp.uglify())
-      .pipe(gp.sourcemaps.write('./'))
-      .pipe(gulp.dest('./dist/scripts/'))
-      .pipe(gp.notify({
-             title: (gutil.colors.cyan.bold('SCRIPTS')),
-            message: (gutil.colors.green.bold( 'browserify task complete'))
-        }));
-  };
+    var bundle = function() {
+        return bundler
+            .bundle()
+            .pipe(source(getBundleName() + '.js'))
+            .pipe(buffer())
+            .pipe(gp.sourcemaps.init({
+                loadMaps: true
+            }))
+            // Add transformation tasks to the pipeline here.
+            .pipe(gulp.dest('./src/scripts/'))
+            .pipe(gp.uglify())
+            .pipe(gp.sourcemaps.write('./'))
+            .pipe(gulp.dest('./dist/scripts/'))
+            .pipe(gp.notify({
+                title: (gutil.colors.cyan.bold('SCRIPTS')),
+                message: (gutil.colors.green.bold('browserify task complete'))
+            }));
+    };
 
-  return bundle();
+    return bundle();
 });
 
-gulp.task('modernizr',  function() {
-    return gulp.src('src/scripts/vendor/modernizr.js')   // js that needs to be placed in the head
-    .pipe(jsminTasks())
-    .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
-     .pipe(gp.notify({
+gulp.task('modernizr', function() {
+    return gulp.src('src/scripts/vendor/modernizr.js') // js that needs to be placed in the head
+        .pipe(jsminTasks())
+        .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
+        .pipe(gp.notify({
             title: 'modernizr',
             message: 'modernizr task complete'
-      }));
+        }));
 });
 
 /*******************************************************************************
@@ -252,8 +281,8 @@ gulp.task('image', ['sprites'], function() {
             stream: true
         }))
         .pipe(gp.notify({
-             title: (gutil.colors.green.bold('IMAGES')),
-            message: (gutil.colors.green.bold( 'Image task complete'))
+            title: (gutil.colors.green.bold('IMAGES')),
+            message: (gutil.colors.green.bold('Image task complete'))
         }));
 
 });
@@ -280,8 +309,8 @@ gulp.task('sprites', function() {
         .pipe(gp.size())
         .pipe(gulp.dest('dist/image/sprites'))
         .pipe(gp.notify({
-             title: (gutil.colors.green.bold('IMAGES')),
-            message: (gutil.colors.green.bold( 'Sprites task complete'))
+            title: (gutil.colors.green.bold('IMAGES')),
+            message: (gutil.colors.green.bold('Sprites task complete'))
         }));
 
 
@@ -317,8 +346,8 @@ gulp.task('html', ['styles'], function() {
             stream: true
         }))
         .pipe(gp.notify({
-             title: (gutil.colors.cyan.bold('HTML')),
-            message: (gutil.colors.green.bold( 'HTML task complete'))
+            title: (gutil.colors.cyan.bold('HTML')),
+            message: (gutil.colors.green.bold('HTML task complete'))
         }));
 
 });
@@ -357,9 +386,9 @@ gulp.task('publish', function() {
 
     // gzip, Set Content-Encoding headers and add .gz extension
     .pipe(gp.awspublish.gzip())
-    .pipe(gp.rename(function(path) {
-        path.dirname = '/' + path.dirname;
-    }))
+        .pipe(gp.rename(function(path) {
+            path.dirname = '/' + path.dirname;
+        }))
 
     // publisher will add Content-Length, Content-Type and Cache-Control headers
     // and if not specified will set x-amz-acl to public-read by default
@@ -369,7 +398,7 @@ gulp.task('publish', function() {
     .pipe(publisher.cache())
 
     //sync bucket files
-   //.pipe(publisher.sync())
+    //.pipe(publisher.sync())
 
     // print upload updates to console
     .pipe(gp.awspublish.reporter({
@@ -428,7 +457,7 @@ gulp.task('watch', ['browser-sync'], function() {
  ******************************************************************************/
 
 gulp.task('build', function() {
-    runSequence('clean', ['browserify','modernizr','scripts', 'image', 'html']);
+    runSequence('clean', ['browserify', 'modernizr', 'scripts', 'image', 'html']);
 });
 
 /*******************************************************************************

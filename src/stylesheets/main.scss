@@ -39,13 +39,13 @@
 // ----------------------------------------
 // COMPONENTS / PARTIALS
 //
-
+	@import "components/_forms";
 	@import "components/_buttons";
  	@import "components/_media";
 	@import "components/_typography";
 	@import "components/_images";
 	@import "components/_navigation";
-	//@import "components/_sprites";
+
 
 
 // ----------------------------------------
@@ -54,7 +54,6 @@
 
 	@import "layout/_grid";
 	@import "layout/_footer";
-	// @import "layout/_forms";
 	@import "layout/_header";
 	@import "layout/_sidebar";
 

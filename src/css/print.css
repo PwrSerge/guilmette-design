@@ -1,64 +1,51 @@
 @media print {
   * {
-    filter: none !important;
+    -webkit-filter: none !important;
+            filter: none !important;
     -ms-filter: none !important;
     background: transparent !important;
     color: #000 !important;
-    text-shadow: none !important;
-  }
+    text-shadow: none !important; }
 
   /* Black prints faster: h5bp.com/s */
   a,
   a:visited {
-    text-decoration: underline;
-  }
+    text-decoration: underline; }
 
   a[href]:after {
-    content: ' (" attr(href) ")';
-  }
+    content: ' (" attr(href) ")'; }
 
   abbr[title]:after {
-    content: ' (" attr(title) ")';
-  }
+    content: ' (" attr(title) ")'; }
 
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
-    content: '';
-  }
+    content: ''; }
 
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+    page-break-inside: avoid; }
 
   thead {
-    display: table-header-group;
-  }
+    display: table-header-group; }
 
   tr,
   img {
-    page-break-inside: avoid;
-  }
+    page-break-inside: avoid; }
 
   img {
-    max-width: 100% !important;
-  }
+    max-width: 100% !important; }
 
-  @  page {
-    margin: .5cm;
-  }
-
+  @page {
+    margin: .5cm; }
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3;
-  }
+    widows: 3; }
 
   h2,
   h3 {
-    page-break-after: avoid;
-  }
-}
+    page-break-after: avoid; } }
