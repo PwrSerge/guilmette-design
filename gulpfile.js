@@ -101,34 +101,27 @@ var jsminTasks = gutil.lazypipe()
 /*******************************************************************************
  *BOWER
  ******************************************************************************/
-// grab libraries files from bower_components, minify and push in /public
-gulp.task('libs', function() {
+// grab libraries files from bower_components and push in /src
+gulp.task('bower', function() {
     var jsFilter = gulpFilter('*.js');
-    var cssFilter = gulpFilter('*.css');
+    var cssFilter = gulpFilter(['*.css', '*.scss']);
     var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);
 
     return gulp.src(mainBowerFiles({
         debugging: true
     }))
 
-    // grab vendor js files from bower_components, minify and push in /public
+    // grab vendor js files from bower_components and push in /src
     .pipe(jsFilter)
-        .pipe(gulp.dest('src/scripts/vendor'))
-        // .pipe(gp.uglify())
-        // .pipe(gp.rename({
-        //     suffix: ".min"
-        // }))
         .pipe(gulp.dest('src/scripts/vendor'))
         .pipe(jsFilter.restore())
 
-    // grab vendor css files from bower_components, minify and push in /public
+    // grab vendor css files from bower_components and push in /src
     .pipe(cssFilter)
-        .pipe(gulp.dest('src/stylesheets/vendor'))
-        .pipe(cssminTasks())
         .pipe(gulp.dest('src/stylesheets/vendor'))
         .pipe(cssFilter.restore())
 
-    // grab vendor font files from bower_components and push in /public
+    // grab vendor font files from bower_components and push in /src
     .pipe(fontFilter)
         .pipe(gp.flatten())
         .pipe(gulp.dest('src/fonts'))

@@ -12,7 +12,7 @@ var $ = require('jquery');
 var Modernizr = require('browsernizr');
 
 //require('svg4everybody');
-require('./vendor/snap.svg-min.js')
+var Snap = require('snapsvg')
 require('./plugins.js')
 
 // First lets create our drawing surface out of existing SVG element

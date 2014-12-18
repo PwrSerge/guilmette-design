@@ -1,5 +1,5 @@
 {
-  "name": "GuilmetteDesign",
+  "name": "guilmette-design",
   "version": "0.0.2",
   "ignore": [
     "**/.*",
@@ -9,12 +9,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
-    "normalize.css": "~3.0.1",
-    "trmix": "~1.1.0",
-    "svg4everybody": "*",
-    "snap.svg": "~0.3.0",
-    "modernizr": "~2.8.3"
+    "normalize.scss": "~3.0.2+normalize.3.0.2",
+    "webfontloader": "~1.5.10",
+    "sass-web-fonts": "*"
   },
   "overrides": {
     "jcrop": {

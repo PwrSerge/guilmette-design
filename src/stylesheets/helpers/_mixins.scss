@@ -141,26 +141,7 @@
 }
 
 
-@mixin animation($content) {
-    animation: $content;
-    -moz-animation: $content;
-    -webkit-animation: $content;
-}
-
-@mixin keyframes($name) {
-    @keyframes #{$name} {
-        @content;
-    }
-
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-}
-
+// Clearfix mixin
 // set to  false to extend else inject mixin
 @mixin cf($extend: true) {
     @if $extend {
