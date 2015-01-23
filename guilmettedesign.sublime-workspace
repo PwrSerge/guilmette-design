@@ -191,16 +191,19 @@
 			"file": "gulpfile.js",
 			"settings":
 			{
-				"buffer_size": 13957,
+				"buffer_size": 13958,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/scripts/main.js",
+			"contents": "Remote:   origin @ https://PwrSerge@bitbucket.org/PwrSerge/guilmette-design.git\nLocal:    master ~\\Desktop\\Serge\\guilmette-design\nHead:     3fca5b1 change in node modules and bower components\n\n\nStashes:\n	0: WIP on master: afbe28b changed modernizr and javascript tasks\n	1: On master: with anomyzer.scss\n	2: On master: work01\n\nUntracked files:\n	src/stylesheets/vendor/\n\nChanges:\n	Modified   guilmettedesign.sublime-workspace\n\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash, Z = create stash including untracked files\n#    backspace = discard stash",
 			"settings":
 			{
-				"buffer_size": 2695,
-				"line_ending": "Unix"
+				"buffer_size": 1186,
+				"line_ending": "Windows",
+				"name": "*git-status*: guilmette-design",
+				"read_only": true,
+				"scratch": true
 			}
 		},
 		{
@@ -220,10 +223,13 @@
 			}
 		},
 		{
-			"file": "src/stylesheets/base/_base.scss",
+			"contents": "//============================================================\n// VARIABLES\n//============================================================\n\n//undefined\n// Project  paths\n//--------------------------------------------------------------------\n\n// Image directory. Change this to the optimised path when deploying\n$img: '../image/';\n\n//undefined\n// Colours\n//--------------------------------------------------------------------\n\n// Neutral color palette\n$palette-neutral--xdark:  #2C3643;\n$palette-neutral--dark:   #3B444F;\n$palette-neutral--base:   #f8f7f2;\n$palette-neutral--light:  #99A9B3;\n$palette-neutral--xlight: #DBE6EC;\n\n// Primary color palette\n$palette-blue--dark:  #1D508D;\n$palette-blue--base:  #206FAC;\n$palette-blue--light: #288AD6;\n$palette-purple-dark: #140b1d;\n$palette-purple-base: #3e225b;\n$palette-purple-light: #9362c4;\n$palette-green-dark: #5f8728;\n$palette-green-base: #8cc63e;\n$palette-green-light: #CFF898;\n\n$palette-red:         #FA5E5B;\n$palette-orange:      #FFC83F;\n$palette-yellow:      #FEEF6D;\n\n// Themes\n$themes: (\n  brand: (\n    primary: $palette-blue--base,\n    secondary: $palette-blue--dark,\n    contrast: white\n  ),\n  highlight: (\n    primary: $palette-yellow,\n    secondary: $palette-orange,\n    contrast: $palette-neutral--dark\n  ),\n  neutral: (\n    primary: $palette-neutral--light,\n    secondary: $palette-neutral--xlight,\n    contrast: $palette-neutral--xdark\n  )\n);\n// main colors\n\n$base-background-image: url(../image/newBG-grey2.svg);\n\n$color-base:  $palette-purple-base;\n$color-base-background: $palette-neutral--base;\n$color-secondary: $palette-green-base;\n$color-tertiary:  $palette-green-light;\n$color-accent: $palette-orange;\n$color-attention: $palette-red;\n\n\n\n\n//undefined\n// Fonts\n//--------------------------------------------------------------------\n//Google fonts\n//@include web-fonts(\"Poiret One\");\n$font-p: Kavoon;\n$font-s: Wendy One;\n$font-t: Montserrat;\n\n\n// Or directly:\n//$fonts: Kavoon, Wendy One, Bonbon;\n//undefined\n\n// Font Family\n$heading-font: \"Montserrat\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n$sans-serif-font: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n$serif-font: Georgia, Times, \"Times New Roman\", serif;\n\n// Fixed Font\n$fixed-font-family: monospace;\n$fixed-font-size: 85%;\n$fixed-line-height: $base-line-height;\n\n// Font weights\n$type-weight: (thin: 200, light: 300, regular: 400, bold: 700, xtrabold: 900);\n\n// Base Font\n$base-font-family: $sans-serif-font;\n$base-font-size: 16px;\n$base-line-height: 26px;\n\n// Rhythm unit (Compass vertical rhythm)\n$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height\n$rhythm-unit: 'rem';// Sets rhythm unit to rem. Remove to use default em unit.\n$rem-with-px-fallback: false;\n\n// configs for modular scale\n$ms-base: 1rem;\n$ms-ratio: $major-third;  // 1.25\n\n\n//Sass map (Sass v3.3) with different font sizes using scale\n$type-scale: (tiny: (font-size: ms(-2), base-lines: .5), small: (font-size: ms(-1), base-lines: .75), base: (font-size: ms(0), base-lines: 1), medium: (font-size: ms(1), base-lines: 1), large: (font-size: ms(2), base-lines: 1), xlarge: (font-size: ms(3), base-lines: 1.5), xxlarge: (font-size: ms(4), base-lines: 2));\n\n//undefined\n// Dimensions\n//--------------------------------------------------------------------\n\n//breakpoint values\n\n$breakpoint-to-ems: true;\n$bp-verysmall: 250px;\n$bp-small: 500px;\n$bp-medium: 700px;\n$bp-large: 1250px;\n$bp-verylarge: 1600px;\n\n// breakpoint\n// assume min-width (by default) if only a number\n$breakpoint-medium-width: 500px;\n$breakpoint-medium-width-em: 30em;\n\n// set min-width/max-width if both values are numbers\n$breakpoint-medium-not-wide: 500px 700px;\n\n// set min/max of feature if there are two numbers\n$breakpoint-medium-height: height 300px 700px;\n\n// if one value is a string, assume a feature/value pair\n$breakpoint-kind-of-wide: min-width 700px;\n$breakpoint-not-too-wide: max-width 700px;\n\n// for multidimensional lists, assume each item is a feature value pair\n$breakpoint-wide-portrait: (max-width 700px) (orientation portrait);\n\n// handle one-sided features (ie. monochrome)\n$breakpoint-wide-portrait-mono: (max-width 700px) (orientation portrait) monochrome;\n$breakpoint-mono: monochrome;\n$breakpoint-hi-rez: min-resolution 1.5dppx;\n\n//undefined\n// Easing\n//undefined\n// @see http://robertpenner.com/\n// @see http://matthewlein.com/ceaser/\n//--------------------------------------------------------------------\n\n// Cubic\n$easein-cubic: cubic-bezier(.55, .055, .675, .19);\n$easout-cubic: cubic-bezier(.215, .61, .355, 1);\n$easeinout-cubic: cubic-bezier(.645, .045, .355, 1);\n\n// Circ\n$easein-circ: cubic-bezier(.6, .04, .98, .335);\n$easeout-circ: cubic-bezier(.075, .82, .165, 1);\n$easeinout-circ: cubic-bezier(.785, .135, .15, .86);\n\n// Expo\n$easein-expo: cubic-bezier(.95, .05, .795, .035);\n$easeout-expo: cubic-bezier(.19, 1, .22, 1);\n$easeinout-expo: cubic-bezier(1, 0, 0, 1);\n\n// Quad\n$easein-quad: cubic-bezier(.55, .085, .68, .53);\n$easeout-quad: cubic-bezier(.25, .46, .45, .94);\n$easeinout-quad: cubic-bezier(.455, .03, .515, .955);\n\n// Quart\n$easein-quart: cubic-bezier(.895, .03, .685, .22);\n$easeout-quart: cubic-bezier(.165, .84, .44, 1);\n$easeinout-quart: cubic-bezier(.77, 0, .175, 1);\n\n// Quint\n$easein-quint: cubic-bezier(.755, .05, .855, .06);\n$easeout-quint: cubic-bezier(.23, 1, .32, 1);\n$easeinout-quint: cubic-bezier(.86, 0, .07, 1);\n\n// Sine\n$easein-sine: cubic-bezier(.47, 0, .745, .715);\n$easeout-sine: cubic-bezier(.39, .575, .565, 1);\n$easeinout-sine: cubic-bezier(.445, .05, .55, .95);\n\n// Back\n$easein-back: cubic-bezier(.6, -.28, .735, .045);\n$easeout-back: cubic-bezier(.175, .885, .32, 1.275);\n$easeinout-back: cubic-bezier(.68, -.55, .265, 1.55);\n\n//Z-index\n//see http://css-tricks.com/handling-z-index/\n//--------------------------------------------------------------------\n\n$zindex: (\n  modal     : 9000,\n  overlay   : 8000,\n  dropdown  : 7000,\n  header    : 6000,\n  footer    : 5000\n);\n\n\n",
+			"file": "src/stylesheets/helpers/_vars.scss",
+			"file_size": 5961,
+			"file_write_time": 130632917460781250,
 			"settings":
 			{
-				"buffer_size": 1657,
+				"buffer_size": 5962,
 				"line_ending": "Unix"
 			}
 		},
@@ -234,44 +240,26 @@
 				"buffer_size": 2371,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"contents": "@import url(http://fonts.googleapis.com/css?family=Kavoon|Wendy+One|Montserrat);\n\n.header-title, .header-logo {\n  position: relative;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/*************************************************\n*BASE\n**************************************************/\nhtml {\n  font-size: 100%;\n  line-height: 1.625em;\n}\n\n*,\n*,\n*:after,\n*:before {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\nbody {\n  background: #f8f7f2;\n  background-size: cover;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  margin: 0;\n  padding: 0;\n  z-index: 0;\n}\n\narticle {\n  line-height: 1.5em;\n}\n\nh1, h2, h3, h4, h5 {\n  font-family: \"Montserrat\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  -webkit-font-feature-settings: \"liga\", \"dlig\", \"onum\";\n  -moz-font-feature-settings: \"liga\", \"dlig\", \"onum\";\n  -ms-font-feature-settings: \"liga\", \"dlig\", \"onum\";\n  font-feature-settings: \"liga\", \"dlig\", \"onum\";\n}\n\nh1 {\n  font-size: 2.44141rem;\n  line-height: 3.25rem;\n  font-weight: 900;\n  color: #3e225b;\n  margin: 0;\n}\n\nh2 {\n  font-size: 1.95313rem;\n  line-height: 2.4375rem;\n  font-weight: 700;\n  border-bottom-width: 0.125rem;\n  border-bottom-style: solid;\n  padding-bottom: 1.5rem;\n  border-color: gray;\n  color: #3e225b;\n}\n\nh3 {\n  font-size: 1.5625rem;\n  line-height: 1.625rem;\n  font-weight: 400;\n  color: #8cc63e;\n}\n\nh4 {\n  font-size: 1.25rem;\n  line-height: 1.625rem;\n  font-weight: 400;\n}\n\nh5 {\n  font-size: 1rem;\n  line-height: 1.625rem;\n}\n\np {\n  font-size: 1.25rem;\n  line-height: 1.625rem;\n  margin-bottom: 1.625rem;\n  word-break: break-word;\n  -moz-hyphens: auto;\n  -ms-hyphens: auto;\n  -webkit-hyphens: auto;\n  hyphens: auto;\n}\n\nsmall {\n  font-size: 0.8rem;\n  line-height: 1.21875rem;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\nlabel {\n  display: block;\n  margin-bottom: 10px;\n}\n\ntable {\n  background-color: transparent;\n  border-collapse: collapse;\n  border-spacing: 0;\n  max-width: 100%;\n}\n\nimg,\nobject,\nembed {\n  max-width: 100%;\n}\n\n/*************************************************\n*BUTTONS\n**************************************************/\n.btn {\n  background: #83B81B;\n  border: 2px solid #83B81B;\n  color: #fff;\n  font-family: sans-serif;\n  font-size: 0.75em;\n  padding: 1em;\n  text-decoration: none;\n}\n\n.btn:hover {\n  background: #fff;\n  color: #83B81B;\n}\n\n.btn:active {\n  background: #fff;\n  border-color: #000;\n  color: #000;\n}\n\n.btn.btn-medium {\n  font-size: 1.25em;\n}\n\n.btn.btn-large {\n  font-size: 2em;\n}\n\n/*************************************************\n*MEDIA\n**************************************************/\n.media {\n  overflow: hidden;\n}\n\n.media .media__obj {\n  float: left;\n}\n\n.media .media__obj img {\n  display: block;\n}\n\n.media .media__obj--ext {\n  float: right;\n}\n\n.media__bd {\n  overflow: hidden;\n}\n\n.flex__container {\n  display: block;\n  position: relative;\n  padding: 0;\n  overflow: hidden;\n}\n\n.flex__container:before {\n  content: \"\";\n  display: block;\n  padding-bottom: 100%;\n  width: 100%;\n}\n\n.flex__container .flex__item,\n.flex__container iframe,\n.flex__container object,\n.flex__container embed {\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n\n.flex__container--16x9:before {\n  padding-bottom: 56.25%;\n}\n\n.flex__container--4x3:before {\n  padding-bottom: 75%;\n}\n\n.element--invisible {\n  position: absolute !important;\n  height: 1px;\n  width: 1px;\n  overflow: hidden;\n  clip: rect(1px 1px 1px 1px);\n  /* IE6, IE7 */\n  clip: rect(1px, 1px, 1px, 1px);\n}\n\n.container__centered-box {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  background-color: rgba(135, 206, 235, 0.2);\n  height: 500px;\n  width: 100%;\n}\n\n/*************************************************\n*TYPOGRAPHY\n**************************************************/\n.headline {\n  margin-top: 0;\n  line-height: 1.2;\n}\n\n.txt-left {\n  text-align: left;\n}\n\n.txt-right {\n  text-align: right;\n}\n\n.txt-center {\n  text-align: center;\n}\n\n/*************************************************\n*IMAGES\n**************************************************/\n.cover {\n  -moz-background-size: cover;\n  -o-background-size: cover;\n  -webkit-background-size: cover;\n  background-size: cover;\n}\n\n.contain {\n  -moz-background-size: contain;\n  -o-background-size: contain;\n  -webkit-background-size: contain;\n  background-size: contain;\n}\n\n.ui-img,\n.no-bleed:after {\n  background-image: url(\"../image//sprites/sprite.svg\");\n  background-repeat: no-repeat;\n}\n\n.no-svg .ui-img, .no-svg\n.no-bleed:after {\n  background-image: url(\"../image//ui-separate-std-sprite.png\");\n}\n\n.no-bleed {\n  position: relative;\n}\n\n.no-bleed:after {\n  background-position: 0 0;\n  background-size: 380px;\n  content: ' ';\n  display: block;\n  height: 380px;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 260px;\n}\n\n.my-svg-container {\n  height: 0;\n  position: relative;\n  width: 10%;\n  padding-top: 10%;\n}\n\n.my-svg {\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\nsvg {\n  fill: currentColor;\n}\n\n.icon {\n  height: 1em;\n  width: 1em;\n}\n\n.icon--big {\n  height: 1.5em;\n  width: 1.5em;\n}\n\n.icon--colorprimary {\n  color: #8cc63e;\n}\n\n/*************************************************\n*NAVIGATION\n**************************************************/\n.nav-toggle {\n  position: relative;\n  background-color: #fff;\n  cursor: pointer;\n  float: right;\n  height: 6em;\n  padding-top: 2em;\n  z-index: 2;\n  display: inline-block;\n}\n\n@media (min-width: 43.75em) {\n  .nav-toggle {\n    display: none;\n  }\n}\n\n.nav-main {\n  height: 6em;\n  position: relative;\n  z-index: 1;\n  transform: translate3d(0, -18em, 0);\n}\n\n@media (min-width: 43.75em) {\n  .nav-main {\n    transform: translate3d(0, 0, 0);\n    background-color: #fff;\n    height: 6em;\n  }\n}\n\n.nav-main.nav-activated, .inner-wrapper.nav-activated {\n  transition: transform .4s ease;\n}\n\n.nav-main.open {\n  transform: translate3d(0, 0, 0);\n}\n\n.inner-wrapper.open {\n  transform: translate3d(0, 18em, 0);\n}\n\n.inner-wrapper {\n  transform: translate3d(0, 6em, 0);\n}\n\n.nav-main__list {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  color: #fff;\n  overflow: hidden;\n  text-align: center;\n  width: 100%;\n  background-color: #8cc63e;\n}\n\n@media (min-width: 43.75em) {\n  .nav-main__list {\n    color: #3e225b;\n    background-color: transparent;\n    display: inline-block;\n  }\n}\n\n.nav-main__item {\n  padding: 1em;\n  width: 100%;\n}\n\n.nav-main__item:hover {\n  background-color: #3e225b;\n}\n\n@media (min-width: 43.75em) {\n  .nav-main__item {\n    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ffffff 51%, #ffffff 100%);\n    background-size: auto 200%;\n    transition: background-position 0.5s ease-out;\n    background-position: 0 -100%;\n    text-align: middle;\n    line-height: 4em;\n    height: 6em;\n    display: inline-block;\n    padding: 0.75em;\n    width: auto;\n  }\n\n  .nav-main__item:hover {\n    background-color: #e6e6e6;\n    background-position: 0 0;\n  }\n}\n\n.flex-nav {\n  display: flex;\n  width: 100%;\n}\n\n.flex-nav-item, .flex-nav-item--search {\n  align-items: center;\n  background-color: #ccc;\n  border-left: 1px solid #999;\n  display: flex;\n  justify-content: center;\n  padding: 5px 10px;\n}\n\n.flex-nav-item:hover {\n  background-color: #aaa;\n}\n\n.flex-nav-item--search {\n  -webkit-flex: 1;\n  flex: 1;\n}\n\n.flex-nav-item--search label {\n  display: block;\n  margin: 0 auto;\n  max-width: 500px;\n  width: 100%;\n}\n\n.flex-nav-item--search input {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  display: block;\n  width: 100%;\n}\n\n/*************************************************\n*GRID\n**************************************************/\nheader {\n  width: 100%;\n  float: left;\n  padding-left: Infinity%;\n  padding-right: Infinity%;\n}\n\n.header-wrapper {\n  width: 83.33333%;\n  float: left;\n  padding-left: 0;\n  padding-right: 0;\n}\n\n.nav-toggle {\n  width: 16.66667%;\n  float: right;\n  padding-left: 0;\n  padding-right: 0;\n}\n\n.nav-main, .footer-main {\n  width: 100%;\n  float: left;\n  padding-left: Infinity%;\n  padding-right: Infinity%;\n}\n\nmain {\n  width: 83.33333%;\n  float: left;\n  padding-left: Infinity%;\n  padding-right: Infinity%;\n  margin-left: 8.33333%;\n  margin-right: 8.33333%;\n}\n\n@media (min-width: 43.75em) {\n  .header-wrapper {\n    width: 41.66667%;\n    float: left;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .nav-main {\n    width: 58.33333%;\n    float: right;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  main {\n    width: 66.66667%;\n    float: left;\n    padding-left: Infinity%;\n    padding-right: Infinity%;\n    margin-left: 16.66667%;\n    margin-right: 16.66667%;\n  }\n}\n\n@media (min-width: 78.125em) {\n  .header-wrapper {\n    width: 58.33333%;\n    float: left;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .nav-main {\n    width: 41.66667%;\n    float: right;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  main {\n    width: 50%;\n    float: left;\n    padding-left: Infinity%;\n    padding-right: Infinity%;\n    margin-left: 25%;\n    margin-right: 25%;\n  }\n\n  .footer-main {\n    width: 100%;\n    float: left;\n    padding-left: Infinity%;\n    padding-right: Infinity%;\n  }\n}\n/*************************************************\n*FOOTER\n**************************************************/\n.footer-main {\n  padding: 1em 4em;\n  margin-top: 3.25rem;\n  border-color: #e6e6e6;\n  background: #ccc;\n}\n\n/*************************************************\n*HEADER\n**************************************************/\n.header-container {\n  height: 6em;\n  font-family: \"Montserrat\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  background-color: #fff;\n  z-index: 2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n}\n\n.header-container--fixed {\n  background-color: #fff;\n  width: 100%;\n  z-index: 2;\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n\n.header-wrapper {\n  height: 6em;\n  position: relative;\n  background-color: #fff;\n  word-wrap: break-word;\n  z-index: 2;\n}\n\n.header-title {\n  font-size: 2em;\n  line-height: 0.9em;\n  vertical-align: middle;\n  padding-left: 2em;\n}\n\n.header-title:after {\n  content: \" Design\";\n  color: #8cc63e;\n}\n\n@media (min-width: 78.125em) {\n  .header-title {\n    font-size: 2.95em;\n    line-height: 3.2em;\n  }\n}\n\n.header-logo {\n  float: left;\n  height: 3em;\n  width: 3em;\n}\n\n@media (min-width: 78.125em) {\n  .header-logo {\n    height: 4em;\n    width: 4em;\n  }\n}\n\n/*************************************************\n*SIDEBAR\n**************************************************/\n.date-ranges {\n  font-family: \"Montserrat\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 1.25rem;\n  line-height: 1.625rem;\n  font-weight: 400;\n  color: #8cc63e;\n}\n\n.job-end:before {\n  content: \" - \";\n}\n\n@media print {\n  * {\n    filter: none !important;\n    -ms-filter: none !important;\n    background: transparent !important;\n    color: #000 !important;\n    text-shadow: none !important;\n  }\n\n  /* Black prints faster: h5bp.com/s */\n  a,\n  a:visited {\n    text-decoration: underline;\n  }\n\n  a[href]:after {\n    content: ' (\" attr(href) \")';\n  }\n\n  abbr[title]:after {\n    content: ' (\" attr(title) \")';\n  }\n\n  .ir a:after,\n  a[href^=\"javascript:\"]:after,\n  a[href^=\"#\"]:after {\n    content: '';\n  }\n\n  pre,\n  blockquote {\n    border: 1px solid #999;\n    page-break-inside: avoid;\n  }\n\n  thead {\n    display: table-header-group;\n  }\n\n  tr,\n  img {\n    page-break-inside: avoid;\n  }\n\n  img {\n    max-width: 100% !important;\n  }\n\n  @  page {\n    margin: .5cm;\n  }\n\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n  }\n\n  h2,\n  h3 {\n    page-break-after: avoid;\n  }\n}\n",
-			"file": "src/styleguide/css/styleguide.css",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 11509,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Remote:   origin @ https://PwrSerge@bitbucket.org/PwrSerge/guilmette-design.git\nLocal:    master ~\\Desktop\\Serge\\guilmette-design\nHead:     594dca1 sass file changes\n\n\nStashes:\n	0: WIP on master: afbe28b changed modernizr and javascript tasks\n	1: On master: with anomyzer.scss\n	2: On master: work01\n\nChanges:\n	Modified   bower.json\n	Modified   guilmettedesign.sublime-workspace\n	Modified   gulpfile.js\n	Modified   src/scripts/main.js\n	Deleted    src/scripts/vendor/jquery.js\n	Deleted    src/scripts/vendor/modernizr.js\n	Deleted    src/scripts/vendor/normalize.css\n	Deleted    src/scripts/vendor/snap.svg-min.js\n	Deleted    src/scripts/vendor/trmix.min.js\n	Modified   src/stylesheets/helpers/_mixins.scss\n	Modified   src/stylesheets/overview.md\n	Deleted    src/stylesheets/vendor/normalize.css\n	Deleted    src/stylesheets/vendor/normalize.min.css\n\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash, Z = create stash including untracked files\n#    backspace = discard stash",
-			"settings":
-			{
-				"buffer_size": 1608,
-				"line_ending": "Windows",
-				"name": "*git-status*: guilmette-design",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 2316,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 37.0,
 		"selected_items":
 		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"git quick",
+				"Git: Quick Commit"
+			],
 			[
 				"git sta",
 				"Git: Status"
@@ -351,14 +339,6 @@
 			[
 				"git stat",
 				"Git: Status"
-			],
-			[
-				"git push",
-				"Git: Push"
-			],
-			[
-				"git quick",
-				"Git: Quick Commit"
 			],
 			[
 				"qui",
@@ -693,7 +673,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 544.0
+		"width": 440.0
 	},
 	"console":
 	{
@@ -718,17 +698,22 @@
 	[
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/bower_components",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/css",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/bower_components/webfontloader",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/vendor",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/vendor"
 	],
 	"file_history":
 	[
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/package.json",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/bower.json",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/styleguide/css/styleguide.css",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/main.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_typography.scss",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/main.js",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/package.json",
+		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/base/_base.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/vendor/normalize.min.css",
 		"/C/Documents and Settings/guilmets/My Documents/Downloads/csstyle (2).scss",
 		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/User/Terminal.sublime-settings",
@@ -750,7 +735,6 @@
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/index.html",
 		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
 		"/C/Documents and Settings/guilmets/Application Data/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/main.js",
 		"/C/Documents and Settings/guilmets/Local Settings/Temp/Snap.svg-0.3.0/demos/snap-ad/src/js/vendor/snap.svg.js",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/index.html",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/dist/image/sprites/svg-symbols.svg",
@@ -760,7 +744,6 @@
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_navigation.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/GD-logo2.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/global.js",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/base/_base.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.jshintignore",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/.jshintrc",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/aws-credentials.json",
@@ -781,8 +764,6 @@
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/helpers/_mixins.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/helpers/_placeholders.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/helpers/_vars.scss",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/components/_typography.scss",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/main.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/twitter.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/icons/github.svg",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/image/sprites/svgsprite.svg",
@@ -853,8 +834,7 @@
 		"/D/!PROJECTS/WebDesign/Resume_gulp/gulpfile.js",
 		"/D/!PROJECTS/WebDesign/Resume_gulp/src/index.html",
 		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_images.scss",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_media.scss",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/helpers/_mixins.scss"
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_media.scss"
 	],
 	"find":
 	{
@@ -877,6 +857,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mainBowerFiles",
 			", minify ",
 			", minify and push in /",
 			"public",
@@ -1021,7 +1002,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1030,15 +1011,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13957,
+						"buffer_size": 13958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2521,
-								2521
+								3189,
+								3189
 							]
 						],
 						"settings":
@@ -1153,7 +1134,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1764.0,
+						"translation.y": 339.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1161,23 +1142,23 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/scripts/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2695,
+						"buffer_size": 1186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								683,
-								683
+								437,
+								437
 							]
 						],
 						"settings":
 						{
+							"__vi_external_disable": true,
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -1282,16 +1263,20 @@
 							},
 							"codeintel_tooltips": "popup",
 							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
+							"draw_white_space": "none",
+							"git_repo": "C:\\Documents and Settings\\guilmets\\Desktop\\Serge\\guilmette-design",
+							"git_status": true,
+							"git_view": "status",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
 						},
-						"translation.x": 0.0,
+						"translation.x": -0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1416,6 +1401,7 @@
 								"Python Django": "Python"
 							},
 							"codeintel_tooltips": "popup",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
 							"sublime_auto_complete": true,
 							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
 						},
@@ -1423,7 +1409,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1439,8 +1425,8 @@
 						"selection":
 						[
 							[
-								315,
-								315
+								1833,
+								1833
 							]
 						],
 						"settings":
@@ -1555,27 +1541,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1134.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/stylesheets/base/_base.scss",
+					"file": "src/stylesheets/helpers/_vars.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1657,
+						"buffer_size": 5962,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								500,
-								500
+								330,
+								330
 							]
 						],
 						"settings":
@@ -1686,14 +1672,14 @@
 							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
 							"sublime_auto_complete": true,
 							"syntax": "Packages/Syntax Highlighting for Sass/Syntaxes/SCSS.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1709,8 +1695,8 @@
 						"selection":
 						[
 							[
-								182,
-								179
+								409,
+								409
 							]
 						],
 						"settings":
@@ -1828,312 +1814,7 @@
 						"translation.y": 73.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/styleguide/css/styleguide.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								367,
-								367
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1608,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								402,
-								402
-							]
-						],
-						"settings":
-						{
-							"__vi_external_disable": true,
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Seti.tmTheme",
-							"draw_white_space": "none",
-							"git_repo": "C:\\Documents and Settings\\guilmets\\Desktop\\Serge\\guilmette-design",
-							"git_status": true,
-							"git_view": "status",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 22.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2316,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1561,
-								1561
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 661.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -2188,7 +1869,7 @@
 	},
 	"output.git-commit":
 	{
-		"height": 221.0
+		"height": 284.0
 	},
 	"output.git-fetch":
 	{

@@ -2,14 +2,14 @@
 // VARIABLES
 //============================================================
 
-//undefined
+//
 // Project  paths
 //--------------------------------------------------------------------
 
 // Image directory. Change this to the optimised path when deploying
 $img: '../image/';
 
-//undefined
+//
 // Colours
 //--------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ $color-attention: $palette-red;
 
 
 
-//undefined
+//
 // Fonts
 //--------------------------------------------------------------------
 //Google fonts
@@ -75,6 +75,7 @@ $color-attention: $palette-red;
 $font-p: Kavoon;
 $font-s: Wendy One;
 $font-t: Montserrat;
+
 
 // Or directly:
 //$fonts: Kavoon, Wendy One, Bonbon;
@@ -111,7 +112,7 @@ $ms-ratio: $major-third;  // 1.25
 //Sass map (Sass v3.3) with different font sizes using scale
 $type-scale: (tiny: (font-size: ms(-2), base-lines: .5), small: (font-size: ms(-1), base-lines: .75), base: (font-size: ms(0), base-lines: 1), medium: (font-size: ms(1), base-lines: 1), large: (font-size: ms(2), base-lines: 1), xlarge: (font-size: ms(3), base-lines: 1.5), xxlarge: (font-size: ms(4), base-lines: 2));
 
-//undefined
+//
 // Dimensions
 //--------------------------------------------------------------------
 

@@ -96,6 +96,31 @@ var jsminTasks = gutil.lazypipe()
     })
     .pipe(gp.uglify);
 
+/*******************************************************************************
+ *TEMPLATE
+ ******************************************************************************/
+//Compile to HTML
+var swig = require('gulp-swig');
+
+gulp.task('templates', function() {
+  gulp.src('./lib/*.html')
+    .pipe(gp.swig())
+    .pipe(gulp.dest('./dist/'))
+});
+
+//Get data via JSON file, keyed on filename.
+var getJsonData = function(file) {
+  return require('./examples/' + path.basename(file.path) + '.json');
+};
+
+gulp.task('json-test', function() {
+  return gulp.src('./examples/test1.html')
+    .pipe(data(getJsonData))
+    .pipe(swig())
+    .pipe(gulp.dest('build'));
+});
+
+
 
 
 /*******************************************************************************
