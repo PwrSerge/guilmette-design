@@ -68,6 +68,11 @@
   width: 100%;
   padding: 1em;
 
+  &:hover {
+    //@include hover-style (red, 15%);
+    background-color: $color-base;
+  }
+
   @include breakpoint($bp-medium) {
     line-height: 4em;
     display: inline-block;
@@ -86,9 +91,6 @@
     }
   }
 
-  &:hover {
-    background-color: $color-base;
-  }
 }
 
 /*

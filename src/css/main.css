@@ -330,6 +330,10 @@ main {
   padding: 1em;
 }
 
+.nav-main__item:hover {
+  background-color: #3e225b;
+}
+
 @media (min-width: 43.75em) {
   .nav-main__item {
     line-height: 4em;
@@ -351,10 +355,6 @@ main {
     background-color: #e6e6e6;
     background-position: 0 0;
   }
-}
-
-.nav-main__item:hover {
-  background-color: #3e225b;
 }
 
 /*

@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     pngcrush       = require('imagemin-pngcrush'),
     svgo           = require('imagemin-svgo'),
     styleguide     = require('sc5-styleguide'),
-    //Modernizr    = require('browsernizr'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter     = require('gulp-filter'),
     runSequence    = require('run-sequence'),
@@ -367,7 +366,7 @@ gulp.task('sprites', function() {
 /* ==========================================================================
    HTML
    ========================================================================== */
-gulp.task('html', ['styles'], function() {
+gulp.task('html', ['sass'], function() {
     return gulp.src('src/index.html')
         //.pipe(gp.changed(paths.html.src))
         .pipe(gp.plumber())
@@ -477,7 +476,7 @@ gulp.task('watch', ['browser-sync'], function() {
     // gulp.start('url');
 
     // Watch .scss files
-    gulp.watch('src/stylesheets/**/*.scss', ['styles']);
+    gulp.watch('src/stylesheets/**/*.scss', ['sass']);
 
     // Watch .js files
     gulp.watch('src/scripts/**/*.js', ['scripts']);
