@@ -1,85 +1,83 @@
-// ====================================================
-// Based on SMACSS, OOCS, the Sass Way of structuring Sass projects
+// ==========================================================================
+//    MAIN
+//    Based on SMACSS, OOCS, the Sass Way of structuring Sass projects
+//    ==========================================================================
 
 
-// ---------------------------------------
-// VENDOR FRAMEWORKS
-//@import "vendor/colorpicker";
+// ==========================================================================
+//    VENDOR FRAMEWORKS
+//    ==========================================================================
 
- @import "compass";
- @import "compass/css3";
- @import "breakpoint";
- @import "modular-scale";
- @import "susy";
- //@import "vendor/_web-fonts";
- @import "vendor/_normalize";
+@import 'compass';
+@import 'compass/css3';
+@import 'breakpoint';
+@import 'modular-scale';
+@import 'susy';
+//@import 'vendor/normalize';
+//@import "vendor/_web-fonts";
 
+// ==========================================================================
+//    UTILS
+//    Doesn't cause Sass to output CSS
+//    Variables/mixins/placeholders/etc
+//    ==========================================================================
 
-// ----------------------------------------
-// HELPERS
-// Doesn't cause Sass to output CSS
-//Variables/mixins/placeholders/etc
+@import 'utils/vars';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+//@import "utils/_animations";
 
-@import "helpers/_vars";
-@import "helpers/_functions";
-@import "helpers/_mixins";
-@import "helpers/_placeholders";
-//@import "helpers/_animations";
+// ==========================================================================
+//    BASE
+//    Plain semantic HTML
+//    No classes/IDs are introduced yet
+//    ==========================================================================
 
-
-// ----------------------------------------
-// BASE
-// Plain semantic HTML
-// No classes/IDs are introduced yet
-
- @import "base/_base";
- /
-
-
-// ----------------------------------------
-// COMPONENTS / PARTIALS
-//
-	@import "components/_forms";
-	@import "components/_buttons";
- 	@import "components/_media";
-	@import "components/_typography";
-	@import "components/_images";
-	@import "components/_navigation";
+@import 'base/base';
+@import 'base/typography';
 
 
+// ==========================================================================
+//    COMPONENTS / PARTIALS
+//    ==========================================================================
 
-// ----------------------------------------
-// LAYOUT
-// Defining the gloabal wireframe
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/media';
+@import 'components/images';
 
-	@import "layout/_grid";
-	@import "layout/_footer";
-	@import "layout/_header";
-	@import "layout/_sidebar";
+// ==========================================================================
+//    LAYOUT
+//    Defining the gloabal wireframe
+//    ==========================================================================
 
-
-// ----------------------------------------
-// PAGES
-// page specific styles
-	@import "pages/_resume";
-	@import "pages/_home";
-
-
-// ----------------------------------------
-// THEMES
-
-	//@import "themes/_light";
-	//@import "themes/_dark";
-	//@import "themes/_orangina";
+@import 'layout/grid';
+@import 'layout/navigation';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/sidebar';
 
 
-// ----------------------------------------
-//  PRINT
+// ==========================================================================
+//    PAGES
+//    page specific styles
+//    ==========================================================================
 
- @import "print";
+//@import 'pages/resume';
+@import 'pages/home';
 
-// ----------------------------------------
-// TOOLS
+// ==========================================================================
+//    THEMES
+//    ==========================================================================
+//@import "themes/_light";
+//@import "themes/_dark";
+//@import "themes/_orangina";
+
+
+// ==========================================================================
+//    TOOLS
+//    ==========================================================================
 
 //<% if Rails.env.development? %>
 //@import "show-grid";

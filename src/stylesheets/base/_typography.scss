@@ -1,26 +1,13 @@
-/*************************************************
-*TYPOGRAPHY
-**************************************************/
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
 @include gwf($font-p, $font-s, $font-t);
-
 
 // Text styles
 .headline {
-  margin-top: 0;
   line-height: 1.2;
+  margin-top: 0;
 }
-
-
-.primary-header {
-
- }
-
-.secondary-header {
-
-}
-
-
-
 
 .txt-left {
   text-align: left;
@@ -33,4 +20,3 @@
 .txt-center {
   text-align: center;
 }
-

@@ -1,13 +1,13 @@
-/*************************************************
-*MEDIA
-**************************************************/
+/* ==========================================================================
+   MEDIA
+   ========================================================================== */
 
-//
-// Retina.
-// Currently only set to 'double' retina, meaning,
-// assets only have to be twice the normal size,
-// @reference http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
-//
+/**
+ * Retina.
+ * Currently only set to 'double' retina, meaning,
+ * assets only have to be twice the normal size,
+ * @reference http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
+ */
 
 @media (-webkit-min-device-pixel-ratio: 2),
         (min--moz-min-device-pixel-ratio: 2),
@@ -16,8 +16,7 @@
         (min-resolution: 2dppx) {
 }
 
-
-// Ported from @stubbornella
+/* Ported from @stubbornella */
 
 .media {
   overflow: hidden;
@@ -39,31 +38,31 @@
   overflow: hidden;
 }
 
-// Flexible media styles  (videos, ifram, object)
+/* Flexible media styles  (videos, ifram, object) */
 
 .flex__container {
-  display:block;
   position: relative;
-  padding: 0;
+  display: block;
   overflow: hidden;
+  padding: 0;
 
   &:before {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-  width: 100%;
-}
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+    content: '';
+  }
 
   .flex__item,
   iframe,
   object,
   embed {
-    bottom: 0;
-    height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -80,10 +79,11 @@
 //  hides from  visual design but still accessible by screen reader
 .element--invisible {
   position: absolute !important;
-  height: 1px; width: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
 }
 
 //Base on FlexBox
@@ -91,10 +91,11 @@
 //http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 .container__centered-box {
-    align-items: center;
-    display: flex;
-    justify-content:center;
-    background-color: rgba(skyblue, 0.2);
-    height: 500px;
-    width: 100%;
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(skyblue, 0.2);
+
+  align-items: center;
+  justify-content: center;
 }

@@ -1,7 +1,6 @@
-/*************************************************
-*BUTTONS
-**************************************************/
-
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 // Buttons
 //
 // Just add your descriptive text about buttons here
@@ -40,50 +39,51 @@ button {
 
 .btn {
   @include type-scale(base);
+
   font-family: $heading-font;
-  background: $color-base;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  display: inline-block;
   position: relative;
+  display: inline-block;
   margin: 0;
   padding: 5px 10px;
   cursor: pointer;
-  line-height: normal;
+  user-select: none;
   text-align: center;
-  text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
-  user-select: none;
+  text-decoration: none;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  background: $color-base;
 
-    &:hover{
-      background: $color-secondary;
+  &:hover {
+    background: $color-secondary;
+  }
 
-    }
-    &:focus,
-    &:active {
-      background: $color-tertiary;
+  &:focus,
+  &:active {
+    background: $color-tertiary;
+  }
 
-    }
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    color: #fff;
+    background: $palette-neutral--dark;
+  }
 
-    &:disabled,
-    &.is-disabled {
-      background: $palette-neutral--dark;
-      color: #fff;
-      cursor: default;
-    }
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
 
-    &::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-    }
-    // Button modifiers
-    &--full {
+  // Button modifiers
+  &--full {
     display: block;
     width: 100%;
   }
-   &.btn-medium {
+
+  &.btn-medium {
     @include type-scale(medium);
   }
 
@@ -91,7 +91,6 @@ button {
     @include type-scale(large);
   }
 }
-
 
 // Button color variations
 @each $name, $theme in $themes {
@@ -106,7 +105,6 @@ button {
 }
 
 // // buttons using John W. Long alpha-attributes mixins
-
 
 // // .button-istransparent {
 // //   @include appearance(none);

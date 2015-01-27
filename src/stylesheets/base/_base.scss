@@ -1,103 +1,109 @@
-/*************************************************
-*BASE
-*Plain semantic HTML
-**************************************************/
-
-
+/* ==========================================================================
+   BASE
+   Plain semantic HTML
+   ========================================================================== */
 @include establish-baseline;
 
 *,
 *:after,
 *:before {
-    @include box-sizing(border-box);
+  @include box-sizing(border-box);
 }
 
 body {
-    background: $color-base-background;
-    background-size: cover;
-    font-family: $base-font-family;
-    margin: 0;
-    padding: 0;
-    z-index: 0;
-    //background: $base-background-color url(../image/creampaper.png);
+  font-family: $base-font-family;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  background: $color-base-background;
+  background-size: cover;
 }
 
 article {
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 main {
-    //margin-top: 6em;
-    //position: relative;
-}
-
-#{h1, h2, h3, h4, h5} {
-    font-family: $heading-font;
-    @include font-feature;
+  // position: relative;
+  // margin-top: 6em;
 }
 
 h1 {
-    //@include type-scale(xxlarge);
-    @include type-scale(xxlarge);
-    @include type-weight(xtrabold);
-    color: $color-base;
-    margin: 0;
+  @include font-feature;
+  //@include type-scale(xxlarge);
+  @include type-scale(xxlarge);
+  @include type-weight(xtrabold);
+
+  font-family: $heading-font;
+  margin: 0;
+  color: $color-base;
 }
 
 h2 {
-    @include type-scale(xlarge);
-    @include type-weight(bold);
-    @include apply-side-rhythm-border(bottom, 2px, 1);
-    border-color: darken(white, 50%);
-    color: $color-base;
+  @include font-feature;
+  @include type-scale(xlarge);
+  @include type-weight(bold);
+  @include apply-side-rhythm-border(bottom, 2px, 1);
+
+  font-family: $heading-font;
+  color: $color-base;
+  border-color: darken(white, 50%);
 }
 
 h3 {
-    @include type-scale(large);
-    @include type-weight(regular);
-    color: $color-secondary;
+  @include font-feature;
+  @include type-scale(large);
+  @include type-weight(regular);
+
+  font-family: $heading-font;
+  color: $color-secondary;
 }
 
 h4 {
-    @include type-scale(medium);
-    @include type-weight(regular);
+  @include font-feature;
+  @include type-scale(medium);
+  @include type-weight(regular);
+
+  font-family: $heading-font;
 }
 
 h5 {
-    @include type-scale(base);
+  @include font-feature;
+  @include type-scale(base);
+
+  font-family: $heading-font;
 }
 
 p {
-    @include type-scale(medium);
-    @include margin-trailer(1);
-    @include word-break(break-word);
-    @include hyphens(auto);
+  @include type-scale(medium);
+  @include margin-trailer(1);
+  @include word-break(break-word);
+  @include hyphens(auto);
 }
 
 small {
-    @include type-scale(small);
+  @include type-scale(small);
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 table {
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
-    max-width: 100%;
+  max-width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: transparent;
 }
 
 img,
 object,
 embed {
-    max-width: 100%;
+  max-width: 100%;
 }
-

@@ -1,30 +1,32 @@
 // Load plugins
 var gulp = require('gulp'),
-    source = require('vinyl-source-stream'),
-    browserify = require('browserify'),
-    buffer = require('vinyl-buffer'),
-    stylish = require('jshint-stylish'),
-    browserSync = require('browser-sync'),
-    pngcrush = require('imagemin-pngcrush'),
-    svgo = require('imagemin-svgo'),
-    styleguide = require("sc5-styleguide"),
-    //Modernizr = require('browsernizr'),
+    source         = require('vinyl-source-stream'),
+    browserify     = require('browserify'),
+    buffer         = require('vinyl-buffer'),
+    stylish        = require('jshint-stylish'),
+    browserSync    = require('browser-sync'),
+    pngcrush       = require('imagemin-pngcrush'),
+    svgo           = require('imagemin-svgo'),
+    styleguide     = require('sc5-styleguide'),
+    //Modernizr    = require('browsernizr'),
     mainBowerFiles = require('main-bower-files'),
-    gulpFilter = require('gulp-filter'),
-    runSequence = require('run-sequence'),
-    gutil = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline', 'lazypipe']),
-    gp = require('gulp-load-plugins')({
-        pattern: ['gulp-*', 'gulp.*'],
-        replaceString: /\bgulp[\-.]/
-    });
+    gulpFilter     = require('gulp-filter'),
+    runSequence    = require('run-sequence'),
+    sass           = require('gulp-ruby-sass'),
+    gutil          = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline', 'lazypipe']),
+    gp             = require('gulp-load-plugins')({
+    pattern: ['gulp-*', 'gulp.*'],
+    replaceString: /\bgulp[\-.]/
+});
 
+/* ==========================================================================
+   CONFIGS
+   ========================================================================== */
 
+/*
+   Paths
+   ========================================================================== */
 
-/*******************************************************************************
- *CONFIGS
- ******************************************************************************/
-
-//Paths
 var paths = {
     scr: 'src',
     dest: 'dist',
@@ -46,13 +48,17 @@ var paths = {
     }
 };
 
-// fileinclude
+/*
+   fileinclude
+   ========================================================================== */
 var fileincludecfg = {
     prefix: '@@',
     basepath: '@file'
 };
 
-//Banner
+/*
+   Baner
+   ========================================================================== */
 var packg = require('./package.json');
 var banner = ['/**',
     ' * <%= packg.name %> - <%= packg.description %>',
@@ -63,17 +69,12 @@ var banner = ['/**',
     ''
 ].join('\n');
 
-//lazypipe tasks using gulp-load-utils
+/*
+   lazypipe tasks using gulp-load-utils
+   ========================================================================== */
 var sassTasks = gutil.lazypipe()
-    .pipe(gp.rubySass, {
-        //style: 'expanded',
-        //sourcemap: true,
-        lineNumbers: false,
-        compass: true,
-        trace: true,
-        require: ['susy', 'modular-scale', 'breakpoint']
-    })
-    .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
+
+     .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
     .pipe(gp.cssbeautify, {
         indent: '  ',
         openbrace: 'end-of-line',
@@ -81,14 +82,17 @@ var sassTasks = gutil.lazypipe()
     })
     .pipe(gp.uncss, ({
         html: ['src/index.html'],
-        ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open ', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
+        ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
     }));
+
 
 var cssminTasks = gutil.lazypipe()
     .pipe(gp.rename, {
+        //basename: 'main',
         suffix: '.min'
     })
     .pipe(gp.minifyCss);
+        //.pipe(gp.sourcemaps,  'write()');
 
 var jsminTasks = gutil.lazypipe()
     .pipe(gp.rename, {
@@ -96,36 +100,82 @@ var jsminTasks = gutil.lazypipe()
     })
     .pipe(gp.uglify);
 
-/*******************************************************************************
- *TEMPLATE
- ******************************************************************************/
-//Compile to HTML
-var swig = require('gulp-swig');
 
-gulp.task('templates', function() {
-  gulp.src('./lib/*.html')
-    .pipe(gp.swig())
-    .pipe(gulp.dest('./dist/'))
-});
+/*
+   Sass config
+   ========================================================================== */
+var sassconfig = function sassconfig (Container) {
+   return {
+            //style: 'expanded',
+            container: Container,
+            sourcemap: true,
+            trace: true,
+            quiet: true,
+            lineNumbers: false,
+            compass: true,
+            require: ['susy', 'modular-scale', 'breakpoint']
+        }
+    };
 
-//Get data via JSON file, keyed on filename.
-var getJsonData = function(file) {
-  return require('./examples/' + path.basename(file.path) + '.json');
+/*
+   Notify config
+   ========================================================================== */
+  var notifyconfig = function notifyconfig (Title,Message) {
+   return {
+     title: (gutil.colors.cyan.bold(Title)),
+     message: (gutil.colors.green.bold(Message))
+    }
 };
 
-gulp.task('json-test', function() {
-  return gulp.src('./examples/test1.html')
-    .pipe(data(getJsonData))
-    .pipe(swig())
-    .pipe(gulp.dest('build'));
-});
+/*
+   SVG symbol config
+   ========================================================================== */
+var svgconfig = {
+    svgId: 'icon-%f',
+    className: '.icon-%f',
+    fontSize: 16,
+    css: false,
+    svgoConfig: {
+        removeViewBox: false,
+        cleanupIDs: false
+    }
+};
+
+// gulp.task('shorthand', shell.task([
+//   'echo hello',
+//   'echo world'
+// ]))
+
+/* ==========================================================================
+   TEMPLATE
+   ========================================================================== */
+
+//Compile to HTML
+// var swig = require('gulp-swig');
+
+// gulp.task('templates', function() {
+//   gulp.src('./lib/*.html')
+//     .pipe(gp.swig())
+//     .pipe(gulp.dest('./dist/'))
+// });
+
+// //Get data via JSON file, keyed on filename.
+// var getJsonData = function(file) {
+//   return require('./examples/' + path.basename(file.path) + '.json');
+// };
+
+// gulp.task('json-test', function() {
+//   return gulp.src('./examples/test1.html')
+//     .pipe(data(getJsonData))
+//     .pipe(swig())
+//     .pipe(gulp.dest('build'));
+// });
 
 
+/* ==========================================================================
+   BOWER
+   ========================================================================== */
 
-
-/*******************************************************************************
- *BOWER
- ******************************************************************************/
 // grab libraries files from bower_components and push in /src
 gulp.task('bower', function() {
     var jsFilter = gulpFilter('*.js');
@@ -152,10 +202,9 @@ gulp.task('bower', function() {
         .pipe(gulp.dest('src/fonts'))
 });
 
-/*******************************************************************************
- *STYLEGUIDE (living style guide based on KSS notation)
- ******************************************************************************/
-
+/* ==========================================================================
+   STYLEGUIDE (living style guide based on KSS notation)
+   ========================================================================== */
 gulp.task('gs-clean', function() {
     return gulp.src('src/styleguide/*', {
             read: false
@@ -169,11 +218,11 @@ gulp.task('gs-main', function() {
         .pipe(gulp.dest('src/styleguide'))
 });
 
-gulp.task("gs-styleguide", function() {
+gulp.task('gs-styleguide', function() {
     var outputPath = 'src/styleguide';
     return gulp.src('src/stylesheets/components/*.scss')
         .pipe(styleguide({
-            title: "guilmettedesign Styleguide",
+            title: 'guilmettedesign Styleguide',
             server: true,
             rootPath: outputPath,
             styleVariables: 'src/stylesheets/helpers/_vars.scss',
@@ -191,51 +240,53 @@ gulp.task("gs-styleguide", function() {
         .pipe(gulp.dest(outputPath));
 });
 
-gulp.task("styleguide", function() {
+gulp.task('styleguide', function() {
     runSequence('gs-clean', ['styles','gs-styleguide', 'gs-main']);
 });
 
-gulp.task("styleguide-watch", ["styleguide"], function() {
+gulp.task('styleguide-watch', ['styleguide'], function() {
     // Start watching changes and update styleguide whenever changes are detected
     // Styleguide automatically detects existing server instance
-    gulp.watch(('src/stylesheets/*'), ["styleguide"]);
+    gulp.watch(('src/stylesheets/*'), ['styleguide']);
 });
 
-
-/*******************************************************************************
- *STYLES
- ******************************************************************************/
-
-gulp.task('styles', function() {
-    return gulp.src(paths.styles.src)
+/* ==========================================================================
+   STYLES
+   ========================================================================== */
+gulp.task('sass-site', function() {
+    return sass('src/stylesheets/main.scss', sassconfig('gulp-ruby-sass-site'))
         .pipe(gp.plumber())
-        .pipe(gp.rubySass({
-            //style: 'expanded',
-            //sourcemap: true,
-            lineNumbers: false,
-            compass: true,
-            trace: true,
-            require: ['susy', 'modular-scale', 'breakpoint']
-        }))
-        .pipe(gp.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-
-    .pipe(gulp.dest('src/css'))
         .pipe(sassTasks())
+        .pipe(gp.rename('main.css'))
+        .pipe(gulp.dest('./src/css/'))
         .pipe(cssminTasks())
-        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(gp.sourcemaps.write())
+        .pipe(gulp.dest('./dist/css/'))
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(gp.notify({
-            title: (gutil.colors.cyan.bold('STYLES')),
-            message: (gutil.colors.green.bold('Styles task complete'))
-        }))
+        .pipe(gp.notify(notifyconfig('STYLES','main style task complete')))
 });
 
-/*******************************************************************************
- *SCRIPTS
- ******************************************************************************/
+gulp.task('sass-print', function() {
+    return sass('src/stylesheets/print.scss', sassconfig('gulp-ruby-sass-print'))
+        .pipe(gp.plumber())
+        .pipe(sassTasks())
+        .pipe(gp.rename('print.css'))
+        .pipe(gulp.dest('./src/css/'))
+        .pipe(cssminTasks())
+        .pipe(gp.sourcemaps.write())
+        .pipe(gulp.dest('./dist/css/'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+        .pipe(gp.notify(notifyconfig('STYLES','print style task complete')));
+});
+gulp.task('sass', ['sass-site', 'sass-print']);
 
+/* ==========================================================================
+   SCRIPTS
+   ========================================================================== */
 var getBundleName = function() {
     var name = require('./package.json').name;
     return name + '.' + 'min';
@@ -261,10 +312,7 @@ gulp.task('scripts', function() {
             .pipe(gp.uglify())
             .pipe(gp.sourcemaps.write('./'))
             .pipe(gulp.dest('./dist/scripts/'))
-            .pipe(gp.notify({
-                title: (gutil.colors.cyan.bold('SCRIPTS')),
-                message: (gutil.colors.green.bold('browserify task complete'))
-            }));
+            .pipe(gp.notify(notifyconfig('SCRIPTS','browserify task complete')));
     };
 
     return bundle();
@@ -274,15 +322,13 @@ gulp.task('modernizr', function() {
     return gulp.src('src/scripts/vendor/modernizr.js') // js that needs to be placed in the head
         .pipe(jsminTasks())
         .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
-        .pipe(gp.notify({
-            title: 'modernizr',
-            message: 'modernizr task complete'
-        }));
+        .pipe(gp.notify(notifyconfig('modernizr','modernizr task complete')));
 });
 
-/*******************************************************************************
- *IMAGES
- ******************************************************************************/
+/* ==========================================================================
+   IMAGES
+   ========================================================================== */
+
 gulp.task('image', ['sprites'], function() {
     return gulp.src(paths.image.src)
         .pipe(gp.changed(paths.image.dest))
@@ -298,32 +344,17 @@ gulp.task('image', ['sprites'], function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(gp.notify({
-            title: (gutil.colors.green.bold('IMAGES')),
-            message: (gutil.colors.green.bold('Image task complete'))
-        }));
-
+        .pipe(gp.notify(notifyconfig('IMAGES','Image task complete')));
 });
 
-/*******************************************************************************
- *SVG SPRITES
- ******************************************************************************/
-
-var config = {
-    svgId: 'icon-%f',
-    className: '.icon-%f',
-    fontSize: 16,
-    css: false,
-    svgoConfig: {
-        removeViewBox: false,
-        cleanupIDs: false
-    }
-};
+/* ==========================================================================
+   SVG SPRITES
+   ========================================================================== */
 
 gulp.task('sprites', function() {
     return gulp.src('src/image/icons/*.svg')
         .pipe(gp.plumber())
-        .pipe(gp.svgSymbols(config))
+        .pipe(gp.svgSymbols(svgconfig))
         .pipe(gp.size())
         .pipe(gulp.dest('dist/image/sprites'))
         .pipe(gp.notify({
@@ -333,11 +364,9 @@ gulp.task('sprites', function() {
 
 
 });
-
-/*******************************************************************************
- *HTML
- ******************************************************************************/
-
+/* ==========================================================================
+   HTML
+   ========================================================================== */
 gulp.task('html', ['styles'], function() {
     return gulp.src('src/index.html')
         //.pipe(gp.changed(paths.html.src))
@@ -369,11 +398,9 @@ gulp.task('html', ['styles'], function() {
         }));
 
 });
-
-/*******************************************************************************
- *CLEAN
- ******************************************************************************/
-
+/* ==========================================================================
+   CLEAN
+   ========================================================================== */
 gulp.task('clean', function() {
     return gulp.src('./dist/*', {
             read: false
@@ -381,11 +408,9 @@ gulp.task('clean', function() {
         .pipe(gp.rimraf());
 
 });
-
-/*******************************************************************************
- *AWS PUBLISH
- ******************************************************************************/
-
+/* ==========================================================================
+   AWS PUBLISH
+   ========================================================================== */
 gulp.task('publish', function() {
 
     // create a new publisher
@@ -424,33 +449,29 @@ gulp.task('publish', function() {
     }));
 });
 
-/*******************************************************************************
- *BUMP VERSION
- ******************************************************************************/
-
+/* ==========================================================================
+   BUMP VERSION
+   ========================================================================== */
 gulp.task('bump', function() {
     return gulp.src(['./package.json', './bower.json'])
         .pipe(gp.bump())
         .pipe(gulp.dest('./'));
 });
 
-
-/*******************************************************************************
- *BROWSER_SYNC
- ******************************************************************************/
-
+/* ==========================================================================
+   BROWSER_SYNC
+   ========================================================================== */
 gulp.task('browser-sync', function() {
     browserSync.init(null, {
         server: {
-            baseDir: "./dist"
+            baseDir: './dist'
         }
     });
 });
 
-/*******************************************************************************
- *WATCH
- ******************************************************************************/
-
+/* ==========================================================================
+   WATCH
+   ========================================================================== */
 gulp.task('watch', ['browser-sync'], function() {
     // //opens the index page in default browser
     // gulp.start('url');
@@ -470,18 +491,16 @@ gulp.task('watch', ['browser-sync'], function() {
 
 });
 
-/*******************************************************************************
- * BUILD TASK
- ******************************************************************************/
-
+/* ==========================================================================
+   BUILD TASK
+   ========================================================================== */
 gulp.task('build', function() {
     runSequence('clean', ['browserify', 'modernizr', 'scripts', 'image', 'html']);
 });
 
-/*******************************************************************************
- * DEFAULT TASK
- ******************************************************************************/
-
+/* ==========================================================================
+   DEFAULT TASK
+   ========================================================================== */
 gulp.task('default', function() {
     runSequence('clean', ['scripts', 'image', 'html'], 'watch');
 });
