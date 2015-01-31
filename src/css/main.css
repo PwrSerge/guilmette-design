@@ -22,7 +22,6 @@ html {
 *,
 *:after,
 *:before {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -37,6 +36,7 @@ body {
 
 h1 {
   -webkit-font-feature-settings: "liga", "dlig", "onum";
+  -moz-font-feature-settings: "liga", "dlig", "onum";
   -ms-font-feature-settings: "liga", "dlig", "onum";
   font-feature-settings: "liga", "dlig", "onum";
   font-size: 2.44141rem;
@@ -49,6 +49,7 @@ h1 {
 
 h2 {
   -webkit-font-feature-settings: "liga", "dlig", "onum";
+  -moz-font-feature-settings: "liga", "dlig", "onum";
   -ms-font-feature-settings: "liga", "dlig", "onum";
   font-feature-settings: "liga", "dlig", "onum";
   font-size: 1.95313rem;
@@ -344,7 +345,6 @@ main {
     -webkit-transition: background-position 0.5s ease-out;
     transition: background-position 0.5s ease-out;
     text-align: middle;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0)), color-stop(51%, #ffffff), to(#ffffff));
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ffffff 51%, #ffffff 100%);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, #ffffff 51%, #ffffff 100%);
     background-position: 0 -100%;

@@ -5,8 +5,6 @@ var gulp = require('gulp'),
     buffer         = require('vinyl-buffer'),
     stylish        = require('jshint-stylish'),
     browserSync    = require('browser-sync'),
-    pngcrush       = require('imagemin-pngcrush'),
-    svgo           = require('imagemin-svgo'),
     styleguide     = require('sc5-styleguide'),
     mainBowerFiles = require('main-bower-files'),
     gulpFilter     = require('gulp-filter'),
@@ -335,7 +333,7 @@ gulp.task('image', ['sprites'], function() {
         .pipe(gp.cache(gp.imagemin({
             optimizationLevel: 3,
             progressive: true,
-            use: [pngcrush()],
+            // use: [pngcrush()],
             interlaced: true,
         })))
         .pipe(gp.size())
