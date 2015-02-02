@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     buffer         = require('vinyl-buffer'),
     stylish        = require('jshint-stylish'),
     browserSync    = require('browser-sync'),
-    styleguide     = require('sc5-styleguide'),
+    //styleguide     = require('sc5-styleguide'),  waiting for update (not working with win7 anymore)
     mainBowerFiles = require('main-bower-files'),
     gulpFilter     = require('gulp-filter'),
     runSequence    = require('run-sequence'),
@@ -117,21 +117,25 @@ var sassconfig = function sassconfig (Container) {
 /*
    Notify config
    ========================================================================== */
-  var notifyconfig = function notifyconfig (Title,Message) {
+  var notifycfg = function  (Title) {
    return {
      title: (gutil.colors.cyan.bold(Title)),
-     message: (gutil.colors.green.bold(Message))
-    }
+     message: (gutil.colors.green.bold('<%= file.relative %>'+' is done')),
+     wait: false
+     };
 };
+
+
+
 
 /*
    SVG symbol config
    ========================================================================== */
 var svgconfig = {
-    svgId: 'icon-%f',
+    id: 'icon-%f',
     className: '.icon-%f',
     fontSize: 16,
-    css: false,
+    templates:['default-svg'],
     svgoConfig: {
         removeViewBox: false,
         cleanupIDs: false
@@ -260,9 +264,9 @@ gulp.task('sass-site', function() {
         .pipe(gp.sourcemaps.write())
         .pipe(gulp.dest('./dist/css/'))
         .pipe(browserSync.reload({
-            stream: true
+        stream: true
         }))
-        .pipe(gp.notify(notifyconfig('STYLES','main style task complete')))
+        .pipe(gp.notify(notifycfg('STYLES')));
 });
 
 gulp.task('sass-print', function() {
@@ -277,7 +281,9 @@ gulp.task('sass-print', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(gp.notify(notifyconfig('STYLES','print style task complete')));
+        .pipe(gp.notify(notifycfg('STYLES')));
+
+
 });
 gulp.task('sass', ['sass-site', 'sass-print']);
 
@@ -309,7 +315,7 @@ gulp.task('scripts', function() {
             .pipe(gp.uglify())
             .pipe(gp.sourcemaps.write('./'))
             .pipe(gulp.dest('./dist/scripts/'))
-            .pipe(gp.notify(notifyconfig('SCRIPTS','browserify task complete')));
+            .pipe(gp.notify(notifycfg('SCRIPTS','browserify task complete')));
     };
 
     return bundle();
@@ -319,7 +325,7 @@ gulp.task('modernizr', function() {
     return gulp.src('src/scripts/vendor/modernizr.js') // js that needs to be placed in the head
         .pipe(jsminTasks())
         .pipe(gulp.dest(paths.scripts.dest + '/vendor'))
-        .pipe(gp.notify(notifyconfig('modernizr','modernizr task complete')));
+        .pipe(gp.notify(notifycfg('modernizr','modernizr task complete')));
 });
 
 /* ==========================================================================
@@ -341,7 +347,7 @@ gulp.task('image', ['sprites'], function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(gp.notify(notifyconfig('IMAGES','Image task complete')));
+        .pipe(gp.notify(notifycfg('IMAGES','Image task complete')));
 });
 
 /* ==========================================================================
@@ -349,15 +355,13 @@ gulp.task('image', ['sprites'], function() {
    ========================================================================== */
 
 gulp.task('sprites', function() {
+
     return gulp.src('src/image/icons/*.svg')
         .pipe(gp.plumber())
         .pipe(gp.svgSymbols(svgconfig))
         .pipe(gp.size())
         .pipe(gulp.dest('dist/image/sprites'))
-        .pipe(gp.notify({
-            title: (gutil.colors.green.bold('IMAGES')),
-            message: (gutil.colors.green.bold('Sprites task complete'))
-        }));
+        .pipe(gp.notify(notifycfg('IMAGES','Sprites task complete')));
 
 
 });

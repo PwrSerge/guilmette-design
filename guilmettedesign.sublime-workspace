@@ -188,10 +188,31 @@
 	"buffers":
 	[
 		{
+			"contents": "// Load plugins\nvar gulp = require('gulp'),\n    source         = require('vinyl-source-stream'),\n    browserify     = require('browserify'),\n    buffer         = require('vinyl-buffer'),\n    stylish        = require('jshint-stylish'),\n    browserSync    = require('browser-sync'),\n    //styleguide     = require('sc5-styleguide'),\n    mainBowerFiles = require('main-bower-files'),\n    gulpFilter     = require('gulp-filter'),\n    runSequence    = require('run-sequence'),\n    sass           = require('gulp-ruby-sass'),\n    gutil          = require('gulp-load-utils')(['colors', 'env', 'log', 'pipeline', 'lazypipe']),\n    gp             = require('gulp-load-plugins')({\n    pattern: ['gulp-*', 'gulp.*'],\n    replaceString: /\\bgulp[\\-.]/\n});\n\n/* ==========================================================================\n   CONFIGS\n   ========================================================================== */\n\n/*\n   Paths\n   ========================================================================== */\n\nvar paths = {\n    scr: 'src',\n    dest: 'dist',\n    scripts: {\n        src: 'src/scripts/**/*.js',\n        dest: 'dist/scripts'\n    },\n    styles: {\n        src: 'src/stylesheets/*.scss',\n        dest: 'dist/css'\n    },\n    image: {\n        src: ['src/image/*.png', 'src/image/*.jpg'],\n        dest: 'dist/image'\n    },\n    html: {\n        src: 'src/*.html',\n        dest: 'dist/'\n    }\n};\n\n/*\n   fileinclude\n   ========================================================================== */\nvar fileincludecfg = {\n    prefix: '@@',\n    basepath: '@file'\n};\n\n/*\n   Baner\n   ========================================================================== */\nvar packg = require('./package.json');\nvar banner = ['/**',\n    ' * <%= packg.name %> - <%= packg.description %>',\n    ' * @version v<%= packg.version %>',\n    ' * @link <%= packg.homepage %>',\n    ' * @license <%= packg.license %>',\n    ' */',\n    ''\n].join('\\n');\n\n/*\n   lazypipe tasks using gulp-load-utils\n   ========================================================================== */\nvar sassTasks = gutil.lazypipe()\n\n     .pipe(gp.autoprefixer, 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')\n    .pipe(gp.cssbeautify, {\n        indent: '  ',\n        openbrace: 'end-of-line',\n        autosemicolon: true\n    });\n    // .pipe(gp.uncss, ({\n    //     html: ['src/index.html'],\n    //     ignore: ['[class~=\"nav-\"]', '[class~=\"inner-\"]', '[class~=\"header-\"]', '.inner-wrapper.open', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']\n    // }));\n\n\nvar cssminTasks = gutil.lazypipe()\n    .pipe(gp.rename, {\n        //basename: 'main',\n        suffix: '.min'\n    })\n    .pipe(gp.minifyCss);\n        //.pipe(gp.sourcemaps,  'write()');\n\nvar jsminTasks = gutil.lazypipe()\n    .pipe(gp.rename, {\n        suffix: '.min'\n    })\n    .pipe(gp.uglify);\n\n\n/*\n   Sass config\n   ========================================================================== */\nvar sassconfig = function sassconfig (Container) {\n   return {\n            //style: 'expanded',\n            container: Container,\n            sourcemap: true,\n            trace: true,\n            quiet: true,\n            lineNumbers: false,\n            compass: true,\n            require: ['susy', 'modular-scale', 'breakpoint']\n        }\n    };\n\n/*\n   Notify config\n   ========================================================================== */\n  var notifyconfig = function notifyconfig (Title,Message) {\n   return {\n     title: (gutil.colors.cyan.bold(Title)),\n     message: (gutil.colors.green.bold(Message))\n    };\n};\n\n/*\n   SVG symbol config\n   ========================================================================== */\nvar svgconfig = {\n    svgId: 'icon-%f',\n    className: '.icon-%f',\n    fontSize: 16,\n    css: false,\n    svgoConfig: {\n        removeViewBox: false,\n        cleanupIDs: false\n    }\n};\n\n// gulp.task('shorthand', shell.task([\n//   'echo hello',\n//   'echo world'\n// ]))\n\n/* ==========================================================================\n   TEMPLATE\n   ========================================================================== */\n\n//Compile to HTML\n// var swig = require('gulp-swig');\n\n// gulp.task('templates', function() {\n//   gulp.src('./lib/*.html')\n//     .pipe(gp.swig())\n//     .pipe(gulp.dest('./dist/'))\n// });\n\n// //Get data via JSON file, keyed on filename.\n// var getJsonData = function(file) {\n//   return require('./examples/' + path.basename(file.path) + '.json');\n// };\n\n// gulp.task('json-test', function() {\n//   return gulp.src('./examples/test1.html')\n//     .pipe(data(getJsonData))\n//     .pipe(swig())\n//     .pipe(gulp.dest('build'));\n// });\n\n\n/* ==========================================================================\n   BOWER\n   ========================================================================== */\n\n// grab libraries files from bower_components and push in /src\ngulp.task('bower', function() {\n    var jsFilter = gulpFilter('*.js');\n    var cssFilter = gulpFilter(['*.css', '*.scss']);\n    var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);\n\n    return gulp.src(mainBowerFiles({\n        debugging: true\n    }))\n\n    // grab vendor js files from bower_components and push in /src\n    .pipe(jsFilter)\n        .pipe(gulp.dest('src/scripts/vendor'))\n        .pipe(jsFilter.restore())\n\n    // grab vendor css files from bower_components and push in /src\n    .pipe(cssFilter)\n        .pipe(gulp.dest('src/stylesheets/vendor'))\n        .pipe(cssFilter.restore())\n\n    // grab vendor font files from bower_components and push in /src\n    .pipe(fontFilter)\n        .pipe(gp.flatten())\n        .pipe(gulp.dest('src/fonts'))\n});\n\n/* ==========================================================================\n   STYLEGUIDE (living style guide based on KSS notation)\n   ========================================================================== */\ngulp.task('gs-clean', function() {\n    return gulp.src('src/styleguide/*', {\n            read: false\n        })\n        .pipe(gp.rimraf());\n});\n\ngulp.task('gs-main', function() {\n    return gulp.src('src/css/main.css')\n        .pipe(gp.rename('styleguide.css'))\n        .pipe(gulp.dest('src/styleguide'))\n});\n\ngulp.task('gs-styleguide', function() {\n    var outputPath = 'src/styleguide';\n    return gulp.src('src/stylesheets/components/*.scss')\n        .pipe(styleguide({\n            title: 'guilmettedesign Styleguide',\n            server: true,\n            rootPath: outputPath,\n            styleVariables: 'src/stylesheets/helpers/_vars.scss',\n            overviewPath: 'src/stylesheets/overview.md',\n            sass: {\n                lineNumbers: false,\n                compass: true,\n                trace: true,\n                require: ['susy', 'modular-scale', 'breakpoint']\n            },\n            less: {\n                // Options passed to gulp-less\n            }\n        }))\n        .pipe(gulp.dest(outputPath));\n});\n\ngulp.task('styleguide', function() {\n    runSequence('gs-clean', ['styles','gs-styleguide', 'gs-main']);\n});\n\ngulp.task('styleguide-watch', ['styleguide'], function() {\n    // Start watching changes and update styleguide whenever changes are detected\n    // Styleguide automatically detects existing server instance\n    gulp.watch(('src/stylesheets/*'), ['styleguide']);\n});\n\n/* ==========================================================================\n   STYLES\n   ========================================================================== */\ngulp.task('sass-site', function() {\n    return sass('src/stylesheets/main.scss', sassconfig('gulp-ruby-sass-site'))\n        .pipe(gp.plumber())\n        .pipe(sassTasks())\n        .pipe(gp.rename('main.css'))\n        .pipe(gulp.dest('./src/css/'))\n        .pipe(cssminTasks())\n        .pipe(gp.sourcemaps.write())\n        .pipe(gulp.dest('./dist/css/'))\n        .pipe(browserSync.reload({\n            stream: true\n        }))\n    .pipe(gp.notify(notifyconfig('STYLES','main style task complete')))\n});\n\ngulp.task('sass-print', function() {\n    return sass('src/stylesheets/print.scss', sassconfig('gulp-ruby-sass-print'))\n        .pipe(gp.plumber())\n        .pipe(sassTasks())\n        .pipe(gp.rename('print.css'))\n        .pipe(gulp.dest('./src/css/'))\n        .pipe(cssminTasks())\n        .pipe(gp.sourcemaps.write())\n        .pipe(gulp.dest('./dist/css/'))\n        .pipe(browserSync.reload({\n            stream: true\n        }))\n        .pipe(gp.notify(notifyconfig('STYLES','print style task complete')));\n});\ngulp.task('sass', ['sass-site', 'sass-print']);\n\n/* ==========================================================================\n   SCRIPTS\n   ========================================================================== */\nvar getBundleName = function() {\n    var name = require('./package.json').name;\n    return name + '.' + 'min';\n};\n\ngulp.task('scripts', function() {\n\n    var bundler = browserify({\n        entries: ['./src/scripts/main.js'],\n        debug: true\n    });\n\n    var bundle = function() {\n        return bundler\n            .bundle()\n            .pipe(source(getBundleName() + '.js'))\n            .pipe(buffer())\n            .pipe(gp.sourcemaps.init({\n                loadMaps: true\n            }))\n            // Add transformation tasks to the pipeline here.\n            .pipe(gulp.dest('./src/scripts/'))\n            .pipe(gp.uglify())\n            .pipe(gp.sourcemaps.write('./'))\n            .pipe(gulp.dest('./dist/scripts/'))\n            .pipe(gp.notify(notifyconfig('SCRIPTS','browserify task complete')));\n    };\n\n    return bundle();\n});\n\ngulp.task('modernizr', function() {\n    return gulp.src('src/scripts/vendor/modernizr.js') // js that needs to be placed in the head\n        .pipe(jsminTasks())\n        .pipe(gulp.dest(paths.scripts.dest + '/vendor'))\n        .pipe(gp.notify(notifyconfig('modernizr','modernizr task complete')));\n});\n\n/* ==========================================================================\n   IMAGES\n   ========================================================================== */\n\ngulp.task('image', ['sprites'], function() {\n    return gulp.src(paths.image.src)\n        .pipe(gp.changed(paths.image.dest))\n        .pipe(gp.plumber())\n        .pipe(gp.cache(gp.imagemin({\n            optimizationLevel: 3,\n            progressive: true,\n            // use: [pngcrush()],\n            interlaced: true,\n        })))\n        .pipe(gp.size())\n        .pipe(gulp.dest(paths.image.dest))\n        .pipe(browserSync.reload({\n            stream: true\n        }))\n        .pipe(gp.notify(notifyconfig('IMAGES','Image task complete')));\n});\n\n/* ==========================================================================\n   SVG SPRITES\n   ========================================================================== */\n\ngulp.task('sprites', function() {\n    return gulp.src('src/image/icons/*.svg')\n        .pipe(gp.plumber())\n        .pipe(gp.svgSymbols(svgconfig))\n        .pipe(gp.size())\n        .pipe(gulp.dest('dist/image/sprites'))\n        .pipe(gp.notify({\n            title: (gutil.colors.green.bold('IMAGES')),\n            message: (gutil.colors.green.bold('Sprites task complete'))\n        }));\n\n\n});\n/* ==========================================================================\n   HTML\n   ========================================================================== */\ngulp.task('html', ['sass'], function() {\n    return gulp.src('src/index.html')\n        //.pipe(gp.changed(paths.html.src))\n        .pipe(gp.plumber())\n        .pipe(gp.fileInclude(fileincludecfg))\n        //modernizr injection\n        .pipe(gp.inject(gulp.src('./dist/scripts/vendor/modernizr*.min.js', {\n            read: false\n        }), {\n            starttag: '<!-- inject:head:{{ext}} -->',\n            ignorePath: 'dist/',\n            addRootSlash: false\n        }))\n        // stylesheet and main javascripts injection\n        .pipe(gp.inject(gulp.src(['./dist/css/*.min.css', './dist/scripts/*.min.js'], {\n            read: false\n        }), {\n            ignorePath: ['src/', 'dist/'],\n            addRootSlash: false\n        }))\n        .pipe(gp.size())\n        .pipe(gulp.dest('./dist'))\n        .pipe(browserSync.reload({\n            stream: true\n        }))\n        .pipe(gp.notify({\n            title: (gutil.colors.cyan.bold('HTML')),\n            message: (gutil.colors.green.bold('HTML task complete'))\n        }));\n\n});\n/* ==========================================================================\n   CLEAN\n   ========================================================================== */\ngulp.task('clean', function() {\n    return gulp.src('./dist/*', {\n            read: false\n        })\n        .pipe(gp.rimraf());\n\n});\n/* ==========================================================================\n   AWS PUBLISH\n   ========================================================================== */\ngulp.task('publish', function() {\n\n    // create a new publisher\n    var publisher = gp.awspublish.create({\n        key: 'AKIAJXFBVOWZJCTIBP6Q',\n        secret: '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',\n        bucket: 'guilmettedesign.com'\n    });\n\n    // define custom headers\n    var headers = {\n        'Cache-Control': 'max-age=315360000, no-transform, public'\n    };\n\n    return gulp.src('./dist/**/*')\n\n    // gzip, Set Content-Encoding headers and add .gz extension\n    .pipe(gp.awspublish.gzip())\n        .pipe(gp.rename(function(path) {\n            path.dirname = '/' + path.dirname;\n        }))\n\n    // publisher will add Content-Length, Content-Type and Cache-Control headers\n    // and if not specified will set x-amz-acl to public-read by default\n    .pipe(publisher.publish(headers))\n\n    // create a cache file to speed up consecutive uploads\n    .pipe(publisher.cache())\n\n    //sync bucket files\n    //.pipe(publisher.sync())\n\n    // print upload updates to console\n    .pipe(gp.awspublish.reporter({\n        states: ['create', 'update', 'delete']\n    }));\n});\n\n/* ==========================================================================\n   BUMP VERSION\n   ========================================================================== */\ngulp.task('bump', function() {\n    return gulp.src(['./package.json', './bower.json'])\n        .pipe(gp.bump())\n        .pipe(gulp.dest('./'));\n});\n\n/* ==========================================================================\n   BROWSER_SYNC\n   ========================================================================== */\ngulp.task('browser-sync', function() {\n    browserSync.init(null, {\n        server: {\n            baseDir: './dist'\n        }\n    });\n});\n\n/* ==========================================================================\n   WATCH\n   ========================================================================== */\ngulp.task('watch', ['browser-sync'], function() {\n    // //opens the index page in default browser\n    // gulp.start('url');\n\n    // Watch .scss files\n    gulp.watch('src/stylesheets/**/*.scss', ['sass']);\n\n    // Watch .js files\n    gulp.watch('src/scripts/**/*.js', ['scripts']);\n\n    // Watch image files\n    gulp.watch('dist/image/**/*', ['image']);\n\n    // Watch .html files\n    gulp.watch('src/*.html', ['html']);\n\n\n});\n\n/* ==========================================================================\n   BUILD TASK\n   ========================================================================== */\ngulp.task('build', function() {\n    runSequence('clean', ['browserify', 'modernizr', 'scripts', 'image', 'html']);\n});\n\n/* ==========================================================================\n   DEFAULT TASK\n   ========================================================================== */\ngulp.task('default', function() {\n    runSequence('clean', ['scripts', 'image', 'html'], 'watch');\n});\n",
 			"file": "gulpfile.js",
+			"file_size": 16195,
+			"file_write_time": 130672200443904637,
 			"settings":
 			{
-				"buffer_size": 13958,
+				"buffer_size": 15713,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control:\n---------------\n\n  Version 3.0 Release Notes\n  \n  \n  **** Windows Sublime Text 3 Users ****\n  \n  Due to a bug in Package Control 2.0, Windows ST3 users will need to open the\n  Sublime Text console (ctrl+`) and execute the following Python to properly\n  upgrade. All other users may ignore this part of the message.\n  \n  Make sure NOT to copy the leading two spaces, or an \"unexpected indent\" error\n  will occur.\n  \n  import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')\n  \n  ********\n  \n  \n  Package Control 3.0 adds a bunch of polish, improving the Sublime Text\n  experience for users and package developers:\n  \n   - improved upgrades of themes, color schemes and syntaxes\n   - dependency support\n   - SSL for Linux\n   - new secondary Windows HTTP backend\n   - patches for Python in Sublime Text 2 on Windows\n   - commands to easily remove channels and repositories\n   - an events API for packages\n   - improved documentation\n  \n  \n  As of July 2014, I now work for myself. This has allowed me to spend more time\n  working on open source software, including Package Control. If you appreciate\n  the work I've done, please consider a small donation. If even 5% of regular\n  users donated the price of a coffee or beer, that would cover quite a bit of\n  my development time! See https://packagecontrol.io/about for options.\n  \n  \n  Some recent Package Control stats:\n  \n   - every weekday over 1M JSON requests hit the channel server\n   - in December, the channel server will transmit 4TB+ of compressed JSON\n   - users have installed, upgraded or removed 85M+ packages since late 2011\n  \n  \n  Read more about the release at:\n  \n  https://packagecontrol.io/news#2014-12-23-Package_Control_30_Released\n  \n\n\nPackage Control:\n---------------\n\n  Version 3.0 Release Notes\n  \n  \n  **** Windows Sublime Text 3 Users ****\n  \n  Due to a bug in Package Control 2.0, Windows ST3 users will need to open the\n  Sublime Text console (ctrl+`) and execute the following Python to properly\n  upgrade. All other users may ignore this part of the message.\n  \n  Make sure NOT to copy the leading two spaces, or an \"unexpected indent\" error\n  will occur.\n  \n  import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')\n  \n  ********\n  \n  \n  Package Control 3.0 adds a bunch of polish, improving the Sublime Text\n  experience for users and package developers:\n  \n   - improved upgrades of themes, color schemes and syntaxes\n   - dependency support\n   - SSL for Linux\n   - new secondary Windows HTTP backend\n   - patches for Python in Sublime Text 2 on Windows\n   - commands to easily remove channels and repositories\n   - an events API for packages\n   - improved documentation\n  \n  \n  As of July 2014, I now work for myself. This has allowed me to spend more time\n  working on open source software, including Package Control. If you appreciate\n  the work I've done, please consider a small donation. If even 5% of regular\n  users donated the price of a coffee or beer, that would cover quite a bit of\n  my development time! See https://packagecontrol.io/about for options.\n  \n  \n  Some recent Package Control stats:\n  \n   - every weekday over 1M JSON requests hit the channel server\n   - in December, the channel server will transmit 4TB+ of compressed JSON\n   - users have installed, upgraded or removed 85M+ packages since late 2011\n  \n  \n  Read more about the release at:\n  \n  https://packagecontrol.io/news#2014-12-23-Package_Control_30_Released\n  \n",
+			"settings":
+			{
+				"buffer_size": 4613,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 2353,
 				"line_ending": "Unix"
 			}
 		},
@@ -215,18 +236,10 @@
 			}
 		},
 		{
-			"file": "src/stylesheets/helpers/_mixins.scss",
-			"settings":
-			{
-				"buffer_size": 4296,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"contents": "//============================================================\n// VARIABLES\n//============================================================\n\n//undefined\n// Project  paths\n//--------------------------------------------------------------------\n\n// Image directory. Change this to the optimised path when deploying\n$img: '../image/';\n\n//undefined\n// Colours\n//--------------------------------------------------------------------\n\n// Neutral color palette\n$palette-neutral--xdark:  #2C3643;\n$palette-neutral--dark:   #3B444F;\n$palette-neutral--base:   #f8f7f2;\n$palette-neutral--light:  #99A9B3;\n$palette-neutral--xlight: #DBE6EC;\n\n// Primary color palette\n$palette-blue--dark:  #1D508D;\n$palette-blue--base:  #206FAC;\n$palette-blue--light: #288AD6;\n$palette-purple-dark: #140b1d;\n$palette-purple-base: #3e225b;\n$palette-purple-light: #9362c4;\n$palette-green-dark: #5f8728;\n$palette-green-base: #8cc63e;\n$palette-green-light: #CFF898;\n\n$palette-red:         #FA5E5B;\n$palette-orange:      #FFC83F;\n$palette-yellow:      #FEEF6D;\n\n// Themes\n$themes: (\n  brand: (\n    primary: $palette-blue--base,\n    secondary: $palette-blue--dark,\n    contrast: white\n  ),\n  highlight: (\n    primary: $palette-yellow,\n    secondary: $palette-orange,\n    contrast: $palette-neutral--dark\n  ),\n  neutral: (\n    primary: $palette-neutral--light,\n    secondary: $palette-neutral--xlight,\n    contrast: $palette-neutral--xdark\n  )\n);\n// main colors\n\n$base-background-image: url(../image/newBG-grey2.svg);\n\n$color-base:  $palette-purple-base;\n$color-base-background: $palette-neutral--base;\n$color-secondary: $palette-green-base;\n$color-tertiary:  $palette-green-light;\n$color-accent: $palette-orange;\n$color-attention: $palette-red;\n\n\n\n\n//undefined\n// Fonts\n//--------------------------------------------------------------------\n//Google fonts\n//@include web-fonts(\"Poiret One\");\n$font-p: Kavoon;\n$font-s: Wendy One;\n$font-t: Montserrat;\n\n\n// Or directly:\n//$fonts: Kavoon, Wendy One, Bonbon;\n//undefined\n\n// Font Family\n$heading-font: \"Montserrat\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n$sans-serif-font: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n$serif-font: Georgia, Times, \"Times New Roman\", serif;\n\n// Fixed Font\n$fixed-font-family: monospace;\n$fixed-font-size: 85%;\n$fixed-line-height: $base-line-height;\n\n// Font weights\n$type-weight: (thin: 200, light: 300, regular: 400, bold: 700, xtrabold: 900);\n\n// Base Font\n$base-font-family: $sans-serif-font;\n$base-font-size: 16px;\n$base-line-height: 26px;\n\n// Rhythm unit (Compass vertical rhythm)\n$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height\n$rhythm-unit: 'rem';// Sets rhythm unit to rem. Remove to use default em unit.\n$rem-with-px-fallback: false;\n\n// configs for modular scale\n$ms-base: 1rem;\n$ms-ratio: $major-third;  // 1.25\n\n\n//Sass map (Sass v3.3) with different font sizes using scale\n$type-scale: (tiny: (font-size: ms(-2), base-lines: .5), small: (font-size: ms(-1), base-lines: .75), base: (font-size: ms(0), base-lines: 1), medium: (font-size: ms(1), base-lines: 1), large: (font-size: ms(2), base-lines: 1), xlarge: (font-size: ms(3), base-lines: 1.5), xxlarge: (font-size: ms(4), base-lines: 2));\n\n//undefined\n// Dimensions\n//--------------------------------------------------------------------\n\n//breakpoint values\n\n$breakpoint-to-ems: true;\n$bp-verysmall: 250px;\n$bp-small: 500px;\n$bp-medium: 700px;\n$bp-large: 1250px;\n$bp-verylarge: 1600px;\n\n// breakpoint\n// assume min-width (by default) if only a number\n$breakpoint-medium-width: 500px;\n$breakpoint-medium-width-em: 30em;\n\n// set min-width/max-width if both values are numbers\n$breakpoint-medium-not-wide: 500px 700px;\n\n// set min/max of feature if there are two numbers\n$breakpoint-medium-height: height 300px 700px;\n\n// if one value is a string, assume a feature/value pair\n$breakpoint-kind-of-wide: min-width 700px;\n$breakpoint-not-too-wide: max-width 700px;\n\n// for multidimensional lists, assume each item is a feature value pair\n$breakpoint-wide-portrait: (max-width 700px) (orientation portrait);\n\n// handle one-sided features (ie. monochrome)\n$breakpoint-wide-portrait-mono: (max-width 700px) (orientation portrait) monochrome;\n$breakpoint-mono: monochrome;\n$breakpoint-hi-rez: min-resolution 1.5dppx;\n\n//undefined\n// Easing\n//undefined\n// @see http://robertpenner.com/\n// @see http://matthewlein.com/ceaser/\n//--------------------------------------------------------------------\n\n// Cubic\n$easein-cubic: cubic-bezier(.55, .055, .675, .19);\n$easout-cubic: cubic-bezier(.215, .61, .355, 1);\n$easeinout-cubic: cubic-bezier(.645, .045, .355, 1);\n\n// Circ\n$easein-circ: cubic-bezier(.6, .04, .98, .335);\n$easeout-circ: cubic-bezier(.075, .82, .165, 1);\n$easeinout-circ: cubic-bezier(.785, .135, .15, .86);\n\n// Expo\n$easein-expo: cubic-bezier(.95, .05, .795, .035);\n$easeout-expo: cubic-bezier(.19, 1, .22, 1);\n$easeinout-expo: cubic-bezier(1, 0, 0, 1);\n\n// Quad\n$easein-quad: cubic-bezier(.55, .085, .68, .53);\n$easeout-quad: cubic-bezier(.25, .46, .45, .94);\n$easeinout-quad: cubic-bezier(.455, .03, .515, .955);\n\n// Quart\n$easein-quart: cubic-bezier(.895, .03, .685, .22);\n$easeout-quart: cubic-bezier(.165, .84, .44, 1);\n$easeinout-quart: cubic-bezier(.77, 0, .175, 1);\n\n// Quint\n$easein-quint: cubic-bezier(.755, .05, .855, .06);\n$easeout-quint: cubic-bezier(.23, 1, .32, 1);\n$easeinout-quint: cubic-bezier(.86, 0, .07, 1);\n\n// Sine\n$easein-sine: cubic-bezier(.47, 0, .745, .715);\n$easeout-sine: cubic-bezier(.39, .575, .565, 1);\n$easeinout-sine: cubic-bezier(.445, .05, .55, .95);\n\n// Back\n$easein-back: cubic-bezier(.6, -.28, .735, .045);\n$easeout-back: cubic-bezier(.175, .885, .32, 1.275);\n$easeinout-back: cubic-bezier(.68, -.55, .265, 1.55);\n\n//Z-index\n//see http://css-tricks.com/handling-z-index/\n//--------------------------------------------------------------------\n\n$zindex: (\n  modal     : 9000,\n  overlay   : 8000,\n  dropdown  : 7000,\n  header    : 6000,\n  footer    : 5000\n);\n\n\n",
 			"file": "src/stylesheets/helpers/_vars.scss",
-			"file_size": 5961,
-			"file_write_time": 130632917460781250,
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
 				"buffer_size": 5962,
@@ -237,8 +250,8 @@
 			"file": "src/stylesheets/components/_buttons.scss",
 			"settings":
 			{
-				"buffer_size": 2371,
-				"line_ending": "Unix"
+				"buffer_size": 2365,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -696,17 +709,14 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/bower_components",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/bower_components/webfontloader",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/scripts/vendor",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets",
-		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/vendor"
+		"/D/!PROJECTS/WebDesign/guilmette-design",
+		"/D/!PROJECTS/WebDesign/guilmette-design/dist",
+		"/D/!PROJECTS/WebDesign/guilmette-design/node_modules",
+		"/D/!PROJECTS/WebDesign/guilmette-design/node_modules/gulp-swig"
 	],
 	"file_history":
 	[
+		"/D/!PROJECTS/WebDesign/guilmette-design/src/stylesheets/helpers/_mixins.scss",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/bower.json",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/styleguide/css/styleguide.css",
 		"/C/Documents and Settings/guilmets/Desktop/Serge/guilmette-design/src/stylesheets/main.scss",
@@ -833,8 +843,7 @@
 		"/D/!PROJECTS/WebDesign/Resume_gulp/dist/SG_resume.html",
 		"/D/!PROJECTS/WebDesign/Resume_gulp/gulpfile.js",
 		"/D/!PROJECTS/WebDesign/Resume_gulp/src/index.html",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_images.scss",
-		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_media.scss"
+		"/D/!PROJECTS/WebDesign/Resume_gulp/src/stylesheets/components/_images.scss"
 	],
 	"find":
 	{
@@ -857,6 +866,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"minify",
 			"mainBowerFiles",
 			", minify ",
 			", minify and push in /",
@@ -1002,7 +1012,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1011,15 +1021,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13958,
+						"buffer_size": 15713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3189,
-								3189
+								3315,
+								3315
 							]
 						],
 						"settings":
@@ -1134,14 +1144,74 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 339.0,
+						"translation.y": 2612.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								482,
+								482
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2353,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1242,
+								1242
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 290.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1272,15 +1342,15 @@
 							"translate_tabs_to_spaces": false,
 							"word_wrap": false
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "src/stylesheets/overview.md",
 					"semi_transient": false,
 					"settings":
@@ -1409,146 +1479,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/stylesheets/helpers/_mixins.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4296,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1833,
-								1833
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Seti (SL).tmTheme",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Syntax Highlighting for Sass/Syntaxes/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1134.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "src/stylesheets/helpers/_vars.scss",
 					"semi_transient": false,
 					"settings":
@@ -1560,8 +1495,8 @@
 						"selection":
 						[
 							[
-								330,
-								330
+								301,
+								301
 							]
 						],
 						"settings":
@@ -1679,24 +1614,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "src/stylesheets/components/_buttons.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2371,
+						"buffer_size": 2365,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								409,
-								409
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1814,7 +1749,7 @@
 						"translation.y": 73.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
