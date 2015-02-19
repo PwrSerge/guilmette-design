@@ -5,8 +5,8 @@ var gulp = require('gulp'),
     buffer         = require('vinyl-buffer'),
     stylish        = require('jshint-stylish'),
     browserSync    = require('browser-sync'),
-    //styleguide     = require('sc5-styleguide'),  waiting for update (not working with win7 anymore)
     mainBowerFiles = require('main-bower-files'),
+    styleguide = require('sc5-styleguide'),
     gulpFilter     = require('gulp-filter'),
     runSequence    = require('run-sequence'),
     sass           = require('gulp-ruby-sass'),
@@ -76,12 +76,11 @@ var sassTasks = gutil.lazypipe()
         indent: '  ',
         openbrace: 'end-of-line',
         autosemicolon: true
-    })
-    .pipe(gp.uncss, ({
-        html: ['src/index.html'],
-        ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
-    }));
-
+    });
+    // .pipe(gp.uncss, ({
+    //     html: ['src/index.html'],
+    //     ignore: ['[class~="nav-"]', '[class~="inner-"]', '[class~="header-"]', '.inner-wrapper.open', '.nav-main.open', '.nav-main.nav-activated', '.inner-wrapper.nav-activated']
+    // }));
 
 var cssminTasks = gutil.lazypipe()
     .pipe(gp.rename, {
@@ -96,8 +95,6 @@ var jsminTasks = gutil.lazypipe()
         suffix: '.min'
     })
     .pipe(gp.uglify);
-
-
 /*
    Sass config
    ========================================================================== */
@@ -113,7 +110,6 @@ var sassconfig = function sassconfig (Container) {
             require: ['susy', 'modular-scale', 'breakpoint']
         }
     };
-
 /*
    Notify config
    ========================================================================== */
@@ -124,10 +120,6 @@ var sassconfig = function sassconfig (Container) {
      wait: false
      };
 };
-
-
-
-
 /*
    SVG symbol config
    ========================================================================== */
@@ -141,11 +133,6 @@ var svgconfig = {
         cleanupIDs: false
     }
 };
-
-// gulp.task('shorthand', shell.task([
-//   'echo hello',
-//   'echo world'
-// ]))
 
 /* ==========================================================================
    TEMPLATE
@@ -204,52 +191,30 @@ gulp.task('bower', function() {
 });
 
 /* ==========================================================================
-   STYLEGUIDE (living style guide based on KSS notation)
+   STYLGUIDE based on KSS
    ========================================================================== */
-gulp.task('gs-clean', function() {
-    return gulp.src('src/styleguide/*', {
-            read: false
-        })
-        .pipe(gp.rimraf());
+var outputPath = 'styleguide';
+
+gulp.task('styleguide:generate', function() {
+  return gulp.src('src/stylesheets/components/*.scss')
+    .pipe(styleguide.generate({
+        title: 'My Styleguide',
+        server: true,
+        rootPath: outputPath,
+        styleVariables:'src/stylesheets/components/_vars.scss',
+        overviewPath: 'styleguide/sg-styleguide.md'
+      }))
+    .pipe(gulp.dest(outputPath));
 });
 
-gulp.task('gs-main', function() {
-    return gulp.src('src/css/main.css')
-        .pipe(gp.rename('styleguide.css'))
-        .pipe(gulp.dest('src/styleguide'))
+gulp.task('styleguide:applystyles', function() {
+  return gulp.src('src/css/main.css')
+       .pipe(styleguide.applyStyles())
+    .pipe(gulp.dest(outputPath));
 });
 
-gulp.task('gs-styleguide', function() {
-    var outputPath = 'src/styleguide';
-    return gulp.src('src/stylesheets/components/*.scss')
-        .pipe(styleguide({
-            title: 'guilmettedesign Styleguide',
-            server: true,
-            rootPath: outputPath,
-            styleVariables: 'src/stylesheets/helpers/_vars.scss',
-            overviewPath: 'src/stylesheets/overview.md',
-            sass: {
-                lineNumbers: false,
-                compass: true,
-                trace: true,
-                require: ['susy', 'modular-scale', 'breakpoint']
-            },
-            less: {
-                // Options passed to gulp-less
-            }
-        }))
-        .pipe(gulp.dest(outputPath));
-});
+gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 
-gulp.task('styleguide', function() {
-    runSequence('gs-clean', ['styles','gs-styleguide', 'gs-main']);
-});
-
-gulp.task('styleguide-watch', ['styleguide'], function() {
-    // Start watching changes and update styleguide whenever changes are detected
-    // Styleguide automatically detects existing server instance
-    gulp.watch(('src/stylesheets/*'), ['styleguide']);
-});
 
 /* ==========================================================================
    STYLES
@@ -282,8 +247,6 @@ gulp.task('sass-print', function() {
             stream: true
         }))
         .pipe(gp.notify(notifycfg('STYLES')));
-
-
 });
 gulp.task('sass', ['sass-site', 'sass-print']);
 
@@ -296,7 +259,6 @@ var getBundleName = function() {
 };
 
 gulp.task('scripts', function() {
-
     var bundler = browserify({
         entries: ['./src/scripts/main.js'],
         debug: true
@@ -317,7 +279,6 @@ gulp.task('scripts', function() {
             .pipe(gulp.dest('./dist/scripts/'))
             .pipe(gp.notify(notifycfg('SCRIPTS','browserify task complete')));
     };
-
     return bundle();
 });
 
@@ -353,17 +314,13 @@ gulp.task('image', ['sprites'], function() {
 /* ==========================================================================
    SVG SPRITES
    ========================================================================== */
-
 gulp.task('sprites', function() {
-
     return gulp.src('src/image/icons/*.svg')
         .pipe(gp.plumber())
         .pipe(gp.svgSymbols(svgconfig))
         .pipe(gp.size())
         .pipe(gulp.dest('dist/image/sprites'))
         .pipe(gp.notify(notifycfg('IMAGES','Sprites task complete')));
-
-
 });
 /* ==========================================================================
    HTML
@@ -458,7 +415,6 @@ gulp.task('bump', function() {
         .pipe(gp.bump())
         .pipe(gulp.dest('./'));
 });
-
 /* ==========================================================================
    BROWSER_SYNC
    ========================================================================== */
@@ -469,7 +425,6 @@ gulp.task('browser-sync', function() {
         }
     });
 });
-
 /* ==========================================================================
    WATCH
    ========================================================================== */
@@ -488,17 +443,13 @@ gulp.task('watch', ['browser-sync'], function() {
 
     // Watch .html files
     gulp.watch('src/*.html', ['html']);
-
-
 });
-
 /* ==========================================================================
    BUILD TASK
    ========================================================================== */
 gulp.task('build', function() {
     runSequence('clean', ['browserify', 'modernizr', 'scripts', 'image', 'html']);
 });
-
 /* ==========================================================================
    DEFAULT TASK
    ========================================================================== */
