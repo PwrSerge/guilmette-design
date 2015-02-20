@@ -4,9 +4,8 @@
 
 .footer-main {
   @include margin-leader(2);
-
   padding: 1em 4em;
-
   border-color: darken(white, 10%);
   background: #ccc;
 }
+
