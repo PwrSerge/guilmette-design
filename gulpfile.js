@@ -366,46 +366,7 @@ gulp.task('clean', function() {
         .pipe(gp.rimraf());
 
 });
-/* ==========================================================================
-   AWS PUBLISH
-   ========================================================================== */
-gulp.task('publish', function() {
 
-    // create a new publisher
-    var publisher = gp.awspublish.create({
-        key: 'AKIAJXFBVOWZJCTIBP6Q',
-        secret: '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',
-        bucket: 'guilmettedesign.com'
-    });
-
-    // define custom headers
-    var headers = {
-        'Cache-Control': 'max-age=315360000, no-transform, public'
-    };
-
-    return gulp.src('./dist/**/*')
-
-    // gzip, Set Content-Encoding headers and add .gz extension
-    .pipe(gp.awspublish.gzip())
-        .pipe(gp.rename(function(path) {
-            path.dirname = '/' + path.dirname;
-        }))
-
-    // publisher will add Content-Length, Content-Type and Cache-Control headers
-    // and if not specified will set x-amz-acl to public-read by default
-    .pipe(publisher.publish(headers))
-
-    // create a cache file to speed up consecutive uploads
-    .pipe(publisher.cache())
-
-    //sync bucket files
-    //.pipe(publisher.sync())
-
-    // print upload updates to console
-    .pipe(gp.awspublish.reporter({
-        states: ['create', 'update', 'delete']
-    }));
-});
 
 /* ==========================================================================
    BUMP VERSION
